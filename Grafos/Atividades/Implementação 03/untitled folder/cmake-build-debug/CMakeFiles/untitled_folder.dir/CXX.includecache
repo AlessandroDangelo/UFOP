@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/marinalima/Documents/OneDrive/Documentos/UFOP/PLE/Grafos/Atividades/Implementação 03/untitled folder/main.cpp
+iostream
+-
+utility
+-
+list
+-
+queue
+-
+
