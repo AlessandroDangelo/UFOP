@@ -1,0 +1,7 @@
+
+	EfficientDet D0 512x512		SSD MobileNet V2 FPNLite 320x320	SSD ResNet50 V1 FPN 640x640 (RetinaNet50)	Faster R-CNN ResNet50 V1 640x640	Mask R-CNN Inception ResNet V2 1024x1024
+Praia 		1.8 				3.933820					9.272093					10.281029				81.255176
+Cachorros 	0.85				0.362098					4.160098					5.773618				73.767800
+Pássartos 	0.81				0.239454					5.462659					3.944194				68.791482
+
+		

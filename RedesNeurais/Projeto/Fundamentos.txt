@@ -1,0 +1,29 @@
+\section{Fundamentos}
+
+A detecção de mensagens perigosas ou ofensivas em comunidades ou redes sociais é um tema relevante na era digital, considerando o aumento da disseminação de conteúdo prejudicial. A utilização de algoritmos e técnicas de processamento de linguagem natural e aprendizado de máquina oferece uma abordagem promissora para lidar com esse desafio \cite{boriola2021detectando}. Esses algoritmos permitem identificar padrões, analisar o contexto e classificar automaticamente as mensagens, auxiliando na proteção dos usuários e na promoção de ambientes mais seguros e saudáveis online.
+
+\subsection{Linguagem Ofensiva}
+
+A linguagem ofensiva se refere a um tipo de comunicação que envolve insultos, ameaças, ofensas, palavras de baixo calão e obscenidade. É um comportamento que pode causar danos emocionais e impactar negativamente as interações nas comunidades e redes sociais \cite{boriola2021detectando}.
+
+\subsection{Processamento de Linguagem Natural (PLN)}
+
+Algoritmos e técnicas de Processamento de Linguagem Natural referem-se a métodos computacionais e abordagens utilizados para analisar, compreender e processar textos e linguagem humana. O PLN combina conhecimentos de linguística, inteligência artificial e ciência da computação para permitir que computadores compreendam e interajam com a linguagem humana de forma significativa \cite{braga2008}.
+
+\subsection{Aprendizado de Máquina}
+
+O aprendizado de máquina é uma disciplina da inteligência artificial que busca desenvolver técnicas computacionais para que os sistemas adquiram conhecimento de forma automática. Esses sistemas são capazes de tomar decisões com base em experiências anteriores, utilizando algoritmos e métodos estatísticos. Ao analisar e processar dados, eles identificam padrões e aprendem com eles ao longo do tempo \cite{brunialti2015aprendizado}.
+
+\subsection{Mineração de Texto}
+
+A mineração de texto desempenha um papel fundamental na detecção de linguagem ofensiva em comunidades e redes sociais. Por meio de algoritmos e técnicas de processamento de linguagem natural, a mineração de texto permite analisar e extrair informações relevantes dos textos, identificando padrões, contextos e sentimentos subjacentes às mensagens \cite{silva2016unsupervised}. Essa abordagem possibilita a detecção automatizada de palavras, frases ou expressões ofensivas, contribuindo para a criação de ambientes online mais seguros e saudáveis. Ao utilizar métodos de mineração de texto, é possível identificar e classificar eficientemente conteúdos inapropriados, auxiliando na proteção dos usuários e no combate ao discurso de ódio, cyberbullying e outras formas de comportamento prejudicial.
+
+\subsection{Detecção com Processamento de Linguagem Natural e Aprendizado de Máquina}
+
+Com a aplicação de algoritmos e técnicas de Processamento de Linguagem Natural e aprendizado de máquina na detecção de mensagens perigosas ou ofensivas em comunidades ou redes sociais, através da análise automatizada de textos, é possível identificar padrões, contextos e sentimentos subjacentes às mensagens, permitindo uma detecção mais precisa e eficiente.
+
+\subsection{Abordagem Robusta com PLN e Aprendizado de Máquina}
+
+A combinação de algoritmos de Processamento de Linguagem Natural (PLN) e aprendizado de máquina, como PyTorch LSTM e BERT, proporciona uma abordagem ainda mais robusta e eficaz para lidar com a detecção de mensagens perigosas ou ofensivas em escala. O uso de PyTorch LSTM permite modelar dependências temporais em sequências de texto, capturando nuances e padrões complexos nas mensagens. Por outro lado, a incorporação de BERT, um modelo pré-treinado altamente avançado baseado em transformers, possibilita uma compreensão mais profunda das relações semânticas em contextos textuais complexos.
+
+Essas técnicas avançadas oferecem a capacidade de identificar e filtrar conteúdos inapropriados em tempo real, contribuindo de maneira significativa para a criação de ambientes online mais seguros e saudáveis. A combinação desses algoritmos permite uma análise mais abrangente, considerando não apenas a estrutura sequencial das mensagens, mas também as relações semânticas e contextuais, resultando em uma detecção mais precisa e eficiente de mensagens prejudiciais em comunidades e redes sociais. Essa abordagem integrada promove a promoção de um ambiente digital mais seguro e a construção de comunidades online mais saudáveis.
