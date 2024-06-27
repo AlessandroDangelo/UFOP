@@ -1,0 +1,31 @@
+\doxysection{mem\+\_\+usage.\+cpp}
+\label{mem__usage_8cpp_source}\index{test/unit/mem\_usage.cpp@{test/unit/mem\_usage.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}mem\_usage.h"{}}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{keywordtype}{void} memory\_usage(\textcolor{keywordtype}{double}\& vm\_usage, \textcolor{keywordtype}{double}\& resident\_set) \{}
+\DoxyCodeLine{00006     vm\_usage = 0.0;}
+\DoxyCodeLine{00007     resident\_set = 0.0;}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009     ifstream stat\_stream(\textcolor{stringliteral}{"{}/proc/self/stat"{}}, ios\_base::in); \textcolor{comment}{//get info from proc directory}}
+\DoxyCodeLine{00010     }
+\DoxyCodeLine{00011     \textcolor{comment}{// Create variables to get info}}
+\DoxyCodeLine{00012     \textcolor{keywordtype}{string} pid, comm, state, ppid, pgrp, session, tty\_nr;}
+\DoxyCodeLine{00013     \textcolor{keywordtype}{string} tpgid, flags, minflt, cminflt, majflt, cmajflt;}
+\DoxyCodeLine{00014     \textcolor{keywordtype}{string} utime, stime, cutime, cstime, priority, nice;}
+\DoxyCodeLine{00015     \textcolor{keywordtype}{string} O, itrealvalue, starttime;}
+\DoxyCodeLine{00016     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} vsize;}
+\DoxyCodeLine{00017     \textcolor{keywordtype}{long} rss;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     stat\_stream >> pid >> comm >> state >> ppid >> pgrp >> session >> tty\_nr}
+\DoxyCodeLine{00020                 >> tpgid >> flags >> minflt >> cminflt >> majflt >> cmajflt}
+\DoxyCodeLine{00021                 >> utime >> stime >> cutime >> cstime >> priority >> nice}
+\DoxyCodeLine{00022                 >> O >> itrealvalue >> starttime >> vsize >> rss;}
+\DoxyCodeLine{00023     stat\_stream.close();}
+\DoxyCodeLine{00024     vm\_usage = vsize / 1024.0;}
+\DoxyCodeLine{00025 \}}
+
+\end{DoxyCode}

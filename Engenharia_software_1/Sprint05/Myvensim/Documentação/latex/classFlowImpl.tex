@@ -1,0 +1,404 @@
+\doxysection{Flow\+Impl Class Reference}
+\label{classFlowImpl}\index{FlowImpl@{FlowImpl}}
+
+
+Class \doxyref{Flow\+Impl}{p.}{classFlowImpl}.  
+
+
+
+
+{\ttfamily \#include $<$flow\+Impl.\+h$>$}
+
+
+
+Inheritance diagram for Flow\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlowImpl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flow\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classFlowImpl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Flow\+Impl} (string \textbf{ name}=\char`\"{}\char`\"{}, \textbf{ System} $\ast$\textbf{ source}=NULL, \textbf{ System} $\ast$\textbf{ target}=NULL)
+\item 
+virtual \textbf{ $\sim$\+Flow\+Impl} ()
+\item 
+virtual double \textbf{ execute} ()=0
+\item 
+string \textbf{ get\+Name} () const
+\item 
+void \textbf{ set\+Name} (string flow\+Name)
+\item 
+\textbf{ System} $\ast$ \textbf{ get\+Source} () const
+\item 
+void \textbf{ set\+Source} (\textbf{ System} $\ast$source\+Sys)
+\item 
+void \textbf{ clear\+Source} ()
+\item 
+\textbf{ System} $\ast$ \textbf{ get\+Target} () const
+\item 
+void \textbf{ set\+Target} (\textbf{ System} $\ast$target\+Sys)
+\item 
+void \textbf{ clear\+Target} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Flow\+Impl} (const \textbf{ Flow} \&flow)
+\item 
+\textbf{ Flow\+Impl} \& \textbf{ operator=} (const \textbf{ Flow} \&flow)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \textbf{ name}
+\item 
+\textbf{ System} $\ast$ \textbf{ source}
+\item 
+\textbf{ System} $\ast$ \textbf{ target}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \doxyref{Flow\+Impl}{p.}{classFlowImpl}. 
+
+This Class represents a flow in the General Systems Theory implemented in this code. 
+
+Definition at line \textbf{ 13} of file \textbf{ flow\+Impl.\+h}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classFlowImpl_ab6633e6def4d5b66b3d7fc84004be98e}} 
+\index{FlowImpl@{FlowImpl}!FlowImpl@{FlowImpl}}
+\index{FlowImpl@{FlowImpl}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{FlowImpl()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Flow\+Impl\+::\+Flow\+Impl (\begin{DoxyParamCaption}\item[{const \textbf{ Flow} \&}]{flow }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+This is the copy constructor for the \doxyref{Flow\+Impl}{p.}{classFlowImpl} Class. 
+\begin{DoxyParams}{Parameters}
+{\em flow} & the flow that is going to be cloned. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 3} of file \textbf{ flow\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{classFlowImpl_ab6633e6def4d5b66b3d7fc84004be98e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlowImpl_ac3dd23e6cdfaeab86cd588aec58c4aac}} 
+\index{FlowImpl@{FlowImpl}!FlowImpl@{FlowImpl}}
+\index{FlowImpl@{FlowImpl}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{FlowImpl()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Flow\+Impl\+::\+Flow\+Impl (\begin{DoxyParamCaption}\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{\textbf{ System} $\ast$}]{source = {\ttfamily NULL},  }\item[{\textbf{ System} $\ast$}]{target = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+This is the default constructor for the \doxyref{Flow\+Impl}{p.}{classFlowImpl} Class. 
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the \doxyref{Flow}{p.}{classFlow}. \\
+\hline
+{\em source} & a pointer to the source system of the \doxyref{Flow}{p.}{classFlow}. \\
+\hline
+{\em target} & a pointer to the target system of the \doxyref{Flow}{p.}{classFlow}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Flow}{p.}{classFlow} -\/ a \doxyref{Flow\+Impl}{p.}{classFlowImpl} Class object, with it\textquotesingle{}s is\+Copy attribute set to false. 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 25} of file \textbf{ flow\+Impl.\+cpp}.
+
+\mbox{\label{classFlowImpl_a2d91539593b336aee4a19048f8a82e8c}} 
+\index{FlowImpl@{FlowImpl}!````~FlowImpl@{$\sim$FlowImpl}}
+\index{````~FlowImpl@{$\sim$FlowImpl}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{$\sim$FlowImpl()}
+{\footnotesize\ttfamily Flow\+Impl\+::$\sim$\+Flow\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the default destructor for the \doxyref{Flow\+Impl}{p.}{classFlowImpl} Class. 
+
+Definition at line \textbf{ 27} of file \textbf{ flow\+Impl.\+cpp}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classFlowImpl_a92a3d902afab0aa20ec2886d55264156}} 
+\index{FlowImpl@{FlowImpl}!clearSource@{clearSource}}
+\index{clearSource@{clearSource}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{clearSource()}
+{\footnotesize\ttfamily void Flow\+Impl\+::clear\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the pointer of the source attribute as NULL. 
+
+Implements \textbf{ Flow} \doxyref{}{p.}{classFlow_a98e7aafb65699a9645a22f215b49c8b0}.
+
+
+
+Definition at line \textbf{ 45} of file \textbf{ flow\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlowImpl_a92a3d902afab0aa20ec2886d55264156_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlowImpl_afec6eff9cdd0611aa49bfcad74a1f9bd}} 
+\index{FlowImpl@{FlowImpl}!clearTarget@{clearTarget}}
+\index{clearTarget@{clearTarget}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{clearTarget()}
+{\footnotesize\ttfamily void Flow\+Impl\+::clear\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the pointer of the target attribute as NULL. 
+
+Implements \textbf{ Flow} \doxyref{}{p.}{classFlow_a52f8ab7ff430f5d2e87aa0fdb12ad64b}.
+
+
+
+Definition at line \textbf{ 57} of file \textbf{ flow\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlowImpl_afec6eff9cdd0611aa49bfcad74a1f9bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlowImpl_a88d14f759988f1dcf393b83a93aea1f1}} 
+\index{FlowImpl@{FlowImpl}!execute@{execute}}
+\index{execute@{execute}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{execute()}
+{\footnotesize\ttfamily virtual double Flow\+Impl\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+A pure virtual method that will be inherited by subclasses created by the user, and that will contain an equation that will be executed by the model. 
+
+Implements \textbf{ Flow} \doxyref{}{p.}{classFlow_a619be0b590c78202127bc6ac7fb04029}.
+
+
+
+Implemented in \textbf{ Exponencial\+Flow} \doxyref{}{p.}{classExponencialFlow_a3f5d88df645307180879a88501b64863}, \textbf{ Logistic\+Flow} \doxyref{}{p.}{classLogisticFlow_afdc1e2ec0eb61b71b367f8fc2677e371}, \textbf{ Complex\+FlowF} \doxyref{}{p.}{classComplexFlowF_adfca5685dfe25d0eadf8abd9bf523829}, \textbf{ Complex\+FlowT} \doxyref{}{p.}{classComplexFlowT_a1ab577756e7a0c1eeaa47779bb0952cc}, \textbf{ Complex\+FlowU} \doxyref{}{p.}{classComplexFlowU_a75627b2a7b0cdbf767c92aa102840458}, \textbf{ Complex\+FlowV} \doxyref{}{p.}{classComplexFlowV_a5478a557bb037d90430ab092569c695a}, \textbf{ Complex\+FlowG} \doxyref{}{p.}{classComplexFlowG_a8cfa9dca03275f0999de008449d16c56}, \textbf{ Complex\+FlowR} \doxyref{}{p.}{classComplexFlowR_a3b8d9d5dca6e0180d48192d48040d17c}, and \textbf{ Exponencial\+Flow} \doxyref{}{p.}{classExponencialFlow_a3f5d88df645307180879a88501b64863}.
+
+\mbox{\label{classFlowImpl_a63453811afa24e0799e54e22161738a8}} 
+\index{FlowImpl@{FlowImpl}!getName@{getName}}
+\index{getName@{getName}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{getName()}
+{\footnotesize\ttfamily string Flow\+Impl\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the name attribute in the \doxyref{Flow\+Impl}{p.}{classFlowImpl} Class. \begin{DoxyReturn}{Returns}
+string -\/ the content name attribute. ~\newline
+ 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Flow} \doxyref{}{p.}{classFlow_aa91a8025b6dbb27ee5137c7c9ad0c564}.
+
+
+
+Definition at line \textbf{ 29} of file \textbf{ flow\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlowImpl_a63453811afa24e0799e54e22161738a8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlowImpl_a54940323059d2c4158f4146080841f32}} 
+\index{FlowImpl@{FlowImpl}!getSource@{getSource}}
+\index{getSource@{getSource}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{getSource()}
+{\footnotesize\ttfamily \textbf{ System} $\ast$ Flow\+Impl\+::get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the source attribute in the \doxyref{Flow\+Impl}{p.}{classFlowImpl} Class. ~\newline
+ \begin{DoxyReturn}{Returns}
+System$\ast$ -\/ the pointer of the source system. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Flow} \doxyref{}{p.}{classFlow_abf0f3dbb285fe82e5ba6449de06b97c8}.
+
+
+
+Definition at line \textbf{ 37} of file \textbf{ flow\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlowImpl_a54940323059d2c4158f4146080841f32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlowImpl_ab07923bc230308cd949f627a92901bca}} 
+\index{FlowImpl@{FlowImpl}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{getTarget()}
+{\footnotesize\ttfamily \textbf{ System} $\ast$ Flow\+Impl\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the target attribute in the \doxyref{Flow\+Impl}{p.}{classFlowImpl} Class. \begin{DoxyReturn}{Returns}
+System$\ast$ -\/ the pointer of the target system. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Flow} \doxyref{}{p.}{classFlow_afb9b8d93ea0fc81868b8e02dd382a787}.
+
+
+
+Definition at line \textbf{ 49} of file \textbf{ flow\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlowImpl_ab07923bc230308cd949f627a92901bca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlowImpl_ab2e72095b62738fb6ab6b968b40bbaf2}} 
+\index{FlowImpl@{FlowImpl}!operator=@{operator=}}
+\index{operator=@{operator=}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{operator=()}
+{\footnotesize\ttfamily \textbf{ Flow\+Impl} \& Flow\+Impl\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Flow} \&}]{flow }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+This is the overloaded assignment operator for the \doxyref{Flow\+Impl}{p.}{classFlowImpl} Class. 
+
+Definition at line \textbf{ 13} of file \textbf{ flow\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{classFlowImpl_ab2e72095b62738fb6ab6b968b40bbaf2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlowImpl_a5b418614ad5d16791d364ef7d95c00ae}} 
+\index{FlowImpl@{FlowImpl}!setName@{setName}}
+\index{setName@{setName}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{setName()}
+{\footnotesize\ttfamily void Flow\+Impl\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{flow\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the name attribute in the \doxyref{Flow\+Impl}{p.}{classFlowImpl} Class. 
+\begin{DoxyParams}{Parameters}
+{\em flow\+Name} & which will be set to the current flow. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Flow} \doxyref{}{p.}{classFlow_aa20f016d470e011f8955dfbdfc88fa06}.
+
+
+
+Definition at line \textbf{ 33} of file \textbf{ flow\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlowImpl_a5b418614ad5d16791d364ef7d95c00ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlowImpl_a650a16f4a2e902f1decfb37428fc375c}} 
+\index{FlowImpl@{FlowImpl}!setSource@{setSource}}
+\index{setSource@{setSource}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{setSource()}
+{\footnotesize\ttfamily void Flow\+Impl\+::set\+Source (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{source\+Sys }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the source attribute in the \doxyref{Flow\+Impl}{p.}{classFlowImpl} Class. 
+\begin{DoxyParams}{Parameters}
+{\em source\+Sys} & a pointer to the source target. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Flow} \doxyref{}{p.}{classFlow_a4af218ba8b4875c0c08c92817d8c2a96}.
+
+
+
+Definition at line \textbf{ 41} of file \textbf{ flow\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlowImpl_a650a16f4a2e902f1decfb37428fc375c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlowImpl_a9df35271364df544eed6728731b598a4}} 
+\index{FlowImpl@{FlowImpl}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{setTarget()}
+{\footnotesize\ttfamily void Flow\+Impl\+::set\+Target (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{target\+Sys }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the target attribute in the \doxyref{Flow\+Impl}{p.}{classFlowImpl} Class. ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em target\+Sys} & a pointer to the target system. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Flow} \doxyref{}{p.}{classFlow_a2b7c129655bf7cf553e16585930b0ccd}.
+
+
+
+Definition at line \textbf{ 53} of file \textbf{ flow\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlowImpl_a9df35271364df544eed6728731b598a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classFlowImpl_a4f3915297f6ef9d76acc5f9fef67342c}} 
+\index{FlowImpl@{FlowImpl}!name@{name}}
+\index{name@{name}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{name}
+{\footnotesize\ttfamily string Flow\+Impl\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+This attribute contains a name for the flow. 
+
+Definition at line \textbf{ 16} of file \textbf{ flow\+Impl.\+h}.
+
+\mbox{\label{classFlowImpl_a950987351656a518a1057b64c5f85af8}} 
+\index{FlowImpl@{FlowImpl}!source@{source}}
+\index{source@{source}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{source}
+{\footnotesize\ttfamily \textbf{ System}$\ast$ Flow\+Impl\+::source\hspace{0.3cm}{\ttfamily [protected]}}
+
+This attribute stores a pointer to the source system of a flow. 
+
+Definition at line \textbf{ 17} of file \textbf{ flow\+Impl.\+h}.
+
+\mbox{\label{classFlowImpl_af97039b649da65573e5582edbeb287b5}} 
+\index{FlowImpl@{FlowImpl}!target@{target}}
+\index{target@{target}!FlowImpl@{FlowImpl}}
+\doxysubsubsection{target}
+{\footnotesize\ttfamily \textbf{ System}$\ast$ Flow\+Impl\+::target\hspace{0.3cm}{\ttfamily [protected]}}
+
+This attribute stores a pointer to the target system of a flow. 
+
+Definition at line \textbf{ 18} of file \textbf{ flow\+Impl.\+h}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\textbf{ flow\+Impl.\+h}\item 
+src/lib/\textbf{ flow\+Impl.\+cpp}\end{DoxyCompactItemize}

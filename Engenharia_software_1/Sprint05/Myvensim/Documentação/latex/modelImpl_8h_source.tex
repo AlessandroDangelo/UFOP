@@ -1,0 +1,85 @@
+\doxysection{model\+Impl.\+h}
+\label{modelImpl_8h_source}\index{src/include/modelImpl.h@{src/include/modelImpl.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#ifndef MODELIMPL\_H}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#define MODELIMPL\_H}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}./model.h"{}}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00012 \textcolor{keyword}{class }ModelImpl : \textcolor{keyword}{public} Model\{}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00015         \textcolor{keywordtype}{string} name; }
+\DoxyCodeLine{00016         \textcolor{keywordtype}{double} time; }
+\DoxyCodeLine{00017         vector<System*> systems; }
+\DoxyCodeLine{00018         vector<Flow*> flows; }
+\DoxyCodeLine{00019         \textcolor{keyword}{static} \textcolor{keywordtype}{int} qntd; }
+\DoxyCodeLine{00021     \textcolor{keyword}{public}:  }
+\DoxyCodeLine{00022         \textcolor{keyword}{friend} \textcolor{keyword}{class }UnitModel;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024         \textcolor{keyword}{typedef} vector<System *>::iterator systemIterator;}
+\DoxyCodeLine{00025         \textcolor{keyword}{typedef} vector<Flow *>::iterator flowIterator;}
+\DoxyCodeLine{00026         \textcolor{keyword}{typedef} vector<Model *>::iterator modelIterator;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028         systemIterator beginSystems(); }
+\DoxyCodeLine{00029         systemIterator endSystems(); }
+\DoxyCodeLine{00030         flowIterator beginFlows(); }
+\DoxyCodeLine{00031         flowIterator endFlows(); }
+\DoxyCodeLine{00039         \textcolor{keyword}{static} Model* createModel(\textcolor{keywordtype}{string} name=\textcolor{stringliteral}{"{}"{}}, \textcolor{keywordtype}{double} time=0.0);}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00047         ModelImpl(\textcolor{keywordtype}{string} name=\textcolor{stringliteral}{"{}"{}}, \textcolor{keywordtype}{double} time=0.0);}
+\DoxyCodeLine{00048         }
+\DoxyCodeLine{00052         \textcolor{keyword}{virtual} \string~ModelImpl();}
+\DoxyCodeLine{00053             }
+\DoxyCodeLine{00060         \textcolor{keywordtype}{void} execute(\textcolor{keywordtype}{double} start=0.0, \textcolor{keywordtype}{double} \textcolor{keyword}{final}=0.0, \textcolor{keywordtype}{double} increment=1.0);}
+\DoxyCodeLine{00061         }
+\DoxyCodeLine{00066         \textcolor{keywordtype}{void} remove(System* sys);}
+\DoxyCodeLine{00067       }
+\DoxyCodeLine{00072         \textcolor{keywordtype}{void} remove(Flow* flow);}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00078         \textcolor{keywordtype}{void} setName(\textcolor{keywordtype}{string} modelName);}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00084         \textcolor{keywordtype}{string} getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00090         \textcolor{keywordtype}{void} setTime(\textcolor{keywordtype}{double} currentTime);}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00096         \textcolor{keywordtype}{double} getTime() \textcolor{keyword}{const};}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00102         \textcolor{keywordtype}{void} incrementTime(\textcolor{keywordtype}{double} increment);}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00108         System* getSystem(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00114         Flow* getFlow(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00122         System* createSystem(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00129         \textcolor{keywordtype}{void} setTarget(Flow* f, System* s);}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00136         \textcolor{keywordtype}{void} setSource(Flow* f, System* s);}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00143         System* getTarget(Flow* f);}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00150         System* getSource(Flow* f);}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00156         \textcolor{keywordtype}{void} clearTarget(Flow* f);}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00162         \textcolor{keywordtype}{void} clearSource(Flow* f);}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164     \textcolor{keyword}{private}:}
+\DoxyCodeLine{00169         ModelImpl (\textcolor{keyword}{const} ModelImpl\& model);}
+\DoxyCodeLine{00170         }
+\DoxyCodeLine{00174         \textcolor{keywordtype}{void} operator=(\textcolor{keyword}{const} ModelImpl\& model);}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00180         \textcolor{keywordtype}{void} add(System* sys);}
+\DoxyCodeLine{00181         }
+\DoxyCodeLine{00186         \textcolor{keywordtype}{void} add(Flow* flow);}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188 \};}
+\DoxyCodeLine{00189 }
+\DoxyCodeLine{00190 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

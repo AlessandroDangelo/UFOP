@@ -1,0 +1,52 @@
+\doxysection{flow\+Impl.\+hpp}
+\label{flowImpl_8hpp_source}\index{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/src/flowImpl.hpp@{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/src/flowImpl.hpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#ifndef FLOWIMPL\_H}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#define FLOWIMPL\_H}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}./flow.hpp"{}}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00012 \textcolor{keyword}{class }FlowImpl : \textcolor{keyword}{public} Flow\{}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00015         \textcolor{keywordtype}{string} name; }
+\DoxyCodeLine{00016         System* source; }
+\DoxyCodeLine{00017         System* target; }
+\DoxyCodeLine{00023         FlowImpl(\textcolor{keyword}{const} Flow\& flow);}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00028         FlowImpl\& operator=(\textcolor{keyword}{const} Flow\& flow);}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031         \textcolor{keyword}{friend} \textcolor{keyword}{class }Model; }
+\DoxyCodeLine{00032         \textcolor{keyword}{friend} \textcolor{keyword}{class }ModelImpl; }
+\DoxyCodeLine{00033         \textcolor{keyword}{friend} \textcolor{keyword}{class }UnitFlow; }
+\DoxyCodeLine{00042         FlowImpl(\textcolor{keywordtype}{string} name = \textcolor{stringliteral}{"{}"{}}, System* source = NULL, System* target = NULL);}
+\DoxyCodeLine{00043         }
+\DoxyCodeLine{00047         \textcolor{keyword}{virtual} \string~FlowImpl();}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00053         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} execute() = 0;}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00059         \textcolor{keywordtype}{string} getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00065         \textcolor{keywordtype}{void} setName(\textcolor{keywordtype}{string} flowName);}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00071         System* getSource() \textcolor{keyword}{const};}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00077         \textcolor{keywordtype}{void} setSource(System* sourceSys);}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00082         \textcolor{keywordtype}{void} clearSource();}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00088         System* getTarget() \textcolor{keyword}{const};}
+\DoxyCodeLine{00089         }
+\DoxyCodeLine{00094         \textcolor{keywordtype}{void} setTarget(System* targetSys);}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00099         \textcolor{keywordtype}{void} clearTarget();}
+\DoxyCodeLine{00100 \};}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

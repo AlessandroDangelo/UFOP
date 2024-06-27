@@ -1,0 +1,129 @@
+\doxysection{funcional\+\_\+tests.\+cpp}
+\label{funcional__tests_8cpp_source}\index{test/funcional/funcional\_tests.cpp@{test/funcional/funcional\_tests.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include "{}funcional\_tests.h"{}} }
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{comment}{// Function for exponential functional test.}}
+\DoxyCodeLine{00008 \textcolor{keywordtype}{void} exponentialFuncionalTest()\{}
+\DoxyCodeLine{00009     cout << \textcolor{stringliteral}{"{}TEST 1 -\/ Simple model with exponential equation"{}} << endl;}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011     \textcolor{comment}{// Create model}}
+\DoxyCodeLine{00012     Model* exponencialModel = Model::createModel(\textcolor{stringliteral}{"{}Exponential Model"{}}, 0.0);}
+\DoxyCodeLine{00013     System* sys1 = exponencialModel-\/>createSystem(\textcolor{stringliteral}{"{}Population 1"{}}, 100.0);}
+\DoxyCodeLine{00014     System* sys2 = exponencialModel-\/>createSystem(\textcolor{stringliteral}{"{}Population 2"{}}, 0.0);}
+\DoxyCodeLine{00015     Flow* exponencialFlow = exponencialModel-\/>createFlow<ExponencialFlow>(\textcolor{stringliteral}{"{}Unlimited Growth"{}}, sys1, sys2);}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{comment}{//Making assertions for the unit test before execution}}
+\DoxyCodeLine{00018     assert(sys1-\/>getName() == \textcolor{stringliteral}{"{}Population 1"{}});}
+\DoxyCodeLine{00019     assert(sys2-\/>getName() == \textcolor{stringliteral}{"{}Population 2"{}});}
+\DoxyCodeLine{00020     assert(exponencialFlow-\/>getName() == \textcolor{stringliteral}{"{}Unlimited Growth"{}});}
+\DoxyCodeLine{00021     assert(exponencialModel-\/>getName() == \textcolor{stringliteral}{"{}Exponential Model"{}});}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     assert(abs(sys1-\/>getValue() -\/ 100.0) < 0.0001);}
+\DoxyCodeLine{00024     assert(abs(sys2-\/>getValue() -\/ 0.0) < 0.0001);}
+\DoxyCodeLine{00025     assert(abs(exponencialModel-\/>getTime() -\/ 0.0) < 0.0001);}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{comment}{//Executes the model}}
+\DoxyCodeLine{00028     exponencialModel-\/>execute(0, 100, 1);}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{comment}{//Making assertions for the unit test after execution}}
+\DoxyCodeLine{00031     assert(abs(sys1-\/>getValue() -\/ 36.6032) < 0.0001);}
+\DoxyCodeLine{00032     assert(abs(sys2-\/>getValue() -\/ 63.3968) < 0.0001);}
+\DoxyCodeLine{00033     assert(abs(exponencialModel-\/>getTime() -\/ 100.0) < 0.0001);}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keyword}{delete} (exponencialModel);}
+\DoxyCodeLine{00036     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}}<< RESET << endl;}
+\DoxyCodeLine{00037 \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 \textcolor{comment}{// Function for logistical functional test.}}
+\DoxyCodeLine{00040 \textcolor{keywordtype}{void} logisticalFuncionalTest()\{}
+\DoxyCodeLine{00041     cout << \textcolor{stringliteral}{"{}TEST 2 -\/ Simple model with logistic equation"{}} << endl;}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{comment}{// Create model}}
+\DoxyCodeLine{00044     Model* logisticalModel = Model::createModel(\textcolor{stringliteral}{"{}Logistic Model"{}}, 0.0);}
+\DoxyCodeLine{00045     System* sys1 = logisticalModel-\/>createSystem(\textcolor{stringliteral}{"{}Population 1"{}}, 100.0);}
+\DoxyCodeLine{00046     System* sys2 = logisticalModel-\/>createSystem(\textcolor{stringliteral}{"{}Population 2"{}}, 10.0);}
+\DoxyCodeLine{00047     Flow* logisticalFlow = logisticalModel-\/>createFlow<LogisticFlow>(\textcolor{stringliteral}{"{}Logistic flow"{}}, sys1, sys2);}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049     \textcolor{comment}{//Making assertions for the unit test before execution}}
+\DoxyCodeLine{00050     assert(sys1-\/>getName() == \textcolor{stringliteral}{"{}Population 1"{}});}
+\DoxyCodeLine{00051     assert(sys2-\/>getName() == \textcolor{stringliteral}{"{}Population 2"{}});    }
+\DoxyCodeLine{00052     assert(logisticalFlow-\/>getName() == \textcolor{stringliteral}{"{}Logistic flow"{}});}
+\DoxyCodeLine{00053     assert(logisticalModel-\/>getName() == \textcolor{stringliteral}{"{}Logistic Model"{}});}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     assert(abs(sys1-\/>getValue() -\/ 100.0) < 0.0001);}
+\DoxyCodeLine{00056     assert(abs(sys2-\/>getValue() -\/ 10.0) < 0.0001);}
+\DoxyCodeLine{00057     assert(abs(logisticalModel-\/>getTime() -\/ 0.0) < 0.0001);   }
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{comment}{//Executes the model}}
+\DoxyCodeLine{00060     logisticalModel-\/>execute(0, 100, 1);}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     \textcolor{comment}{//Making assertions for the unit test after execution}}
+\DoxyCodeLine{00063     assert(abs(sys1-\/>getValue() -\/ 88.2167) < 0.0001);}
+\DoxyCodeLine{00064     assert(abs(sys2-\/>getValue() -\/ 21.7833) < 0.0001);}
+\DoxyCodeLine{00065     assert(abs(logisticalModel-\/>getTime() -\/ 100.0) < 0.0001); }
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{keyword}{delete}(logisticalModel);}
+\DoxyCodeLine{00068     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}}<< RESET << endl;}
+\DoxyCodeLine{00069 \}}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071 \textcolor{comment}{// Function for complex functional test.}}
+\DoxyCodeLine{00072 \textcolor{keywordtype}{void} complexFuncionalTest()\{}
+\DoxyCodeLine{00073     cout << \textcolor{stringliteral}{"{}TEST 3 -\/ Complex model"{}} << endl;}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     \textcolor{comment}{// Create model}}
+\DoxyCodeLine{00076     Model* complexModel = Model::createModel(\textcolor{stringliteral}{"{}Complex Model"{}}, 0.0);}
+\DoxyCodeLine{00077     System* q1 = complexModel-\/>createSystem(\textcolor{stringliteral}{"{}Q1"{}}, 100.0);}
+\DoxyCodeLine{00078     System* q2 = complexModel-\/>createSystem(\textcolor{stringliteral}{"{}Q2"{}}, 0.0);}
+\DoxyCodeLine{00079     System* q3 = complexModel-\/>createSystem(\textcolor{stringliteral}{"{}Q3"{}}, 100.0);}
+\DoxyCodeLine{00080     System* q4 = complexModel-\/>createSystem(\textcolor{stringliteral}{"{}Q4"{}}, 0.0);}
+\DoxyCodeLine{00081     System* q5 = complexModel-\/>createSystem(\textcolor{stringliteral}{"{}Q5"{}}, 0.0);}
+\DoxyCodeLine{00082     Flow* complexFlowF = complexModel-\/>createFlow<ComplexFlowF>(\textcolor{stringliteral}{"{}Flow f"{}}, q1, q2);}
+\DoxyCodeLine{00083     Flow* complexFlowT = complexModel-\/>createFlow<ComplexFlowT>(\textcolor{stringliteral}{"{}Flow t"{}}, q2, q3);}
+\DoxyCodeLine{00084     Flow* complexFlowU = complexModel-\/>createFlow<ComplexFlowU>(\textcolor{stringliteral}{"{}Flow u"{}}, q3, q4);}
+\DoxyCodeLine{00085     Flow* complexFlowV = complexModel-\/>createFlow<ComplexFlowV>(\textcolor{stringliteral}{"{}Flow v"{}}, q4, q1);}
+\DoxyCodeLine{00086     Flow* complexFlowG = complexModel-\/>createFlow<ComplexFlowG>(\textcolor{stringliteral}{"{}Flow g"{}}, q1, q3);}
+\DoxyCodeLine{00087     Flow* complexFlowR = complexModel-\/>createFlow<ComplexFlowR>(\textcolor{stringliteral}{"{}Flow r"{}}, q2, q5);}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089     \textcolor{comment}{//Making assertions for the unit test before execution}}
+\DoxyCodeLine{00090     assert(q1-\/>getName() == \textcolor{stringliteral}{"{}Q1"{}});}
+\DoxyCodeLine{00091     assert(q2-\/>getName() == \textcolor{stringliteral}{"{}Q2"{}});}
+\DoxyCodeLine{00092     assert(q3-\/>getName() == \textcolor{stringliteral}{"{}Q3"{}});}
+\DoxyCodeLine{00093     assert(q4-\/>getName() == \textcolor{stringliteral}{"{}Q4"{}});}
+\DoxyCodeLine{00094     assert(q5-\/>getName() == \textcolor{stringliteral}{"{}Q5"{}});}
+\DoxyCodeLine{00095     assert(complexFlowF-\/>getName() == \textcolor{stringliteral}{"{}Flow f"{}});}
+\DoxyCodeLine{00096     assert(complexFlowT-\/>getName() == \textcolor{stringliteral}{"{}Flow t"{}});}
+\DoxyCodeLine{00097     assert(complexFlowU-\/>getName() == \textcolor{stringliteral}{"{}Flow u"{}});}
+\DoxyCodeLine{00098     assert(complexFlowV-\/>getName() == \textcolor{stringliteral}{"{}Flow v"{}});}
+\DoxyCodeLine{00099     assert(complexFlowG-\/>getName() == \textcolor{stringliteral}{"{}Flow g"{}});}
+\DoxyCodeLine{00100     assert(complexFlowR-\/>getName() == \textcolor{stringliteral}{"{}Flow r"{}});}
+\DoxyCodeLine{00101     assert(complexModel-\/>getName() == \textcolor{stringliteral}{"{}Complex Model"{}});}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103     assert(abs(q1-\/>getValue() -\/ 100.0) < 0.0001);}
+\DoxyCodeLine{00104     assert(abs(q2-\/>getValue() -\/ 0.0) < 0.0001);}
+\DoxyCodeLine{00105     assert(abs(q3-\/>getValue() -\/ 100.0) < 0.0001);}
+\DoxyCodeLine{00106     assert(abs(q4-\/>getValue() -\/ 0.0) < 0.0001);}
+\DoxyCodeLine{00107     assert(abs(q5-\/>getValue() -\/ 0.0) < 0.0001);}
+\DoxyCodeLine{00108     assert(abs(complexModel-\/>getTime() -\/ 0.0) < 0.0001);}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110     \textcolor{comment}{//Executes the model}}
+\DoxyCodeLine{00111     complexModel-\/>execute(0, 100, 1);}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113     \textcolor{comment}{//Making assertions for the unit test after execution}}
+\DoxyCodeLine{00114     assert(abs(q1-\/>getValue() -\/ 31.8513) < 0.0001);}
+\DoxyCodeLine{00115     assert(abs(q2-\/>getValue() -\/ 18.4003) < 0.0001);}
+\DoxyCodeLine{00116     assert(abs(q3-\/>getValue() -\/ 77.1143) < 0.0001);}
+\DoxyCodeLine{00117     assert(abs(q4-\/>getValue() -\/ 56.1728) < 0.0001);}
+\DoxyCodeLine{00118     assert(abs(q5-\/>getValue() -\/ 16.4612) < 0.0001);}
+\DoxyCodeLine{00119     assert(abs(complexModel-\/>getTime() -\/ 100.0) < 0.0001);}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121     \textcolor{keyword}{delete}(complexModel);}
+\DoxyCodeLine{00122     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}}<< RESET << endl;}
+\DoxyCodeLine{00123 \}}
+
+\end{DoxyCode}

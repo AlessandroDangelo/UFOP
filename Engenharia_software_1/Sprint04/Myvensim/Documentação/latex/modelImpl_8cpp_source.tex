@@ -1,0 +1,130 @@
+\doxysection{model\+Impl.\+cpp}
+\label{modelImpl_8cpp_source}\index{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/src/modelImpl.cpp@{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/src/modelImpl.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}./modelImpl.hpp"{}}      }
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 ModelImpl::ModelImpl (\textcolor{keyword}{const} ModelImpl\& model)\{\}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 \textcolor{keywordtype}{void} ModelImpl::operator=(\textcolor{keyword}{const} ModelImpl\& model)\{\}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 ModelImpl::systemIterator ModelImpl::beginSystems( \textcolor{keywordtype}{void} )\{\textcolor{keywordflow}{return} systems.begin();\}}
+\DoxyCodeLine{00008 ModelImpl::systemIterator ModelImpl::endSystems( \textcolor{keywordtype}{void} )\{\textcolor{keywordflow}{return} systems.end();\}}
+\DoxyCodeLine{00009 ModelImpl::flowIterator ModelImpl::beginFlows( \textcolor{keywordtype}{void} )\{\textcolor{keywordflow}{return} flows.begin();\} }
+\DoxyCodeLine{00010 ModelImpl::flowIterator ModelImpl::endFlows( \textcolor{keywordtype}{void} )\{\textcolor{keywordflow}{return} flows.end();\}  }
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 ModelImpl::ModelImpl(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{double} time):name(name), time(time)\{\}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014 ModelImpl::\string~ModelImpl()\{           }
+\DoxyCodeLine{00015     \textcolor{comment}{// Deletes Flows}}
+\DoxyCodeLine{00016     \textcolor{keywordflow}{for} (Flow* item : flows) \{}
+\DoxyCodeLine{00017         \textcolor{keyword}{delete} (item);}
+\DoxyCodeLine{00018     \}}
+\DoxyCodeLine{00019     flows.clear();}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{comment}{// Deletes Systems}}
+\DoxyCodeLine{00022     \textcolor{keywordflow}{for} (System* item : systems) \{}
+\DoxyCodeLine{00023         \textcolor{keyword}{delete} (item);}
+\DoxyCodeLine{00024     \}}
+\DoxyCodeLine{00025     systems.clear();}
+\DoxyCodeLine{00026 \}}
+\DoxyCodeLine{00027     }
+\DoxyCodeLine{00028 \textcolor{keywordtype}{void} ModelImpl::execute(\textcolor{keywordtype}{double} start, \textcolor{keywordtype}{double} \textcolor{keyword}{final}, \textcolor{keywordtype}{double} increment)\{}
+\DoxyCodeLine{00029     }
+\DoxyCodeLine{00030     vector<double> results;}
+\DoxyCodeLine{00031     \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{double} k = start; k < \textcolor{keyword}{final}; k += increment)\{}
+\DoxyCodeLine{00034         \textcolor{comment}{// Executes each flow 'i' in the model}}
+\DoxyCodeLine{00035         \textcolor{keywordflow}{for} (Flow* item : flows) \{}
+\DoxyCodeLine{00036             results.push\_back(item-\/>execute());}
+\DoxyCodeLine{00037         \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039         \textcolor{comment}{// Updates the system's values associated with each flow 'i' in the model}}
+\DoxyCodeLine{00040         count = 0;}
+\DoxyCodeLine{00041         \textcolor{keywordflow}{for} (Flow* item : flows) \{}
+\DoxyCodeLine{00042             \textcolor{keywordflow}{if} (item-\/>getSource() != NULL)\{}
+\DoxyCodeLine{00043                 item-\/>getSource()-\/>setValue(item-\/>getSource()-\/>getValue() -\/ results[count]);}
+\DoxyCodeLine{00044             \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046             \textcolor{keywordflow}{if} (item-\/>getTarget() != NULL)\{}
+\DoxyCodeLine{00047                 item-\/>getTarget()-\/>setValue(item-\/>getTarget()-\/>getValue() + results[count]);}
+\DoxyCodeLine{00048             \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050             count++;}
+\DoxyCodeLine{00051         \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053         \textcolor{comment}{// Resetting the results vector}}
+\DoxyCodeLine{00054         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = beginFlows(); i != endFlows(); ++i)\{}
+\DoxyCodeLine{00055             results.pop\_back();}
+\DoxyCodeLine{00056         \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058         time += increment;}
+\DoxyCodeLine{00059     \}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061 \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063 \textcolor{keywordtype}{void} ModelImpl::add(System* sys)\{}
+\DoxyCodeLine{00064     systems.insert(endSystems(), sys);            }
+\DoxyCodeLine{00065 \}}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067 \textcolor{keywordtype}{void} ModelImpl::add(Flow* flow)\{}
+\DoxyCodeLine{00068     flows.insert(endFlows(), flow);       }
+\DoxyCodeLine{00069 \}}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071 \textcolor{keywordtype}{void} ModelImpl::remove(System* sys)\{}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \textcolor{keyword}{auto} i = beginSystems();}
+\DoxyCodeLine{00074     \textcolor{keywordflow}{for} (System* item : systems)\{}
+\DoxyCodeLine{00075         \textcolor{keywordflow}{if} (sys == item)\{}
+\DoxyCodeLine{00076             systems.erase(i);                    }
+\DoxyCodeLine{00077             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00078         \}}
+\DoxyCodeLine{00079         ++i;}
+\DoxyCodeLine{00080     \}}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082 \}}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084 \textcolor{keywordtype}{void} ModelImpl::remove(Flow* flow)\{}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \textcolor{keyword}{auto} i = beginFlows();}
+\DoxyCodeLine{00087     \textcolor{keywordflow}{for} (Flow* item : flows)\{}
+\DoxyCodeLine{00088         \textcolor{keywordflow}{if} (flow == item)\{}
+\DoxyCodeLine{00089             flows.erase(i);                   }
+\DoxyCodeLine{00090             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00091         \}}
+\DoxyCodeLine{00092         ++i;}
+\DoxyCodeLine{00093     \}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095 \}}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097 \textcolor{keywordtype}{void} ModelImpl::setName(\textcolor{keywordtype}{string} modelName)\{}
+\DoxyCodeLine{00098     name = modelName;}
+\DoxyCodeLine{00099 \}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101 \textcolor{keywordtype}{string} ModelImpl::getName()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00102     \textcolor{keywordflow}{return} name;}
+\DoxyCodeLine{00103 \}    }
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105 \textcolor{keywordtype}{void} ModelImpl::setTime(\textcolor{keywordtype}{double} currentTime)\{}
+\DoxyCodeLine{00106     time = currentTime;}
+\DoxyCodeLine{00107 \}}
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109 \textcolor{keywordtype}{double} ModelImpl::getTime()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00110     \textcolor{keywordflow}{return} time;}
+\DoxyCodeLine{00111 \}    }
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113 \textcolor{keywordtype}{void} ModelImpl::incrementTime(\textcolor{keywordtype}{double} increment) \{}
+\DoxyCodeLine{00114     time += increment;}
+\DoxyCodeLine{00115 \}}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117 System* ModelImpl::getSystem(\textcolor{keywordtype}{int} index)\{}
+\DoxyCodeLine{00118     \textcolor{keywordflow}{return} systems[index];}
+\DoxyCodeLine{00119 \}}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121 Flow* ModelImpl::getFlow(\textcolor{keywordtype}{int} index)\{}
+\DoxyCodeLine{00122     \textcolor{keywordflow}{return} flows[index];}
+\DoxyCodeLine{00123 \}}
+\DoxyCodeLine{00124 }
+
+\end{DoxyCode}

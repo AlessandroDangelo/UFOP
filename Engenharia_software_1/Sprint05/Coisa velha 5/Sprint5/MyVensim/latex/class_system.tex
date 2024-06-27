@@ -1,0 +1,169 @@
+\hypertarget{class_system}{}\doxysection{System Class Reference}
+\label{class_system}\index{System@{System}}
+
+
+File responsible for project systems.  
+
+
+
+
+{\ttfamily \#include $<$system.\+h$>$}
+
+
+
+Inheritance diagram for System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_system__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{class_system__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_system_a2fc0f34023977cab9b628aa9f734d88c}{$\sim$\+System}} ()
+\begin{DoxyCompactList}\small\item\em Destructor to destroy the system. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_system_aacc697c3f09eecce394380a6bde96c34}{set\+Name}} (string)=0
+\begin{DoxyCompactList}\small\item\em Add a name for the system. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_system_a95e6d4c1ce05b47b5fa743fd2401dd03}{set\+Value}} (double)=0
+\begin{DoxyCompactList}\small\item\em Add a value to the system. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_system_aef8971c63440ffdc90946c750db440f7}{get\+Value}} ()=0
+\begin{DoxyCompactList}\small\item\em Function to return system value. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{class_system_afbdf2f80a34acdee62584a29c864c620}{get\+Name}} ()=0
+\begin{DoxyCompactList}\small\item\em Function to return system name. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_system_ad6857ab8ad489203dfdb2857bd12de4c}{operator=}} (\mbox{\hyperlink{class_system}{System}} $\ast$)=0
+\begin{DoxyCompactList}\small\item\em Function to overload operator =. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File responsible for project systems. 
+
+\begin{DoxyAuthor}{Author}
+Ananda Mendes 2021. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_system_a2fc0f34023977cab9b628aa9f734d88c}\label{class_system_a2fc0f34023977cab9b628aa9f734d88c}} 
+\index{System@{System}!````~System@{$\sim$System}}
+\index{````~System@{$\sim$System}!System@{System}}
+\doxysubsubsection{\texorpdfstring{$\sim$System()}{~System()}}
+{\footnotesize\ttfamily virtual System\+::$\sim$\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor to destroy the system. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_system_afbdf2f80a34acdee62584a29c864c620}\label{class_system_afbdf2f80a34acdee62584a29c864c620}} 
+\index{System@{System}!getName@{getName}}
+\index{getName@{getName}!System@{System}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual string System\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Function to return system name. 
+
+\begin{DoxyReturn}{Returns}
+Returns a string. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_system___imp_a2cf86de018ddba2f7f9c0bf80ff588ae}{System\+\_\+\+Imp}}.
+
+\mbox{\Hypertarget{class_system_aef8971c63440ffdc90946c750db440f7}\label{class_system_aef8971c63440ffdc90946c750db440f7}} 
+\index{System@{System}!getValue@{getValue}}
+\index{getValue@{getValue}!System@{System}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily virtual double System\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Function to return system value. 
+
+\begin{DoxyReturn}{Returns}
+Returns a double. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_system___imp_ac1da39ab3ac13c4681bdcea61aa887ce}{System\+\_\+\+Imp}}.
+
+\mbox{\Hypertarget{class_system_ad6857ab8ad489203dfdb2857bd12de4c}\label{class_system_ad6857ab8ad489203dfdb2857bd12de4c}} 
+\index{System@{System}!operator=@{operator=}}
+\index{operator=@{operator=}!System@{System}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_system}{System}}$\ast$ System\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Function to overload operator =. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flow} & \mbox{\hyperlink{class_system}{System}} pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a system. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_system___imp_a0a6fd252024100f350f32bf8427f17a5}{System\+\_\+\+Imp}}.
+
+\mbox{\Hypertarget{class_system_aacc697c3f09eecce394380a6bde96c34}\label{class_system_aacc697c3f09eecce394380a6bde96c34}} 
+\index{System@{System}!setName@{setName}}
+\index{setName@{setName}!System@{System}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily virtual void System\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add a name for the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \mbox{\hyperlink{class_system}{System}} name. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_system___imp_a30455416cae702dbcca637fd1ba817b5}{System\+\_\+\+Imp}}.
+
+\mbox{\Hypertarget{class_system_a95e6d4c1ce05b47b5fa743fd2401dd03}\label{class_system_a95e6d4c1ce05b47b5fa743fd2401dd03}} 
+\index{System@{System}!setValue@{setValue}}
+\index{setValue@{setValue}!System@{System}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily virtual void System\+::set\+Value (\begin{DoxyParamCaption}\item[{double}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add a value to the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \mbox{\hyperlink{class_system}{System}} value. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_system___imp_ac27046c27cba87946becdf113460e977}{System\+\_\+\+Imp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\mbox{\hyperlink{system_8h}{system.\+h}}\end{DoxyCompactItemize}

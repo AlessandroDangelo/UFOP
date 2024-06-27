@@ -1,0 +1,181 @@
+\doxysection{model\+Impl.\+cpp}
+\label{modelImpl_8cpp_source}\index{src/lib/modelImpl.cpp@{src/lib/modelImpl.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}../include/modelImpl.h"{}}     }
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}../include/systemImpl.h"{}}     }
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{keywordtype}{int} ModelImpl::qntd = 0;}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 Model* Model::createModel(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{double} time)\{}
+\DoxyCodeLine{00007     \textcolor{keywordflow}{return} ModelImpl::createModel(name, time);}
+\DoxyCodeLine{00008 \}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010 Model* ModelImpl::createModel(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{double} time)\{}
+\DoxyCodeLine{00011     \textcolor{keywordflow}{if} (ModelImpl::qntd == 0)\{}
+\DoxyCodeLine{00012         ModelImpl::qntd++;}
+\DoxyCodeLine{00013         Model* m = \textcolor{keyword}{new} ModelImpl(name, time);}
+\DoxyCodeLine{00014         \textcolor{keywordflow}{return} m;}
+\DoxyCodeLine{00015     \}}
+\DoxyCodeLine{00016     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00017         cout << \textcolor{stringliteral}{"{}Não é possível criar outro Model! :)"{}} << endl;}
+\DoxyCodeLine{00018         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{00019     \}}
+\DoxyCodeLine{00020 \}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 ModelImpl::ModelImpl (\textcolor{keyword}{const} ModelImpl\& model)\{\}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 \textcolor{keywordtype}{void} ModelImpl::operator=(\textcolor{keyword}{const} ModelImpl\& model)\{\}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 ModelImpl::systemIterator ModelImpl::beginSystems( \textcolor{keywordtype}{void} )\{\textcolor{keywordflow}{return} systems.begin();\}}
+\DoxyCodeLine{00027 ModelImpl::systemIterator ModelImpl::endSystems( \textcolor{keywordtype}{void} )\{\textcolor{keywordflow}{return} systems.end();\}}
+\DoxyCodeLine{00028 ModelImpl::flowIterator ModelImpl::beginFlows( \textcolor{keywordtype}{void} )\{\textcolor{keywordflow}{return} flows.begin();\} }
+\DoxyCodeLine{00029 ModelImpl::flowIterator ModelImpl::endFlows( \textcolor{keywordtype}{void} )\{\textcolor{keywordflow}{return} flows.end();\}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031 ModelImpl::ModelImpl(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{double} time):name(name), time(time)\{\}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033 ModelImpl::\string~ModelImpl()\{           }
+\DoxyCodeLine{00034     \textcolor{comment}{// Deletes Flows}}
+\DoxyCodeLine{00035     \textcolor{keywordflow}{for} (Flow* item : flows) \{}
+\DoxyCodeLine{00036         \textcolor{keyword}{delete} (item);}
+\DoxyCodeLine{00037     \}}
+\DoxyCodeLine{00038     flows.clear();}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     \textcolor{comment}{// Deletes Systems}}
+\DoxyCodeLine{00041     \textcolor{keywordflow}{for} (System* item : systems) \{}
+\DoxyCodeLine{00042         \textcolor{keyword}{delete} (item);}
+\DoxyCodeLine{00043     \}}
+\DoxyCodeLine{00044     systems.clear();}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046     ModelImpl::qntd-\/-\/;}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049     }
+\DoxyCodeLine{00050 \textcolor{keywordtype}{void} ModelImpl::execute(\textcolor{keywordtype}{double} start, \textcolor{keywordtype}{double} \textcolor{keyword}{final}, \textcolor{keywordtype}{double} increment)\{}
+\DoxyCodeLine{00051     }
+\DoxyCodeLine{00052     vector<double> results;}
+\DoxyCodeLine{00053     \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{double} k = start; k < \textcolor{keyword}{final}; k += increment)\{}
+\DoxyCodeLine{00056         \textcolor{comment}{// Executes each flow 'i' in the model}}
+\DoxyCodeLine{00057         \textcolor{keywordflow}{for} (Flow* item : flows) \{}
+\DoxyCodeLine{00058             results.push\_back(item-\/>execute());}
+\DoxyCodeLine{00059         \}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061         \textcolor{comment}{// Updates the system's values associated with each flow 'i' in the model}}
+\DoxyCodeLine{00062         count = 0;}
+\DoxyCodeLine{00063         \textcolor{keywordflow}{for} (Flow* item : flows) \{}
+\DoxyCodeLine{00064             \textcolor{keywordflow}{if} (item-\/>getSource() != NULL)\{}
+\DoxyCodeLine{00065                 item-\/>getSource()-\/>setValue(item-\/>getSource()-\/>getValue() -\/ results[count]);}
+\DoxyCodeLine{00066             \}}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068             \textcolor{keywordflow}{if} (item-\/>getTarget() != NULL)\{}
+\DoxyCodeLine{00069                 item-\/>getTarget()-\/>setValue(item-\/>getTarget()-\/>getValue() + results[count]);}
+\DoxyCodeLine{00070             \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072             count++;}
+\DoxyCodeLine{00073         \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075         \textcolor{comment}{// Resetting the results vector}}
+\DoxyCodeLine{00076         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = beginFlows(); i != endFlows(); ++i)\{}
+\DoxyCodeLine{00077             results.pop\_back();}
+\DoxyCodeLine{00078         \}}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080         time += increment;}
+\DoxyCodeLine{00081     \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083 \}}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085 \textcolor{keywordtype}{void} ModelImpl::add(System* sys)\{}
+\DoxyCodeLine{00086     systems.insert(endSystems(), sys);            }
+\DoxyCodeLine{00087 \}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089 \textcolor{keywordtype}{void} ModelImpl::add(Flow* flow)\{}
+\DoxyCodeLine{00090     flows.insert(endFlows(), flow);       }
+\DoxyCodeLine{00091 \}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093 \textcolor{keywordtype}{void} ModelImpl::remove(System* sys)\{}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     \textcolor{keyword}{auto} i = beginSystems();}
+\DoxyCodeLine{00096     \textcolor{keywordflow}{for} (System* item : systems)\{}
+\DoxyCodeLine{00097         \textcolor{keywordflow}{if} (sys == item)\{}
+\DoxyCodeLine{00098             systems.erase(i);                    }
+\DoxyCodeLine{00099             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00100         \}}
+\DoxyCodeLine{00101         ++i;}
+\DoxyCodeLine{00102     \}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104 \}}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106 \textcolor{keywordtype}{void} ModelImpl::remove(Flow* flow)\{}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108     \textcolor{keyword}{auto} i = beginFlows();}
+\DoxyCodeLine{00109     \textcolor{keywordflow}{for} (Flow* item : flows)\{}
+\DoxyCodeLine{00110         \textcolor{keywordflow}{if} (flow == item)\{}
+\DoxyCodeLine{00111             flows.erase(i);                   }
+\DoxyCodeLine{00112             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00113         \}}
+\DoxyCodeLine{00114         ++i;}
+\DoxyCodeLine{00115     \}}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117 \}}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119 \textcolor{keywordtype}{void} ModelImpl::setName(\textcolor{keywordtype}{string} modelName)\{}
+\DoxyCodeLine{00120     name = modelName;}
+\DoxyCodeLine{00121 \}}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123 \textcolor{keywordtype}{string} ModelImpl::getName()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00124     \textcolor{keywordflow}{return} name;}
+\DoxyCodeLine{00125 \}    }
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127 \textcolor{keywordtype}{void} ModelImpl::setTime(\textcolor{keywordtype}{double} currentTime)\{}
+\DoxyCodeLine{00128     time = currentTime;}
+\DoxyCodeLine{00129 \}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131 \textcolor{keywordtype}{double} ModelImpl::getTime()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00132     \textcolor{keywordflow}{return} time;}
+\DoxyCodeLine{00133 \}    }
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135 \textcolor{keywordtype}{void} ModelImpl::incrementTime(\textcolor{keywordtype}{double} increment) \{}
+\DoxyCodeLine{00136     time += increment;}
+\DoxyCodeLine{00137 \}}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139 System* ModelImpl::getSystem(\textcolor{keywordtype}{int} index)\{}
+\DoxyCodeLine{00140     \textcolor{keywordflow}{return} this-\/>systems[index];}
+\DoxyCodeLine{00141 \}}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143 Flow* ModelImpl::getFlow(\textcolor{keywordtype}{int} index)\{}
+\DoxyCodeLine{00144     \textcolor{keywordflow}{return} flows[index];}
+\DoxyCodeLine{00145 \}}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147 System* ModelImpl::createSystem(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{double} value)\{}
+\DoxyCodeLine{00148     System* s = \textcolor{keyword}{new} SystemImpl(name, value);}
+\DoxyCodeLine{00149     add(s);}
+\DoxyCodeLine{00150     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{00151 \}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153 \textcolor{keywordtype}{void} ModelImpl::setTarget(Flow* f, System* s)\{}
+\DoxyCodeLine{00154     f-\/>setTarget(s);}
+\DoxyCodeLine{00155 \}}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157 \textcolor{keywordtype}{void} ModelImpl::setSource(Flow* f, System* s)\{}
+\DoxyCodeLine{00158     f-\/>setSource(s);}
+\DoxyCodeLine{00159 \}}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161 System* ModelImpl::getTarget(Flow* f)\{}
+\DoxyCodeLine{00162     \textcolor{keywordflow}{return} f-\/>getTarget();}
+\DoxyCodeLine{00163 \}}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165 System* ModelImpl::getSource(Flow* f)\{}
+\DoxyCodeLine{00166     \textcolor{keywordflow}{return} f-\/>getSource();}
+\DoxyCodeLine{00167 \}}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169 \textcolor{keywordtype}{void} ModelImpl::clearTarget(Flow* f)\{}
+\DoxyCodeLine{00170     f-\/>clearTarget();}
+\DoxyCodeLine{00171 \}}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173 \textcolor{keywordtype}{void} ModelImpl::clearSource(Flow* f)\{}
+\DoxyCodeLine{00174     f-\/>clearSource();}
+\DoxyCodeLine{00175 \}}
+
+\end{DoxyCode}

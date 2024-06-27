@@ -1,0 +1,163 @@
+\doxysection{Flow\+Handle$<$ T $>$ Class Template Reference}
+\label{class_flow_handle}\index{FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}}
+
+
+{\ttfamily \#include $<$flow\+\_\+\+Imp.\+h$>$}
+
+
+
+Inheritance diagram for Flow\+Handle$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{class_flow_handle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flow\+Handle$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{class_flow_handle__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Flow\+Handle} ()
+\item 
+virtual \textbf{ $\sim$\+Flow\+Handle} ()
+\item 
+void \textbf{ set\+Sources} (\textbf{ System} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Add an input system to the stream. \end{DoxyCompactList}\item 
+void \textbf{ set\+Destination} (\textbf{ System} $\ast$destination)
+\begin{DoxyCompactList}\small\item\em Add an exit system to the stream. \end{DoxyCompactList}\item 
+\textbf{ System} $\ast$ \textbf{ get\+Source} ()
+\begin{DoxyCompactList}\small\item\em Function to return an input system. \end{DoxyCompactList}\item 
+\textbf{ System} $\ast$ \textbf{ get\+Destination} ()
+\begin{DoxyCompactList}\small\item\em Function to return an output system. \end{DoxyCompactList}\item 
+virtual double \textbf{ run} ()
+\begin{DoxyCompactList}\small\item\em Virtual function to run the stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_flow_handle_a9660537c3378be39b9ffbb5d29785505}} 
+\index{FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}!FlowHandle@{FlowHandle}}
+\index{FlowHandle@{FlowHandle}!FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}}
+\doxysubsubsection{FlowHandle()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Flow\+Handle}$<$ T $>$\+::\textbf{ Flow\+Handle} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_flow_handle_abb0aa8c5126b68219d113fd692a47e28}} 
+\index{FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}!````~FlowHandle@{$\sim$FlowHandle}}
+\index{````~FlowHandle@{$\sim$FlowHandle}!FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}}
+\doxysubsubsection{$\sim$FlowHandle()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual \textbf{ Flow\+Handle}$<$ T $>$\+::$\sim$\textbf{ Flow\+Handle} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_flow_handle_a5894b7ed8846fa021e438196447b81e2}} 
+\index{FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}!getDestination@{getDestination}}
+\index{getDestination@{getDestination}!FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}}
+\doxysubsubsection{getDestination()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ System}$\ast$ \textbf{ Flow\+Handle}$<$ T $>$\+::get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Function to return an output system. 
+
+\begin{DoxyReturn}{Returns}
+Returns a \doxyref{System}{p.}{class_system} object. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Flow} \doxyref{}{p.}{class_flow_a8bab401d070f19cf12ad2e0f54f1286b}.
+
+\mbox{\label{class_flow_handle_adeca02a40a44251a47f8a9df97c5f129}} 
+\index{FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}!getSource@{getSource}}
+\index{getSource@{getSource}!FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}}
+\doxysubsubsection{getSource()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ System}$\ast$ \textbf{ Flow\+Handle}$<$ T $>$\+::get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Function to return an input system. 
+
+\begin{DoxyReturn}{Returns}
+Returns a \doxyref{System}{p.}{class_system} object. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Flow} \doxyref{}{p.}{class_flow_ac4060eca7a83b8eeedf83b7823dd0ec8}.
+
+\mbox{\label{class_flow_handle_a7a1009fdb7072e727cbbd3edb5ad9fe7}} 
+\index{FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}!run@{run}}
+\index{run@{run}!FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}}
+\doxysubsubsection{run()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual double \textbf{ Flow\+Handle}$<$ T $>$\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual function to run the stream. 
+
+\begin{DoxyReturn}{Returns}
+Returns value of 0. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Flow} \doxyref{}{p.}{class_flow_a1cac6068ee3ed3f03fa0708640eb2f02}.
+
+\mbox{\label{class_flow_handle_a03c5da6503feef206c0c06393d34ed69}} 
+\index{FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}!setDestination@{setDestination}}
+\index{setDestination@{setDestination}!FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}}
+\doxysubsubsection{setDestination()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \textbf{ Flow\+Handle}$<$ T $>$\+::set\+Destination (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Add an exit system to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em system} & \doxyref{System}{p.}{class_system} pointer. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Flow} \doxyref{}{p.}{class_flow_aecb114f3f5beca729c6d9f64fca36bea}.
+
+\mbox{\label{class_flow_handle_a84c82b35ecb2d38bb3883aa908953109}} 
+\index{FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}!setSources@{setSources}}
+\index{setSources@{setSources}!FlowHandle$<$ T $>$@{FlowHandle$<$ T $>$}}
+\doxysubsubsection{setSources()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \textbf{ Flow\+Handle}$<$ T $>$\+::set\+Sources (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Add an input system to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em system} & \doxyref{System}{p.}{class_system} pointer. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Flow} \doxyref{}{p.}{class_flow_a0e189c0918fb655cde5cd15efed7fc34}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\textbf{ flow\+\_\+\+Imp.\+h}\end{DoxyCompactItemize}

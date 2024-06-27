@@ -1,0 +1,189 @@
+\doxysection{Model\+Body Class Reference}
+\label{class_model_body}\index{ModelBody@{ModelBody}}
+
+
+{\ttfamily \#include $<$model\+\_\+\+Imp.\+h$>$}
+
+
+
+Inheritance diagram for Model\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_model_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Model\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_model_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Model\+Body} ()
+\item 
+\textbf{ Model\+Body} (string)
+\item 
+virtual \textbf{ $\sim$\+Model\+Body} ()
+\item 
+double \textbf{ run} (int, int)
+\item 
+\textbf{ System} $\ast$ \textbf{ create\+System} (string, double)
+\item 
+\textbf{ System} $\ast$ \textbf{ get\+System} (string name)
+\item 
+vector$<$ \textbf{ Flow} $\ast$ $>$ \textbf{ get\+Flows} ()
+\item 
+string \textbf{ get\+Id} ()
+\item 
+void \textbf{ set\+Id} (string)
+\item 
+void \textbf{ add} (\textbf{ System} $\ast$)
+\item 
+void \textbf{ add} (\textbf{ Flow} $\ast$)
+\item 
+void \textbf{ add} (\textbf{ Model} $\ast$model)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Model} $\ast$ \textbf{ create\+Model} (string)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \textbf{ Flow} $\ast$ $>$ \textbf{ flows}
+\item 
+vector$<$ \textbf{ System} $\ast$ $>$ \textbf{ systems}
+\item 
+string \textbf{ id}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \textbf{ Model} $\ast$ $>$ \textbf{ models}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_model_body_a6063bddda2422802c33f7061c1b91087}} 
+\index{ModelBody@{ModelBody}!ModelBody@{ModelBody}}
+\index{ModelBody@{ModelBody}!ModelBody@{ModelBody}}
+\doxysubsubsection{ModelBody()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Model\+Body\+::\+Model\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_model_body_a548bc003a9a270b2d071ed9a1506eb4f}} 
+\index{ModelBody@{ModelBody}!ModelBody@{ModelBody}}
+\index{ModelBody@{ModelBody}!ModelBody@{ModelBody}}
+\doxysubsubsection{ModelBody()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Model\+Body\+::\+Model\+Body (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+\mbox{\label{class_model_body_a61bb091ef404a3615bace348e2071809}} 
+\index{ModelBody@{ModelBody}!````~ModelBody@{$\sim$ModelBody}}
+\index{````~ModelBody@{$\sim$ModelBody}!ModelBody@{ModelBody}}
+\doxysubsubsection{$\sim$ModelBody()}
+{\footnotesize\ttfamily Model\+Body\+::$\sim$\+Model\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_model_body_aa356e789203429c578536e014999a1bf}} 
+\index{ModelBody@{ModelBody}!add@{add}}
+\index{add@{add}!ModelBody@{ModelBody}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Model\+Body\+::add (\begin{DoxyParamCaption}\item[{\textbf{ Flow} $\ast$}]{flow }\end{DoxyParamCaption})}
+
+\mbox{\label{class_model_body_a9bcec0730ddcf1f27ca79882f9308cd8}} 
+\index{ModelBody@{ModelBody}!add@{add}}
+\index{add@{add}!ModelBody@{ModelBody}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Model\+Body\+::add (\begin{DoxyParamCaption}\item[{\textbf{ Model} $\ast$}]{model }\end{DoxyParamCaption})}
+
+\mbox{\label{class_model_body_a57cfc0cee3191cf9def427701238df77}} 
+\index{ModelBody@{ModelBody}!add@{add}}
+\index{add@{add}!ModelBody@{ModelBody}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Model\+Body\+::add (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{system }\end{DoxyParamCaption})}
+
+\mbox{\label{class_model_body_a602d1dc445e560f398898765bd8d89f0}} 
+\index{ModelBody@{ModelBody}!createModel@{createModel}}
+\index{createModel@{createModel}!ModelBody@{ModelBody}}
+\doxysubsubsection{createModel()}
+{\footnotesize\ttfamily static \textbf{ Model}$\ast$ Model\+Body\+::create\+Model (\begin{DoxyParamCaption}\item[{string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{class_model_body_aee76bbc110deded0092697a844cf8296}} 
+\index{ModelBody@{ModelBody}!createSystem@{createSystem}}
+\index{createSystem@{createSystem}!ModelBody@{ModelBody}}
+\doxysubsubsection{createSystem()}
+{\footnotesize\ttfamily \textbf{ System} $\ast$ Model\+Body\+::create\+System (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+\mbox{\label{class_model_body_a5c89f0f215dc80d5a50fe99877917695}} 
+\index{ModelBody@{ModelBody}!getFlows@{getFlows}}
+\index{getFlows@{getFlows}!ModelBody@{ModelBody}}
+\doxysubsubsection{getFlows()}
+{\footnotesize\ttfamily vector$<$ \textbf{ Flow} $\ast$ $>$ Model\+Body\+::get\+Flows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_model_body_afc27b5f3ff8228d52bd1f62ba6628307}} 
+\index{ModelBody@{ModelBody}!getId@{getId}}
+\index{getId@{getId}!ModelBody@{ModelBody}}
+\doxysubsubsection{getId()}
+{\footnotesize\ttfamily string Model\+Body\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_model_body_aefdc6d2c77e28cc1603ac159b1cdf50b}} 
+\index{ModelBody@{ModelBody}!getSystem@{getSystem}}
+\index{getSystem@{getSystem}!ModelBody@{ModelBody}}
+\doxysubsubsection{getSystem()}
+{\footnotesize\ttfamily \textbf{ System} $\ast$ Model\+Body\+::get\+System (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\label{class_model_body_a27fd561a7ccb437081bb5d4ba264a317}} 
+\index{ModelBody@{ModelBody}!run@{run}}
+\index{run@{run}!ModelBody@{ModelBody}}
+\doxysubsubsection{run()}
+{\footnotesize\ttfamily double Model\+Body\+::run (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{int}]{finish }\end{DoxyParamCaption})}
+
+\mbox{\label{class_model_body_a32727b9c79ee264e93befc57fee67d9a}} 
+\index{ModelBody@{ModelBody}!setId@{setId}}
+\index{setId@{setId}!ModelBody@{ModelBody}}
+\doxysubsubsection{setId()}
+{\footnotesize\ttfamily void Model\+Body\+::set\+Id (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{class_model_body_a275a4efed4bca08a5d995c6d532d4c41}} 
+\index{ModelBody@{ModelBody}!flows@{flows}}
+\index{flows@{flows}!ModelBody@{ModelBody}}
+\doxysubsubsection{flows}
+{\footnotesize\ttfamily vector$<$\textbf{ Flow}$\ast$$>$ Model\+Body\+::flows\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_model_body_a905ef6edf5b77b8824f7779fc00ce4fb}} 
+\index{ModelBody@{ModelBody}!id@{id}}
+\index{id@{id}!ModelBody@{ModelBody}}
+\doxysubsubsection{id}
+{\footnotesize\ttfamily string Model\+Body\+::id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_model_body_ac7520681b552ec8ea86dc899b61d8b71}} 
+\index{ModelBody@{ModelBody}!models@{models}}
+\index{models@{models}!ModelBody@{ModelBody}}
+\doxysubsubsection{models}
+{\footnotesize\ttfamily vector$<$ \textbf{ Model} $\ast$ $>$ Model\+Body\+::models\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\label{class_model_body_a6204f76405f7d7fea398a3dd03f144e7}} 
+\index{ModelBody@{ModelBody}!systems@{systems}}
+\index{systems@{systems}!ModelBody@{ModelBody}}
+\doxysubsubsection{systems}
+{\footnotesize\ttfamily vector$<$\textbf{ System}$\ast$$>$ Model\+Body\+::systems\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\textbf{ model\+\_\+\+Imp.\+h}\item 
+src/lib/\textbf{ model\+\_\+\+Imp.\+cpp}\end{DoxyCompactItemize}

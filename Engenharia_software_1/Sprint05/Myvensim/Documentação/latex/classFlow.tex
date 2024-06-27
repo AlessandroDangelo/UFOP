@@ -1,0 +1,248 @@
+\doxysection{Flow Class Reference}
+\label{classFlow}\index{Flow@{Flow}}
+
+
+Class \doxyref{Flow}{p.}{classFlow}.  
+
+
+
+
+{\ttfamily \#include $<$flow.\+h$>$}
+
+
+
+Inheritance diagram for Flow\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flow\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classFlow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+Flow} ()
+\item 
+virtual double \textbf{ execute} ()=0
+\item 
+virtual string \textbf{ get\+Name} () const =0
+\item 
+virtual void \textbf{ set\+Name} (string flow\+Name)=0
+\item 
+virtual \textbf{ System} $\ast$ \textbf{ get\+Source} () const =0
+\item 
+virtual void \textbf{ set\+Source} (\textbf{ System} $\ast$source\+Sys)=0
+\item 
+virtual void \textbf{ clear\+Source} ()=0
+\item 
+virtual \textbf{ System} $\ast$ \textbf{ get\+Target} () const =0
+\item 
+virtual void \textbf{ set\+Target} (\textbf{ System} $\ast$target\+Sys)=0
+\item 
+virtual void \textbf{ clear\+Target} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \doxyref{Flow}{p.}{classFlow}. 
+
+This Class represents a flow in the General Systems Theory implemented in this code. 
+
+Definition at line \textbf{ 12} of file \textbf{ flow.\+h}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classFlow_a325d284a50ca3274b126b21f5c39b9af}} 
+\index{Flow@{Flow}!````~Flow@{$\sim$Flow}}
+\index{````~Flow@{$\sim$Flow}!Flow@{Flow}}
+\doxysubsubsection{$\sim$Flow()}
+{\footnotesize\ttfamily virtual Flow\+::$\sim$\+Flow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This is the default destructor for the \doxyref{Flow}{p.}{classFlow} Class. 
+
+Definition at line \textbf{ 19} of file \textbf{ flow.\+h}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classFlow_a98e7aafb65699a9645a22f215b49c8b0}} 
+\index{Flow@{Flow}!clearSource@{clearSource}}
+\index{clearSource@{clearSource}!Flow@{Flow}}
+\doxysubsubsection{clearSource()}
+{\footnotesize\ttfamily virtual void Flow\+::clear\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the pointer of the source attribute as NULL. 
+
+Implemented in \textbf{ Flow\+Impl} \doxyref{}{p.}{classFlowImpl_a92a3d902afab0aa20ec2886d55264156}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classFlow_a98e7aafb65699a9645a22f215b49c8b0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlow_a52f8ab7ff430f5d2e87aa0fdb12ad64b}} 
+\index{Flow@{Flow}!clearTarget@{clearTarget}}
+\index{clearTarget@{clearTarget}!Flow@{Flow}}
+\doxysubsubsection{clearTarget()}
+{\footnotesize\ttfamily virtual void Flow\+::clear\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the pointer of the target attribute as NULL. 
+
+Implemented in \textbf{ Flow\+Impl} \doxyref{}{p.}{classFlowImpl_afec6eff9cdd0611aa49bfcad74a1f9bd}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classFlow_a52f8ab7ff430f5d2e87aa0fdb12ad64b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlow_a619be0b590c78202127bc6ac7fb04029}} 
+\index{Flow@{Flow}!execute@{execute}}
+\index{execute@{execute}!Flow@{Flow}}
+\doxysubsubsection{execute()}
+{\footnotesize\ttfamily virtual double Flow\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+A pure virtual method that will be inherited by subclasses created by the user, and that will contain an equation that will be executed by the model. 
+
+Implemented in \textbf{ Exponencial\+Flow} \doxyref{}{p.}{classExponencialFlow_a3f5d88df645307180879a88501b64863}, \textbf{ Logistic\+Flow} \doxyref{}{p.}{classLogisticFlow_afdc1e2ec0eb61b71b367f8fc2677e371}, \textbf{ Complex\+FlowF} \doxyref{}{p.}{classComplexFlowF_adfca5685dfe25d0eadf8abd9bf523829}, \textbf{ Complex\+FlowT} \doxyref{}{p.}{classComplexFlowT_a1ab577756e7a0c1eeaa47779bb0952cc}, \textbf{ Complex\+FlowU} \doxyref{}{p.}{classComplexFlowU_a75627b2a7b0cdbf767c92aa102840458}, \textbf{ Complex\+FlowV} \doxyref{}{p.}{classComplexFlowV_a5478a557bb037d90430ab092569c695a}, \textbf{ Complex\+FlowG} \doxyref{}{p.}{classComplexFlowG_a8cfa9dca03275f0999de008449d16c56}, \textbf{ Complex\+FlowR} \doxyref{}{p.}{classComplexFlowR_a3b8d9d5dca6e0180d48192d48040d17c}, \textbf{ Exponencial\+Flow} \doxyref{}{p.}{classExponencialFlow_a3f5d88df645307180879a88501b64863}, and \textbf{ Flow\+Impl} \doxyref{}{p.}{classFlowImpl_a88d14f759988f1dcf393b83a93aea1f1}.
+
+\mbox{\label{classFlow_aa91a8025b6dbb27ee5137c7c9ad0c564}} 
+\index{Flow@{Flow}!getName@{getName}}
+\index{getName@{getName}!Flow@{Flow}}
+\doxysubsubsection{getName()}
+{\footnotesize\ttfamily virtual string Flow\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the name attribute in the \doxyref{Flow}{p.}{classFlow} Class. \begin{DoxyReturn}{Returns}
+string -\/ the content name attribute. ~\newline
+ 
+\end{DoxyReturn}
+
+
+Implemented in \textbf{ Flow\+Impl} \doxyref{}{p.}{classFlowImpl_a63453811afa24e0799e54e22161738a8}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlow_aa91a8025b6dbb27ee5137c7c9ad0c564_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlow_abf0f3dbb285fe82e5ba6449de06b97c8}} 
+\index{Flow@{Flow}!getSource@{getSource}}
+\index{getSource@{getSource}!Flow@{Flow}}
+\doxysubsubsection{getSource()}
+{\footnotesize\ttfamily virtual \textbf{ System} $\ast$ Flow\+::get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the source attribute in the \doxyref{Flow}{p.}{classFlow} Class. ~\newline
+ \begin{DoxyReturn}{Returns}
+System$\ast$ -\/ the pointer of the source system. 
+\end{DoxyReturn}
+
+
+Implemented in \textbf{ Flow\+Impl} \doxyref{}{p.}{classFlowImpl_a54940323059d2c4158f4146080841f32}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlow_abf0f3dbb285fe82e5ba6449de06b97c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlow_afb9b8d93ea0fc81868b8e02dd382a787}} 
+\index{Flow@{Flow}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!Flow@{Flow}}
+\doxysubsubsection{getTarget()}
+{\footnotesize\ttfamily virtual \textbf{ System} $\ast$ Flow\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the target attribute in the \doxyref{Flow}{p.}{classFlow} Class. \begin{DoxyReturn}{Returns}
+System$\ast$ -\/ the pointer of the target system. 
+\end{DoxyReturn}
+
+
+Implemented in \textbf{ Flow\+Impl} \doxyref{}{p.}{classFlowImpl_ab07923bc230308cd949f627a92901bca}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlow_afb9b8d93ea0fc81868b8e02dd382a787_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlow_aa20f016d470e011f8955dfbdfc88fa06}} 
+\index{Flow@{Flow}!setName@{setName}}
+\index{setName@{setName}!Flow@{Flow}}
+\doxysubsubsection{setName()}
+{\footnotesize\ttfamily virtual void Flow\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{flow\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the name attribute in the \doxyref{Flow}{p.}{classFlow} Class. 
+\begin{DoxyParams}{Parameters}
+{\em flow\+Name} & which will be set to the current flow. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ Flow\+Impl} \doxyref{}{p.}{classFlowImpl_a5b418614ad5d16791d364ef7d95c00ae}.
+
+\mbox{\label{classFlow_a4af218ba8b4875c0c08c92817d8c2a96}} 
+\index{Flow@{Flow}!setSource@{setSource}}
+\index{setSource@{setSource}!Flow@{Flow}}
+\doxysubsubsection{setSource()}
+{\footnotesize\ttfamily virtual void Flow\+::set\+Source (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{source\+Sys }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the source attribute in the \doxyref{Flow}{p.}{classFlow} Class. 
+\begin{DoxyParams}{Parameters}
+{\em source\+Sys} & a pointer to the source target. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ Flow\+Impl} \doxyref{}{p.}{classFlowImpl_a650a16f4a2e902f1decfb37428fc375c}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classFlow_a4af218ba8b4875c0c08c92817d8c2a96_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classFlow_a2b7c129655bf7cf553e16585930b0ccd}} 
+\index{Flow@{Flow}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!Flow@{Flow}}
+\doxysubsubsection{setTarget()}
+{\footnotesize\ttfamily virtual void Flow\+::set\+Target (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{target\+Sys }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Sets the target attribute in the \doxyref{Flow}{p.}{classFlow} Class. ~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em target\+Sys} & a pointer to the target system. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ Flow\+Impl} \doxyref{}{p.}{classFlowImpl_a9df35271364df544eed6728731b598a4}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classFlow_a2b7c129655bf7cf553e16585930b0ccd_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\textbf{ flow.\+h}\end{DoxyCompactItemize}

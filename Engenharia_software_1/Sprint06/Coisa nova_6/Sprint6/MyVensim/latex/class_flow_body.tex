@@ -1,0 +1,139 @@
+\doxysection{Flow\+Body Class Reference}
+\label{class_flow_body}\index{FlowBody@{FlowBody}}
+
+
+{\ttfamily \#include $<$flow\+\_\+\+Imp.\+h$>$}
+
+
+
+Inheritance diagram for Flow\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_flow_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flow\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{class_flow_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Flow\+Body} ()
+\item 
+\textbf{ Flow\+Body} (\textbf{ System} $\ast$, \textbf{ System} $\ast$)
+\item 
+virtual \textbf{ $\sim$\+Flow\+Body} ()
+\item 
+void \textbf{ set\+Sources} (\textbf{ System} $\ast$)
+\item 
+void \textbf{ set\+Destination} (\textbf{ System} $\ast$)
+\item 
+\textbf{ System} $\ast$ \textbf{ get\+Source} ()
+\item 
+\textbf{ System} $\ast$ \textbf{ get\+Destination} ()
+\item 
+virtual double \textbf{ run} ()=0
+\item 
+\textbf{ Flow\+Body} $\ast$ \textbf{ operator=} (\textbf{ Flow\+Body} $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ System} $\ast$ \textbf{ source}
+\item 
+\textbf{ System} $\ast$ \textbf{ destination}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_flow_body_af7c4dc7b257284ba66176985df9ad544}} 
+\index{FlowBody@{FlowBody}!FlowBody@{FlowBody}}
+\index{FlowBody@{FlowBody}!FlowBody@{FlowBody}}
+\doxysubsubsection{FlowBody()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Flow\+Body\+::\+Flow\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_flow_body_aa54b0e2a4e4182e01d9e1e2fd4927feb}} 
+\index{FlowBody@{FlowBody}!FlowBody@{FlowBody}}
+\index{FlowBody@{FlowBody}!FlowBody@{FlowBody}}
+\doxysubsubsection{FlowBody()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Flow\+Body\+::\+Flow\+Body (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{source,  }\item[{\textbf{ System} $\ast$}]{destination }\end{DoxyParamCaption})}
+
+\mbox{\label{class_flow_body_a178e56af6c29c29b49c1f9f7af7d9311}} 
+\index{FlowBody@{FlowBody}!````~FlowBody@{$\sim$FlowBody}}
+\index{````~FlowBody@{$\sim$FlowBody}!FlowBody@{FlowBody}}
+\doxysubsubsection{$\sim$FlowBody()}
+{\footnotesize\ttfamily Flow\+Body\+::$\sim$\+Flow\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_flow_body_a9c9fe5e8aee4fd6ec7a8f4c355be99f4}} 
+\index{FlowBody@{FlowBody}!getDestination@{getDestination}}
+\index{getDestination@{getDestination}!FlowBody@{FlowBody}}
+\doxysubsubsection{getDestination()}
+{\footnotesize\ttfamily \textbf{ System} $\ast$ Flow\+Body\+::get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_flow_body_acd4ccaea46cd833a0cee5f6b5f0df858}} 
+\index{FlowBody@{FlowBody}!getSource@{getSource}}
+\index{getSource@{getSource}!FlowBody@{FlowBody}}
+\doxysubsubsection{getSource()}
+{\footnotesize\ttfamily \textbf{ System} $\ast$ Flow\+Body\+::get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_flow_body_a4072fb4e3ea930d4aaae3cbc59ed8d48}} 
+\index{FlowBody@{FlowBody}!operator=@{operator=}}
+\index{operator=@{operator=}!FlowBody@{FlowBody}}
+\doxysubsubsection{operator=()}
+{\footnotesize\ttfamily \textbf{ Flow\+Body} $\ast$ Flow\+Body\+::operator= (\begin{DoxyParamCaption}\item[{\textbf{ Flow\+Body} $\ast$}]{flow }\end{DoxyParamCaption})}
+
+\mbox{\label{class_flow_body_a05dd380b61b8e336528a507fd81882ac}} 
+\index{FlowBody@{FlowBody}!run@{run}}
+\index{run@{run}!FlowBody@{FlowBody}}
+\doxysubsubsection{run()}
+{\footnotesize\ttfamily virtual double Flow\+Body\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ Logistic} \doxyref{}{p.}{class_logistic_af6f99f0b3655a4f2066617564935ff24}, \textbf{ Exponential} \doxyref{}{p.}{class_exponential_a00fc8c70e25ea91120b26d640480a22c}, \textbf{ Flow\+Unit} \doxyref{}{p.}{class_flow_unit_a9a53e30daf47fe0c31785a1ec8e19d83}, \textbf{ Logistic} \doxyref{}{p.}{class_logistic_af6f99f0b3655a4f2066617564935ff24}, and \textbf{ Exponential} \doxyref{}{p.}{class_exponential_a00fc8c70e25ea91120b26d640480a22c}.
+
+\mbox{\label{class_flow_body_ac256360958029f26d4be2322d2e74f28}} 
+\index{FlowBody@{FlowBody}!setDestination@{setDestination}}
+\index{setDestination@{setDestination}!FlowBody@{FlowBody}}
+\doxysubsubsection{setDestination()}
+{\footnotesize\ttfamily void Flow\+Body\+::set\+Destination (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{destination }\end{DoxyParamCaption})}
+
+\mbox{\label{class_flow_body_a59d7fec573ffc71552dbe5fbca8c649e}} 
+\index{FlowBody@{FlowBody}!setSources@{setSources}}
+\index{setSources@{setSources}!FlowBody@{FlowBody}}
+\doxysubsubsection{setSources()}
+{\footnotesize\ttfamily void Flow\+Body\+::set\+Sources (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{source }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{class_flow_body_a7e4c98ae7bed2c5ac492d881cca6570d}} 
+\index{FlowBody@{FlowBody}!destination@{destination}}
+\index{destination@{destination}!FlowBody@{FlowBody}}
+\doxysubsubsection{destination}
+{\footnotesize\ttfamily \textbf{ System}$\ast$ Flow\+Body\+::destination\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_flow_body_a7c46fc66ff02f18c387535e914337c82}} 
+\index{FlowBody@{FlowBody}!source@{source}}
+\index{source@{source}!FlowBody@{FlowBody}}
+\doxysubsubsection{source}
+{\footnotesize\ttfamily \textbf{ System}$\ast$ Flow\+Body\+::source\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\textbf{ flow\+\_\+\+Imp.\+h}\item 
+src/lib/\textbf{ flow\+\_\+\+Imp.\+cpp}\end{DoxyCompactItemize}

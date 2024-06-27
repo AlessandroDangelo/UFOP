@@ -1,0 +1,215 @@
+\doxysection{unit\+\_\+system.\+cpp}
+\label{unit__system_8cpp_source}\index{test/unit/unit\_system.cpp@{test/unit/unit\_system.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include "{}unit\_system.h"{}} }
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{comment}{// Function for System class's constructor unit test.}}
+\DoxyCodeLine{00007 \textcolor{keywordtype}{void} unit\_system\_constructor()\{}
+\DoxyCodeLine{00008     cout << \textcolor{stringliteral}{"{}TEST 1 -\/ Default constructor of the System class without passing parameters"{}} << endl;}
+\DoxyCodeLine{00009     }
+\DoxyCodeLine{00010     System* system1 = \textcolor{keyword}{new} SystemImpl();}
+\DoxyCodeLine{00011     \textcolor{comment}{// Making assertion to verify if the name property was initialized with the default data.}}
+\DoxyCodeLine{00012     assert(system1-\/>getName() == \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00013     \textcolor{comment}{// Making assertion to verify if the value property was initialized with the default data. }}
+\DoxyCodeLine{00014     assert(system1-\/>getValue() == 0.0);}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018     cout << \textcolor{stringliteral}{"{}TEST 2 -\/ Default constructor of the System class with passing parameters"{}} << endl; }
+\DoxyCodeLine{00019     }
+\DoxyCodeLine{00020     System* system2 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}}, 10.0);}
+\DoxyCodeLine{00021     \textcolor{comment}{// Making assertion to verify if the name property was initialized with the parameter specified.}}
+\DoxyCodeLine{00022     assert(system2-\/>getName() == \textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00023     \textcolor{comment}{// Making assertion to verify if the value property was initialized with the parameter specified. }}
+\DoxyCodeLine{00024     assert(system2-\/>getValue() == 10.0);}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}}<< RESET << endl;}
+\DoxyCodeLine{00027 \}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \textcolor{comment}{// Function for System class's copy constructor unit test.}}
+\DoxyCodeLine{00030 \textcolor{keywordtype}{void} UnitSystem::unit\_system\_copy\_constructor()\{}
+\DoxyCodeLine{00031     cout << \textcolor{stringliteral}{"{}TEST 3 -\/ Copy constructor of the System class"{}} << endl;}
+\DoxyCodeLine{00032     }
+\DoxyCodeLine{00033     SystemImpl* system1 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}}, 10.0);}
+\DoxyCodeLine{00034     System* system2 = \textcolor{keyword}{new} SystemImpl(*system1);}
+\DoxyCodeLine{00035     system1-\/>setName(\textcolor{stringliteral}{"{}Original Test System"{}});}
+\DoxyCodeLine{00036     system1-\/>setValue(20.0);}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038     \textcolor{comment}{// Making assertion to verify if the name property was copied before the original's alteration.}}
+\DoxyCodeLine{00039     assert(system2-\/>getName() == \textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00040     \textcolor{comment}{// Making assertion to verify if the value property was copied before the original's alteration.}}
+\DoxyCodeLine{00041     assert(system2-\/>getValue() == 10.0);}
+\DoxyCodeLine{00042     \textcolor{comment}{// Making assertion to verify if the System objects aren't pointing to the same memory.}}
+\DoxyCodeLine{00043     assert(system1 != system2);}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00046 \}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 \textcolor{comment}{// Function for the System class' destructor unit test.}}
+\DoxyCodeLine{00049 \textcolor{keywordtype}{void} unit\_system\_destructor()\{}
+\DoxyCodeLine{00050     cout << \textcolor{stringliteral}{"{}TEST 4 -\/ Default destructor of the System class"{}} << endl;}
+\DoxyCodeLine{00051     }
+\DoxyCodeLine{00052     \textcolor{keywordtype}{double} vmBefore, vmAfter, rss;}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \textcolor{comment}{// Getting the memory usage previous to the creation of a system.}}
+\DoxyCodeLine{00055     memory\_usage(vmBefore, rss);}
+\DoxyCodeLine{00056     }
+\DoxyCodeLine{00057     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}}, 10.0);}
+\DoxyCodeLine{00058     \textcolor{keyword}{delete} system;}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060     \textcolor{comment}{// Getting the memory usage after the creation and destruction of a System object.}}
+\DoxyCodeLine{00061     memory\_usage(vmAfter, rss);}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \textcolor{comment}{// Making assertion to verify if the memory usage after the creation and deletion}}
+\DoxyCodeLine{00064     \textcolor{comment}{// is the same as before the creation of System object.}}
+\DoxyCodeLine{00065     assert(vmBefore == vmAfter);}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00068 \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070 \textcolor{comment}{// Function for System class' method getName() unit test.}}
+\DoxyCodeLine{00071 \textcolor{keywordtype}{void} unit\_system\_getName()\{}
+\DoxyCodeLine{00072     cout << \textcolor{stringliteral}{"{}TEST 5 -\/ System class's getName() method"{}} << endl;}
+\DoxyCodeLine{00073     }
+\DoxyCodeLine{00074     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}}, 10.0);}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{comment}{// Making assertion to verify if the method returns the System class name and if it's}}
+\DoxyCodeLine{00077     \textcolor{comment}{// equal to the parameter previously passed. }}
+\DoxyCodeLine{00078     assert(system-\/>getName() == \textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00081 \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083 \textcolor{comment}{// Function for System class' method setName() unit test.}}
+\DoxyCodeLine{00084 \textcolor{keywordtype}{void} unit\_system\_setName()\{}
+\DoxyCodeLine{00085     cout << \textcolor{stringliteral}{"{}TEST 6 -\/ System class's setName() method"{}} << endl;}
+\DoxyCodeLine{00086     }
+\DoxyCodeLine{00087     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}}, 10.0);}
+\DoxyCodeLine{00088     system-\/>setName(\textcolor{stringliteral}{"{}Altered Name"{}});}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{comment}{// Making assertion to verify if the data of the name property has been altered.}}
+\DoxyCodeLine{00091     assert(system-\/>getName() == \textcolor{stringliteral}{"{}Altered Name"{}});}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00094 \}}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096 \textcolor{comment}{// Function for System class' method getValue() unit test.}}
+\DoxyCodeLine{00097 \textcolor{keywordtype}{void} unit\_system\_getValue()\{}
+\DoxyCodeLine{00098     cout << \textcolor{stringliteral}{"{}TEST 7 -\/ System class's getValue() method"{}} << endl;}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}}, 10.0);}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102     \textcolor{comment}{// Making assertion to verify if the method returns the System class value and if it's}}
+\DoxyCodeLine{00103     \textcolor{comment}{// equal to the parameter previously passed.}}
+\DoxyCodeLine{00104     assert(system-\/>getValue() == 10.0);}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00107 \}}
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109 \textcolor{comment}{// Function for System class' method setValue() unit test.}}
+\DoxyCodeLine{00110 \textcolor{keywordtype}{void} unit\_system\_setValue()\{}
+\DoxyCodeLine{00111     cout << \textcolor{stringliteral}{"{}TEST 8 -\/ System class's setValue() method"{}} << endl;}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}}, 10.0);}
+\DoxyCodeLine{00114     system-\/>setValue(20.0);}
+\DoxyCodeLine{00115     }
+\DoxyCodeLine{00116     \textcolor{comment}{// Making assertion to verify if the data of the value property has been altered.}}
+\DoxyCodeLine{00117     assert(system-\/>getValue() == 20.0);}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00120 \}}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122 \textcolor{comment}{// Function for System class' assingment operator unit test.}}
+\DoxyCodeLine{00123 \textcolor{keywordtype}{void} UnitSystem::unit\_system\_assingmentOperator()\{}
+\DoxyCodeLine{00124     cout << \textcolor{stringliteral}{"{}TEST 9 -\/ System class assignment operator"{}} << endl;}
+\DoxyCodeLine{00125     }
+\DoxyCodeLine{00126     SystemImpl* system1 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}}, 10.0);}
+\DoxyCodeLine{00127     SystemImpl* system2 = \textcolor{keyword}{new} SystemImpl();}
+\DoxyCodeLine{00128     *system2 = *system1;}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130     system1-\/>setName(\textcolor{stringliteral}{"{}Original Test System"{}});}
+\DoxyCodeLine{00131     system1-\/>setValue(100.0);}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133     \textcolor{comment}{// Making assertion to verify if the name property was assigned.}}
+\DoxyCodeLine{00134     assert(system2-\/>getName() == \textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00135     \textcolor{comment}{// Making assertion to verify if the value property was assigned.}}
+\DoxyCodeLine{00136     assert(system2-\/>getValue() == 10.0);}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00139 \}}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141 \textcolor{comment}{// Function for System class' "{}+"{} operator unit test.}}
+\DoxyCodeLine{00142 \textcolor{keywordtype}{void} unit\_system\_sumOperator()\{}
+\DoxyCodeLine{00143     System* sys1 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Population 1"{}}, 100.0);}
+\DoxyCodeLine{00144     System* sys2 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Population 2"{}}, 10.0);}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146     cout << \textcolor{stringliteral}{"{}TEST 10 -\/ System class sum operator"{}} << endl;}
+\DoxyCodeLine{00147     assert(((*sys1) + (*sys2)) == 110);}
+\DoxyCodeLine{00148     assert(((*sys1) + 20.0) == 120);}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00151 \}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153 \textcolor{comment}{// Function for System class' "{}-\/"{} operator unit test.}}
+\DoxyCodeLine{00154 \textcolor{keywordtype}{void} unit\_system\_minusOperator()\{}
+\DoxyCodeLine{00155     System* sys1 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Population 1"{}}, 100.0);}
+\DoxyCodeLine{00156     System* sys2 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Population 2"{}}, 10.0);}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158     cout << \textcolor{stringliteral}{"{}TEST 11 -\/ System class subtraction operator"{}} << endl;}
+\DoxyCodeLine{00159     assert(((*sys1) -\/ (*sys2)) == 90);}
+\DoxyCodeLine{00160     assert(((*sys1) -\/ 20.0) == 80);}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00163 \}}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165 \textcolor{comment}{// Function for System class' "{}*"{} operator unit test.}}
+\DoxyCodeLine{00166 \textcolor{keywordtype}{void} unit\_system\_timesOperator()\{}
+\DoxyCodeLine{00167     System* sys1 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Population 1"{}}, 100.0);}
+\DoxyCodeLine{00168     System* sys2 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Population 2"{}}, 10.0);}
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170     cout << \textcolor{stringliteral}{"{}TEST 12 -\/ System class multiplication operator"{}} << endl;}
+\DoxyCodeLine{00171     assert(((*sys1) * (*sys2)) == 1000);}
+\DoxyCodeLine{00172     assert(((*sys1) * 20.0) == 2000);}
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00175 \}}
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177 \textcolor{comment}{// Function for System class' "{}/"{} operator unit test.}}
+\DoxyCodeLine{00178 \textcolor{keywordtype}{void} unit\_system\_divisionOperator()\{}
+\DoxyCodeLine{00179     System* sys1 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Population 1"{}}, 100.0);}
+\DoxyCodeLine{00180     System* sys2 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Population 2"{}}, 10.0);}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182     cout << \textcolor{stringliteral}{"{}TEST 13 -\/ System class division operator"{}} << endl;}
+\DoxyCodeLine{00183     assert(((*sys1) / (*sys2)) == 10);}
+\DoxyCodeLine{00184     assert(((*sys1) / 20.0) == 5);}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00187 \}}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189 \textcolor{comment}{// Function to run all the System class' unit tests.}}
+\DoxyCodeLine{00190 \textcolor{keywordtype}{void} run\_unit\_tests\_system()\{}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192     UnitSystem* unit\_sys = \textcolor{keyword}{new} UnitSystem();}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194     \textcolor{comment}{// Calling all the System class' unit test functions.}}
+\DoxyCodeLine{00195     unit\_system\_constructor();}
+\DoxyCodeLine{00196     unit\_sys-\/>unit\_system\_copy\_constructor();}
+\DoxyCodeLine{00197     unit\_system\_destructor();}
+\DoxyCodeLine{00198     unit\_system\_getName();}
+\DoxyCodeLine{00199     unit\_system\_setName();}
+\DoxyCodeLine{00200     unit\_system\_getValue();}
+\DoxyCodeLine{00201     unit\_system\_setValue();}
+\DoxyCodeLine{00202     unit\_sys-\/>unit\_system\_assingmentOperator();}
+\DoxyCodeLine{00203     unit\_system\_sumOperator();}
+\DoxyCodeLine{00204     unit\_system\_minusOperator();}
+\DoxyCodeLine{00205     unit\_system\_timesOperator();}
+\DoxyCodeLine{00206     unit\_system\_divisionOperator();}
+\DoxyCodeLine{00207 }
+\DoxyCodeLine{00208     \textcolor{keyword}{delete}(unit\_sys);}
+\DoxyCodeLine{00209 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,258 @@
+\doxysection{unit\+\_\+flow.\+cpp}
+\label{unit__flow_8cpp_source}\index{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/test/unit/unit\_flow.cpp@{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/test/unit/unit\_flow.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}unit\_flow.hpp"{}}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{comment}{// Function for flow's constructor unit test.}}
+\DoxyCodeLine{00005 \textcolor{keywordtype}{void} unit\_flow\_constructor() \{}
+\DoxyCodeLine{00006     cout << \textcolor{stringliteral}{"{}TEST 1 -\/ Default constructor of the Flow class without passing parameters"{}} << endl;}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008     ExponencialFlow* flow1 = \textcolor{keyword}{new} ExponencialFlow();}
+\DoxyCodeLine{00009     }
+\DoxyCodeLine{00010     \textcolor{comment}{// Making assertion to verify if the name property was initialized with the default data.}}
+\DoxyCodeLine{00011     assert(flow1-\/>getName() == \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00012     \textcolor{comment}{// Making assertion to verify if there isn't a source system in this flow.}}
+\DoxyCodeLine{00013     assert(flow1-\/>getSource() == NULL);}
+\DoxyCodeLine{00014     \textcolor{comment}{// Making assertion to verify if there isn't a target system in this flow.}}
+\DoxyCodeLine{00015     assert(flow1-\/>getTarget() == NULL);}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00018     cout << \textcolor{stringliteral}{"{}TEST 2 -\/ Default constructor of the Flow class with passing parameters"{}} << endl;}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     System* source = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System 1"{}}, 5.0);}
+\DoxyCodeLine{00021     System* target = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System 2"{}}, 10.0);}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     ExponencialFlow* flow2 = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow 2"{}}, source, target);}
+\DoxyCodeLine{00024     }
+\DoxyCodeLine{00025     \textcolor{comment}{// Making assertion to verify if the name property was initialized with the parameter specified.}}
+\DoxyCodeLine{00026     assert(flow2-\/>getName() == \textcolor{stringliteral}{"{}Flow 2"{}});}
+\DoxyCodeLine{00027     \textcolor{comment}{// Making assertion to verify if there's a source system in this flow.}}
+\DoxyCodeLine{00028     assert(flow2-\/>getSource() == source);}
+\DoxyCodeLine{00029     \textcolor{comment}{// Making assertion to verify if there's a target system in this flow.}}
+\DoxyCodeLine{00030     assert(flow2-\/>getTarget() == target);}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 \textcolor{comment}{// Function for Flow class's copy constructor unit test.}}
+\DoxyCodeLine{00036 \textcolor{keywordtype}{void} UnitFlow::unit\_flow\_copy\_constructor() \{ }
+\DoxyCodeLine{00037     cout << \textcolor{stringliteral}{"{}TEST 3 -\/ Copy constructor of the Flow class"{}} << endl;}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     System* sys1 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Sys 1"{}}, 5.0);}
+\DoxyCodeLine{00040     System* sys2 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Sys 2"{}}, 6.0);}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     ExponencialFlow* flow1 = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00043     Flow* flow2 = \textcolor{keyword}{new} ExponencialFlow(*flow1); }
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     flow1-\/>setName(\textcolor{stringliteral}{"{}Original Flow 1"{}});}
+\DoxyCodeLine{00046     flow1-\/>setSource(sys1);}
+\DoxyCodeLine{00047     flow1-\/>setTarget(sys2);}
+\DoxyCodeLine{00048     }
+\DoxyCodeLine{00049     \textcolor{comment}{// Making assertion to verify if the name property was copied.}}
+\DoxyCodeLine{00050     assert(flow2-\/>getName() == \textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00051     \textcolor{comment}{// Making assertion to verify if there isn't a source system in this flow.}}
+\DoxyCodeLine{00052     assert(flow2-\/>getSource() == NULL); }
+\DoxyCodeLine{00053     \textcolor{comment}{// Making assertion to verify if there isn't a target system in this flow.}}
+\DoxyCodeLine{00054     assert(flow2-\/>getTarget() == NULL);}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00057 \} }
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059 \textcolor{comment}{// Function for the Flow class' destructor unit test.}}
+\DoxyCodeLine{00060 \textcolor{keywordtype}{void} unit\_flow\_destructor() \{}
+\DoxyCodeLine{00061     cout << \textcolor{stringliteral}{"{}TEST 4 -\/ Default destructor of the Flow class"{}} << endl;}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \textcolor{keywordtype}{double} vmBefore, vmAfter, rss;}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \textcolor{comment}{// Getting the memory usage previous to the creation of a flow.}}
+\DoxyCodeLine{00066     memory\_usage(vmBefore, rss);}
+\DoxyCodeLine{00067   }
+\DoxyCodeLine{00068     ExponencialFlow* flow = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow"{}});}
+\DoxyCodeLine{00069     \textcolor{keyword}{delete}(flow);}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     \textcolor{comment}{// Getting the memory usage after the creation and destruction of a Flow object.}}
+\DoxyCodeLine{00072     memory\_usage(vmAfter, rss);}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074     \textcolor{comment}{// Making assertion to verify if the memory usage after the creation and deletion}}
+\DoxyCodeLine{00075     \textcolor{comment}{// is the same as before the creation of Flow object.}}
+\DoxyCodeLine{00076     assert(vmBefore == vmAfter);}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00079 \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081 \textcolor{comment}{// Function for Flow class' method getName() unit test.}}
+\DoxyCodeLine{00082 \textcolor{keywordtype}{void} unit\_flow\_getName() \{}
+\DoxyCodeLine{00083     cout << \textcolor{stringliteral}{"{}TEST 5 -\/ Flow class' getName() method"{}} << endl;}
+\DoxyCodeLine{00084     }
+\DoxyCodeLine{00085     ExponencialFlow* flow = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     \textcolor{comment}{// Making assertion to verify if the method returns the Flow class name and if it's}}
+\DoxyCodeLine{00088     \textcolor{comment}{// equal to the parameter previously passed. }}
+\DoxyCodeLine{00089     assert(flow-\/>getName() == \textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00090     }
+\DoxyCodeLine{00091     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00092 \}}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094 \textcolor{comment}{// Function for Flow class' method setName() unit test.}}
+\DoxyCodeLine{00095 \textcolor{keywordtype}{void} unit\_flow\_setName() \{}
+\DoxyCodeLine{00096     cout << \textcolor{stringliteral}{"{}TEST 6 -\/ Flow class' setName() method"{}} << endl;}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098     ExponencialFlow* flow = \textcolor{keyword}{new} ExponencialFlow();}
+\DoxyCodeLine{00099     flow-\/>setName(\textcolor{stringliteral}{"{}Test Flow"{}});}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101     \textcolor{comment}{// Making assertion to verify if the data of the name property has been altered.}}
+\DoxyCodeLine{00102     assert(flow-\/>getName() == \textcolor{stringliteral}{"{}Test Flow"{}});}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00105 \}}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107 \textcolor{comment}{// Function for Flow class' method getSource() unit test.}}
+\DoxyCodeLine{00108 \textcolor{keywordtype}{void} unit\_flow\_getSource()\{}
+\DoxyCodeLine{00109     cout << \textcolor{stringliteral}{"{}TEST 7 -\/ Flow class' getSource() method"{}} << endl;}
+\DoxyCodeLine{00110     }
+\DoxyCodeLine{00111     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00112     ExponencialFlow* flow = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow 1"{}}, system);}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114     \textcolor{comment}{// Making assertion to verify if the method returns the Flow class source system and if it's}}
+\DoxyCodeLine{00115     \textcolor{comment}{// equal to the parameter previously passed. }}
+\DoxyCodeLine{00116     assert(flow-\/>getSource()-\/>getName() == \textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00117     }
+\DoxyCodeLine{00118     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;  }
+\DoxyCodeLine{00119 \}}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121 \textcolor{comment}{// Function for Flow class' method setSource() unit test.}}
+\DoxyCodeLine{00122 \textcolor{keywordtype}{void} unit\_flow\_setSource()\{}
+\DoxyCodeLine{00123     cout << \textcolor{stringliteral}{"{}TEST 8 -\/ Flow class' setSource() method"{}} << endl;}
+\DoxyCodeLine{00124     }
+\DoxyCodeLine{00125     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00126     ExponencialFlow* flow1 = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00127     flow1-\/>setSource(system);}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129     \textcolor{comment}{// Making assertion to verify if the data of the source system property has been altered.}}
+\DoxyCodeLine{00130     assert(flow1-\/>getSource()-\/>getName() == \textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00131     }
+\DoxyCodeLine{00132     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;  }
+\DoxyCodeLine{00133 \}}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135 \textcolor{comment}{// Function for Flow class' method clearSource() unit test.}}
+\DoxyCodeLine{00136 \textcolor{keywordtype}{void} unit\_flow\_clearSource()\{}
+\DoxyCodeLine{00137     cout << \textcolor{stringliteral}{"{}TEST 9 -\/ Flow class' clearSource() method"{}} << endl;}
+\DoxyCodeLine{00138     }
+\DoxyCodeLine{00139     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00140     ExponencialFlow* flow1 = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow 1"{}},system);}
+\DoxyCodeLine{00141     flow1-\/>clearSource();}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143     \textcolor{comment}{// Making assertion to verify if the data of the source system property has been altered.}}
+\DoxyCodeLine{00144     assert(flow1-\/>getSource() == NULL);}
+\DoxyCodeLine{00145     }
+\DoxyCodeLine{00146     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;  }
+\DoxyCodeLine{00147 \}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149 \textcolor{comment}{// Function for Flow class' method getTarget() unit test.}}
+\DoxyCodeLine{00150 \textcolor{keywordtype}{void} unit\_flow\_getTarget()\{}
+\DoxyCodeLine{00151     cout << \textcolor{stringliteral}{"{}TEST 10 -\/ Flow class' getTarget() method"{}} << endl;}
+\DoxyCodeLine{00152     }
+\DoxyCodeLine{00153     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}}); }
+\DoxyCodeLine{00154     ExponencialFlow* flow = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow 1"{}},NULL,system);    }
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156     \textcolor{comment}{// Making assertion to verify if the method returns the Flow class target system and if it's}}
+\DoxyCodeLine{00157     \textcolor{comment}{// equal to the parameter previously passed. }}
+\DoxyCodeLine{00158     assert(flow-\/>getTarget()-\/>getName() == \textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00159     }
+\DoxyCodeLine{00160     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00161 \}}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163 \textcolor{comment}{// Function for Flow class' method setTarget() unit test.}}
+\DoxyCodeLine{00164 \textcolor{keywordtype}{void} unit\_flow\_setTarget()\{}
+\DoxyCodeLine{00165     cout << \textcolor{stringliteral}{"{}TEST 11 -\/ Flow class' setTarget() method"{}} << endl;}
+\DoxyCodeLine{00166     }
+\DoxyCodeLine{00167     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00168     ExponencialFlow* flow = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00169     flow-\/>setTarget(system);}
+\DoxyCodeLine{00170 }
+\DoxyCodeLine{00171     \textcolor{comment}{// Making assertion to verify if the data of the target system property has been altered.}}
+\DoxyCodeLine{00172     assert(flow-\/>getTarget()-\/>getName() == \textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00173     }
+\DoxyCodeLine{00174     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00175 \}}
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177 \textcolor{comment}{// Function for Flow class' method clearTarget() unit test.}}
+\DoxyCodeLine{00178 \textcolor{keywordtype}{void} unit\_flow\_clearTarget()\{}
+\DoxyCodeLine{00179     cout << \textcolor{stringliteral}{"{}TEST 12 -\/ Flow class' clearTarget() method"{}} << endl;}
+\DoxyCodeLine{00180     }
+\DoxyCodeLine{00181     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System"{}});}
+\DoxyCodeLine{00182     ExponencialFlow* flow = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow"{}}, NULL, system); }
+\DoxyCodeLine{00183     flow-\/>clearTarget();}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185     \textcolor{comment}{// Making assertion to verify if the data of the target system property has been altered.}}
+\DoxyCodeLine{00186     assert(flow-\/>getTarget() == NULL);}
+\DoxyCodeLine{00187     }
+\DoxyCodeLine{00188     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;  }
+\DoxyCodeLine{00189 \}}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191 \textcolor{comment}{// Function for Flow class' assingment operator unit test.}}
+\DoxyCodeLine{00192 \textcolor{keywordtype}{void} UnitFlow::unit\_flow\_assingmentOperator()\{}
+\DoxyCodeLine{00193     cout << \textcolor{stringliteral}{"{}TEST 13 -\/ Flow class' assignment operator"{}} << endl;}
+\DoxyCodeLine{00194     }
+\DoxyCodeLine{00195     System* sys1 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Sys 1"{}}, 5.0);}
+\DoxyCodeLine{00196     System* sys2 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Sys 2"{}}, 6.0);}
+\DoxyCodeLine{00197 }
+\DoxyCodeLine{00198     ExponencialFlow* flow1 = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00199     ExponencialFlow* flow2 = \textcolor{keyword}{new} ExponencialFlow();}
+\DoxyCodeLine{00200     *flow2 = *flow1;}
+\DoxyCodeLine{00201     }
+\DoxyCodeLine{00202     flow1-\/>setName(\textcolor{stringliteral}{"{}Original Flow 1"{}});}
+\DoxyCodeLine{00203     flow1-\/>setSource(sys1);}
+\DoxyCodeLine{00204     flow1-\/>setTarget(sys2);}
+\DoxyCodeLine{00205         }
+\DoxyCodeLine{00206     \textcolor{comment}{// Making assertion to verify if the name property was assigned.}}
+\DoxyCodeLine{00207     assert(flow2-\/>getName() == \textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00208     \textcolor{comment}{// Making assertion to verify if the source system property was assigned.}}
+\DoxyCodeLine{00209     assert(flow2-\/>getSource() == NULL);}
+\DoxyCodeLine{00210     \textcolor{comment}{// Making assertion to verify if the target system property was assigned.}}
+\DoxyCodeLine{00211     assert(flow2-\/>getTarget() == NULL);}
+\DoxyCodeLine{00212     }
+\DoxyCodeLine{00213     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00214 \}}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216 \textcolor{comment}{// Function for Flow class' execute method unit test.}}
+\DoxyCodeLine{00217 \textcolor{keywordtype}{void} unit\_flow\_execute()\{}
+\DoxyCodeLine{00218     cout << \textcolor{stringliteral}{"{}TEST 14 -\/ Flow class' execute() method"{}} << endl;}
+\DoxyCodeLine{00219     }
+\DoxyCodeLine{00220     System* system1 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System 1"{}}, 10.0);}
+\DoxyCodeLine{00221     System* system2 = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}Test System 2"{}}, 0.0);}
+\DoxyCodeLine{00222     ExponencialFlow* flow = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow"{}}, system1, system2);}
+\DoxyCodeLine{00223     system2-\/>setValue(flow-\/>execute());}
+\DoxyCodeLine{00224     }
+\DoxyCodeLine{00225     \textcolor{comment}{// Making assertion to verify if the execute method has been completed successfully.}}
+\DoxyCodeLine{00226     assert(abs(flow-\/>getTarget()-\/>getValue() -\/ 0.1) < 0.01);}
+\DoxyCodeLine{00227     }
+\DoxyCodeLine{00228     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00229 \}}
+\DoxyCodeLine{00230 }
+\DoxyCodeLine{00231 \textcolor{comment}{// Function to run all the Flow class' unit tests.}}
+\DoxyCodeLine{00232 \textcolor{keywordtype}{void} run\_unit\_tests\_flow() \{}
+\DoxyCodeLine{00233 }
+\DoxyCodeLine{00234     UnitFlow* unit\_flow = \textcolor{keyword}{new} UnitFlow();}
+\DoxyCodeLine{00235 }
+\DoxyCodeLine{00236     \textcolor{comment}{// Calling all the Flow class' unit test functions.}}
+\DoxyCodeLine{00237     unit\_flow\_constructor();  }
+\DoxyCodeLine{00238     unit\_flow-\/>unit\_flow\_copy\_constructor();}
+\DoxyCodeLine{00239     unit\_flow\_destructor(); }
+\DoxyCodeLine{00240     unit\_flow\_getName();}
+\DoxyCodeLine{00241     unit\_flow\_setName();}
+\DoxyCodeLine{00242     unit\_flow\_getSource();}
+\DoxyCodeLine{00243     unit\_flow\_setSource();}
+\DoxyCodeLine{00244     unit\_flow\_clearSource();}
+\DoxyCodeLine{00245     unit\_flow\_getTarget();}
+\DoxyCodeLine{00246     unit\_flow\_setTarget();}
+\DoxyCodeLine{00247     unit\_flow\_clearTarget();}
+\DoxyCodeLine{00248     unit\_flow-\/>unit\_flow\_assingmentOperator();}
+\DoxyCodeLine{00249     unit\_flow\_execute();}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251     \textcolor{keyword}{delete}(unit\_flow);}
+\DoxyCodeLine{00252 \}}
+
+\end{DoxyCode}

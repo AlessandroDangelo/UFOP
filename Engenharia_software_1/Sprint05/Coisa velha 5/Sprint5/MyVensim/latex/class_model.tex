@@ -1,0 +1,219 @@
+\hypertarget{class_model}{}\doxysection{Model Class Reference}
+\label{class_model}\index{Model@{Model}}
+
+
+File responsible for project templates.  
+
+
+
+
+{\ttfamily \#include $<$model.\+h$>$}
+
+
+
+Inheritance diagram for Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_model__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_model_af032d8433c87a0a3a431faf6563a1f03}{$\sim$\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Destructor to destroy the model. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_model_aab6200147ea653640bccae289eff93ee}{run}} (int, int)=0
+\begin{DoxyCompactList}\small\item\em Function to run the model. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_model_a7d2b21a02c1ce4362c5414f2a33fae24}{create\+System}} (string, double)=0
+\item 
+virtual \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_model_a5034e4c32a51bafebfb18e79a2efe32e}{operator=}} (\mbox{\hyperlink{class_model}{Model}} $\ast$)=0
+\item 
+virtual \mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_model_aedb5bbb3b1127751f86d8aeba1a8ea98}{get\+System}} (string name)=0
+\begin{DoxyCompactList}\small\item\em Function to overload operator =. \end{DoxyCompactList}\item 
+virtual vector$<$ \mbox{\hyperlink{class_flow}{Flow}} $\ast$ $>$ \mbox{\hyperlink{class_model_ac1445546b12b7fb8eaf6a783c3a42b90}{get\+Flows}} ()=0
+\item 
+{\footnotesize template$<$typename T\+\_\+\+FLOW $>$ }\\\mbox{\hyperlink{class_flow}{Flow}} $\ast$ \mbox{\hyperlink{class_model_a6422e2a75d21d628ebe3eac05727d914}{create\+Flow}} (\mbox{\hyperlink{class_system}{System}} $\ast$source=nullptr, \mbox{\hyperlink{class_system}{System}} $\ast$destination=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_model_a323706671d255b873e3f7c645a402627}{create\+Model}} (string)
+\begin{DoxyCompactList}\small\item\em Function to create the model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_model_a70362afdd9db6268b4adaedfeddb2935}{add}} (\mbox{\hyperlink{class_system}{System}} $\ast$)=0
+\begin{DoxyCompactList}\small\item\em Function to add a new system. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_model_ac1e19f5fcc4ced9defbfe2847a26ff33}{add}} (\mbox{\hyperlink{class_flow}{Flow}} $\ast$)=0
+\begin{DoxyCompactList}\small\item\em Function to add new flow. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File responsible for project templates. 
+
+\begin{DoxyAuthor}{Author}
+Ananda Mendes 2021. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_af032d8433c87a0a3a431faf6563a1f03}\label{class_model_af032d8433c87a0a3a431faf6563a1f03}} 
+\index{Model@{Model}!````~Model@{$\sim$Model}}
+\index{````~Model@{$\sim$Model}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{$\sim$Model()}{~Model()}}
+{\footnotesize\ttfamily virtual Model\+::$\sim$\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor to destroy the model. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_ac1e19f5fcc4ced9defbfe2847a26ff33}\label{class_model_ac1e19f5fcc4ced9defbfe2847a26ff33}} 
+\index{Model@{Model}!add@{add}}
+\index{add@{add}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Model\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_flow}{Flow}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}
+
+
+
+Function to add new flow. 
+
+
+
+Implemented in \mbox{\hyperlink{class_model___imp_aaf507dc3be98f443c96118aae4138251}{Model\+\_\+\+Imp}}.
+
+\mbox{\Hypertarget{class_model_a70362afdd9db6268b4adaedfeddb2935}\label{class_model_a70362afdd9db6268b4adaedfeddb2935}} 
+\index{Model@{Model}!add@{add}}
+\index{add@{add}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Model\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}
+
+
+
+Function to add a new system. 
+
+
+
+Implemented in \mbox{\hyperlink{class_model___imp_ad417a5c0c859750c3f301c0c8d634d6f}{Model\+\_\+\+Imp}}.
+
+\mbox{\Hypertarget{class_model_a6422e2a75d21d628ebe3eac05727d914}\label{class_model_a6422e2a75d21d628ebe3eac05727d914}} 
+\index{Model@{Model}!createFlow@{createFlow}}
+\index{createFlow@{createFlow}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{createFlow()}{createFlow()}}
+{\footnotesize\ttfamily template$<$typename T\+\_\+\+FLOW $>$ \\
+\mbox{\hyperlink{class_flow}{Flow}}$\ast$ Model\+::create\+Flow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{source = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{destination = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_model_a323706671d255b873e3f7c645a402627}\label{class_model_a323706671d255b873e3f7c645a402627}} 
+\index{Model@{Model}!createModel@{createModel}}
+\index{createModel@{createModel}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{createModel()}{createModel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model}{Model}} $\ast$ Model\+::create\+Model (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function to create the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Initial value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns final model. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_a7d2b21a02c1ce4362c5414f2a33fae24}\label{class_model_a7d2b21a02c1ce4362c5414f2a33fae24}} 
+\index{Model@{Model}!createSystem@{createSystem}}
+\index{createSystem@{createSystem}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{createSystem()}{createSystem()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_system}{System}}$\ast$ Model\+::create\+System (\begin{DoxyParamCaption}\item[{string}]{,  }\item[{double}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_model___imp_a3cfba5f8f889a38614cf4473a0f8de52}{Model\+\_\+\+Imp}}.
+
+\mbox{\Hypertarget{class_model_ac1445546b12b7fb8eaf6a783c3a42b90}\label{class_model_ac1445546b12b7fb8eaf6a783c3a42b90}} 
+\index{Model@{Model}!getFlows@{getFlows}}
+\index{getFlows@{getFlows}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{getFlows()}{getFlows()}}
+{\footnotesize\ttfamily virtual vector$<$\mbox{\hyperlink{class_flow}{Flow}}$\ast$$>$ Model\+::get\+Flows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_model___imp_a8923ada02af9ae7d0c84b0093067566c}{Model\+\_\+\+Imp}}.
+
+\mbox{\Hypertarget{class_model_aedb5bbb3b1127751f86d8aeba1a8ea98}\label{class_model_aedb5bbb3b1127751f86d8aeba1a8ea98}} 
+\index{Model@{Model}!getSystem@{getSystem}}
+\index{getSystem@{getSystem}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{getSystem()}{getSystem()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_system}{System}}$\ast$ Model\+::get\+System (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Function to overload operator =. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \mbox{\hyperlink{class_model}{Model}} pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns model. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_model___imp_a00f21e7c80130e99ad951f81bc1659e2}{Model\+\_\+\+Imp}}.
+
+\mbox{\Hypertarget{class_model_a5034e4c32a51bafebfb18e79a2efe32e}\label{class_model_a5034e4c32a51bafebfb18e79a2efe32e}} 
+\index{Model@{Model}!operator=@{operator=}}
+\index{operator=@{operator=}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_model}{Model}}$\ast$ Model\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model}{Model}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_model___imp_ad443a75e0be3a53918d8f9cc7da400f8}{Model\+\_\+\+Imp}}.
+
+\mbox{\Hypertarget{class_model_aab6200147ea653640bccae289eff93ee}\label{class_model_aab6200147ea653640bccae289eff93ee}} 
+\index{Model@{Model}!run@{run}}
+\index{run@{run}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily virtual double Model\+::run (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Function to run the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Initial value. \\
+\hline
+{\em finish} & Final value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns final value. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_model___imp_a82663d3bf5bd459d39f20e0da286ff9e}{Model\+\_\+\+Imp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\mbox{\hyperlink{model_8h}{model.\+h}}\item 
+src/lib/\mbox{\hyperlink{model___imp_8cpp}{model\+\_\+\+Imp.\+cpp}}\end{DoxyCompactItemize}

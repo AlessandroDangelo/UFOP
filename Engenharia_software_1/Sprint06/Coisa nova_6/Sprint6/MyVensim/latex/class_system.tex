@@ -1,0 +1,145 @@
+\doxysection{System Class Reference}
+\label{class_system}\index{System@{System}}
+
+
+File responsible for project systems.  
+
+
+
+
+{\ttfamily \#include $<$system.\+h$>$}
+
+
+
+Inheritance diagram for System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{class_system__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{class_system__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \textbf{ $\sim$\+System} ()
+\begin{DoxyCompactList}\small\item\em Destructor to destroy the system. \end{DoxyCompactList}\item 
+virtual void \textbf{ set\+Name} (string)=0
+\begin{DoxyCompactList}\small\item\em Add a name for the system. \end{DoxyCompactList}\item 
+virtual void \textbf{ set\+Value} (double)=0
+\begin{DoxyCompactList}\small\item\em Add a value to the system. \end{DoxyCompactList}\item 
+virtual double \textbf{ get\+Value} ()=0
+\begin{DoxyCompactList}\small\item\em Function to return system value. \end{DoxyCompactList}\item 
+virtual string \textbf{ get\+Name} ()=0
+\begin{DoxyCompactList}\small\item\em Function to return system name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File responsible for project systems. 
+
+\begin{DoxyAuthor}{Author}
+Ananda Mendes 2021. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_system_a2fc0f34023977cab9b628aa9f734d88c}} 
+\index{System@{System}!````~System@{$\sim$System}}
+\index{````~System@{$\sim$System}!System@{System}}
+\doxysubsubsection{$\sim$System()}
+{\footnotesize\ttfamily virtual System\+::$\sim$\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor to destroy the system. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_system_afbdf2f80a34acdee62584a29c864c620}} 
+\index{System@{System}!getName@{getName}}
+\index{getName@{getName}!System@{System}}
+\doxysubsubsection{getName()}
+{\footnotesize\ttfamily virtual string System\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Function to return system name. 
+
+\begin{DoxyReturn}{Returns}
+Returns a string. 
+\end{DoxyReturn}
+
+
+Implemented in \textbf{ System\+Handle} \doxyref{}{p.}{class_system_handle_a940b1d5128f889998920ab1e37f62134}.
+
+\mbox{\label{class_system_aef8971c63440ffdc90946c750db440f7}} 
+\index{System@{System}!getValue@{getValue}}
+\index{getValue@{getValue}!System@{System}}
+\doxysubsubsection{getValue()}
+{\footnotesize\ttfamily virtual double System\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Function to return system value. 
+
+\begin{DoxyReturn}{Returns}
+Returns a double. 
+\end{DoxyReturn}
+
+
+Implemented in \textbf{ System\+Handle} \doxyref{}{p.}{class_system_handle_abd491efc0ce7d2fc39e37f4df2f453ec}.
+
+\mbox{\label{class_system_aacc697c3f09eecce394380a6bde96c34}} 
+\index{System@{System}!setName@{setName}}
+\index{setName@{setName}!System@{System}}
+\doxysubsubsection{setName()}
+{\footnotesize\ttfamily virtual void System\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add a name for the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \doxyref{System}{p.}{class_system} name. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ System\+Handle} \doxyref{}{p.}{class_system_handle_aa8da8c60723c4a7dd3457419a2527c4f}.
+
+\mbox{\label{class_system_a95e6d4c1ce05b47b5fa743fd2401dd03}} 
+\index{System@{System}!setValue@{setValue}}
+\index{setValue@{setValue}!System@{System}}
+\doxysubsubsection{setValue()}
+{\footnotesize\ttfamily virtual void System\+::set\+Value (\begin{DoxyParamCaption}\item[{double}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add a value to the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \doxyref{System}{p.}{class_system} value. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ System\+Handle} \doxyref{}{p.}{class_system_handle_aa7206ceb4d5ceaf67271edb1b12e135d}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\textbf{ system.\+h}\end{DoxyCompactItemize}

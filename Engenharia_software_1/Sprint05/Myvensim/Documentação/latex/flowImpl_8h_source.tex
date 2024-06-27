@@ -1,0 +1,51 @@
+\doxysection{flow\+Impl.\+h}
+\label{flowImpl_8h_source}\index{src/include/flowImpl.h@{src/include/flowImpl.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#ifndef FLOWIMPL\_H}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#define FLOWIMPL\_H}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}./flow.h"{}}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}model.h"{}}}
+\DoxyCodeLine{00006 }
+\DoxyCodeLine{00007 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00013 \textcolor{keyword}{class }FlowImpl : \textcolor{keyword}{public} Flow\{}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00016         \textcolor{keywordtype}{string} name; }
+\DoxyCodeLine{00017         System* source; }
+\DoxyCodeLine{00018         System* target; }
+\DoxyCodeLine{00024         FlowImpl(\textcolor{keyword}{const} Flow\& flow);}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00029         FlowImpl\& operator=(\textcolor{keyword}{const} Flow\& flow);}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00040         FlowImpl(\textcolor{keywordtype}{string} name = \textcolor{stringliteral}{"{}"{}}, System* source = NULL, System* target = NULL);}
+\DoxyCodeLine{00041         }
+\DoxyCodeLine{00045         \textcolor{keyword}{virtual} \string~FlowImpl();}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00051         \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} execute() = 0;}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00057         \textcolor{keywordtype}{string} getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00063         \textcolor{keywordtype}{void} setName(\textcolor{keywordtype}{string} flowName);}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00069         System* getSource() \textcolor{keyword}{const};}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00075         \textcolor{keywordtype}{void} setSource(System* sourceSys);}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{00080         \textcolor{keywordtype}{void} clearSource();}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00086         System* getTarget() \textcolor{keyword}{const};}
+\DoxyCodeLine{00087         }
+\DoxyCodeLine{00092         \textcolor{keywordtype}{void} setTarget(System* targetSys);}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00097         \textcolor{keywordtype}{void} clearTarget();}
+\DoxyCodeLine{00098 \};}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

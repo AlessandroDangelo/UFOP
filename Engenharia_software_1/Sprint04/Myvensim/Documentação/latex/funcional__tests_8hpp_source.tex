@@ -1,0 +1,144 @@
+\doxysection{funcional\+\_\+tests.\+hpp}
+\label{funcional__tests_8hpp_source}\index{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/test/funcional/funcional\_tests.hpp@{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/test/funcional/funcional\_tests.hpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#ifndef FUNCTIONAL\_TEST}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#define FUNCTIONAL\_TEST}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}../../src/flowImpl.hpp"{}}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}../../src/systemImpl.hpp"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}../../src/modelImpl.hpp"{}}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#define RESET "{}\(\backslash\)033[0m"{}}  \textcolor{comment}{/* Escape sequence to reset color output to default. */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#define GREEN "{}\(\backslash\)033[32m"{}} \textcolor{comment}{/* Escape sequence to a green color output. */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00019 \textcolor{keywordtype}{void} exponentialFuncionalTest();}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00024 \textcolor{keywordtype}{void} logisticalFuncionalTest();}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00029 \textcolor{keywordtype}{void} complexFuncionalTest();}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00035 \textcolor{keyword}{class }ExponencialFlow : \textcolor{keyword}{public} FlowImpl\{}
+\DoxyCodeLine{00036     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043         ExponencialFlow(\textcolor{keywordtype}{string} name, System* source, System* target): FlowImpl(name, source, target)\{\}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00048         \textcolor{keywordtype}{double} execute()\{}
+\DoxyCodeLine{00049             \textcolor{keywordflow}{if} (getSource() != NULL)\{}
+\DoxyCodeLine{00050                 \textcolor{keywordflow}{return} (0.01 * getSource()-\/>getValue());}
+\DoxyCodeLine{00051             \}}
+\DoxyCodeLine{00052             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00053                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00054             \}}
+\DoxyCodeLine{00055         \}}
+\DoxyCodeLine{00056 \};}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00062 \textcolor{keyword}{class }LogisticFlow : \textcolor{keyword}{public} FlowImpl\{}
+\DoxyCodeLine{00063     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070         LogisticFlow(\textcolor{keywordtype}{string} name, System* source, System* target): FlowImpl(name, source, target)\{\}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00075         \textcolor{keywordtype}{double} execute()\{}
+\DoxyCodeLine{00076             \textcolor{keywordflow}{if} (getTarget() != NULL)\{}
+\DoxyCodeLine{00077                 \textcolor{keywordflow}{return} 0.01 * getTarget()-\/>getValue() * (1 -\/ getTarget()-\/>getValue() / 70);}
+\DoxyCodeLine{00078             \}}
+\DoxyCodeLine{00079             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00080                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00081             \}}
+\DoxyCodeLine{00082         \}}
+\DoxyCodeLine{00083 \};}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00089 \textcolor{keyword}{class }ComplexFlowF : \textcolor{keyword}{public} FlowImpl\{}
+\DoxyCodeLine{00090     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00097         ComplexFlowF(\textcolor{keywordtype}{string} name, System* source, System* target): FlowImpl(name, source, target)\{\}}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00102         \textcolor{keywordtype}{double} execute()\{}
+\DoxyCodeLine{00103             \textcolor{keywordflow}{if} (getSource() != NULL)\{}
+\DoxyCodeLine{00104                 \textcolor{keywordflow}{return} 0.01 * getSource()-\/>getValue();}
+\DoxyCodeLine{00105             \}}
+\DoxyCodeLine{00106             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00107                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00108             \}}
+\DoxyCodeLine{00109         \}}
+\DoxyCodeLine{00110 \};}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00116 \textcolor{keyword}{class }ComplexFlowT : \textcolor{keyword}{public} FlowImpl\{}
+\DoxyCodeLine{00117     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00124         ComplexFlowT(\textcolor{keywordtype}{string} name, System* source, System* target): FlowImpl(name, source, target)\{\}}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00129         \textcolor{keywordtype}{double} execute()\{}
+\DoxyCodeLine{00130             \textcolor{keywordflow}{if} (getSource() != NULL)\{}
+\DoxyCodeLine{00131                 \textcolor{keywordflow}{return} 0.01 * getSource()-\/>getValue();}
+\DoxyCodeLine{00132             \}}
+\DoxyCodeLine{00133             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00134                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00135             \}}
+\DoxyCodeLine{00136         \}}
+\DoxyCodeLine{00137 \};}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00143 \textcolor{keyword}{class }ComplexFlowU : \textcolor{keyword}{public} FlowImpl\{}
+\DoxyCodeLine{00144     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00151         ComplexFlowU(\textcolor{keywordtype}{string} name, System* source, System* target): FlowImpl(name, source, target)\{\}}
+\DoxyCodeLine{00152         }
+\DoxyCodeLine{00156         \textcolor{keywordtype}{double} execute()\{}
+\DoxyCodeLine{00157             \textcolor{keywordflow}{if} (getSource() != NULL)\{}
+\DoxyCodeLine{00158                 \textcolor{keywordflow}{return} 0.01 * getSource()-\/>getValue();}
+\DoxyCodeLine{00159             \}}
+\DoxyCodeLine{00160             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00161                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00162             \}}
+\DoxyCodeLine{00163         \}}
+\DoxyCodeLine{00164 \};}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00170 \textcolor{keyword}{class }ComplexFlowV : \textcolor{keyword}{public} FlowImpl\{}
+\DoxyCodeLine{00171     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00178         ComplexFlowV(\textcolor{keywordtype}{string} name, System* source, System* target): FlowImpl(name, source, target)\{\}}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00183         \textcolor{keywordtype}{double} execute()\{}
+\DoxyCodeLine{00184             \textcolor{keywordflow}{if} (getSource() != NULL)\{}
+\DoxyCodeLine{00185                 \textcolor{keywordflow}{return} 0.01 * getSource()-\/>getValue();}
+\DoxyCodeLine{00186             \}}
+\DoxyCodeLine{00187             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00188                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00189             \}}
+\DoxyCodeLine{00190         \}}
+\DoxyCodeLine{00191 \};}
+\DoxyCodeLine{00192 }
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00197 \textcolor{keyword}{class }ComplexFlowG : \textcolor{keyword}{public} FlowImpl\{}
+\DoxyCodeLine{00198     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00205         ComplexFlowG(\textcolor{keywordtype}{string} name, System* source, System* target): FlowImpl(name, source, target)\{\}}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00210         \textcolor{keywordtype}{double} execute()\{}
+\DoxyCodeLine{00211             \textcolor{keywordflow}{if} (getSource() != NULL)\{}
+\DoxyCodeLine{00212                 \textcolor{keywordflow}{return} 0.01 * getSource()-\/>getValue();}
+\DoxyCodeLine{00213             \}}
+\DoxyCodeLine{00214             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00215                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00216             \}}
+\DoxyCodeLine{00217         \}}
+\DoxyCodeLine{00218 \};}
+\DoxyCodeLine{00219 }
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{00224 \textcolor{keyword}{class }ComplexFlowR: \textcolor{keyword}{public} FlowImpl\{}
+\DoxyCodeLine{00225     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00232         ComplexFlowR(\textcolor{keywordtype}{string} name, System* source, System* target): FlowImpl(name, source, target)\{\}}
+\DoxyCodeLine{00233 }
+\DoxyCodeLine{00237         \textcolor{keywordtype}{double} execute()\{}
+\DoxyCodeLine{00238             \textcolor{keywordflow}{if} (getSource() != NULL)\{}
+\DoxyCodeLine{00239                 \textcolor{keywordflow}{return} 0.01 * getSource()-\/>getValue();}
+\DoxyCodeLine{00240             \}}
+\DoxyCodeLine{00241             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00242                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00243             \}}
+\DoxyCodeLine{00244         \}}
+\DoxyCodeLine{00245 \};}
+\DoxyCodeLine{00246 }
+\DoxyCodeLine{00247 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

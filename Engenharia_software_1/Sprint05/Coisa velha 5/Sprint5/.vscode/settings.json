@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "cstdlib": "cpp",
+        "iostream": "cpp",
+        "typeinfo": "cpp",
+        "new": "cpp",
+        "string": "cpp"
+    },
+    "git.ignoreLimitWarning": true,
+    "C_Cpp.errorSquiggles": "Disabled"
+}

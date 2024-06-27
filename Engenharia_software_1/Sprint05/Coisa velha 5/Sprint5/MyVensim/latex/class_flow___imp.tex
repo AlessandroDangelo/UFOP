@@ -1,0 +1,235 @@
+\hypertarget{class_flow___imp}{}\doxysection{Flow\+\_\+\+Imp Class Reference}
+\label{class_flow___imp}\index{Flow\_Imp@{Flow\_Imp}}
+
+
+File responsible for project flows.  
+
+
+
+
+{\ttfamily \#include $<$flow\+\_\+\+Imp.\+h$>$}
+
+
+
+Inheritance diagram for Flow\+\_\+\+Imp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_flow___imp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flow\+\_\+\+Imp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{class_flow___imp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_flow___imp_a1c43604863f047a197402d3446aaefad}{Flow\+\_\+\+Imp}} ()
+\begin{DoxyCompactList}\small\item\em Builder to create a new flow. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_flow___imp_af088429e1814c2d6417900b2daac056b}{Flow\+\_\+\+Imp}} (\mbox{\hyperlink{class_system}{System}} $\ast$, \mbox{\hyperlink{class_system}{System}} $\ast$)
+\item 
+virtual \mbox{\hyperlink{class_flow___imp_af545a8eb70fbb6175d86c71866cb19ee}{$\sim$\+Flow\+\_\+\+Imp}} ()
+\begin{DoxyCompactList}\small\item\em Destructor to destroy the flow. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_flow___imp_a672dfab39e612533951460bdcdc52e9c}{set\+Sources}} (\mbox{\hyperlink{class_system}{System}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Add an input system to the stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_flow___imp_aaa3bd28218b47c56d9cb6ac04df1c617}{set\+Destination}} (\mbox{\hyperlink{class_system}{System}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Add an exit system to the stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_flow___imp_a8250e6502d9ae0bde86fcad44b7d5d8e}{get\+Source}} ()
+\begin{DoxyCompactList}\small\item\em Function to return an input system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_flow___imp_ad93b98b0c135ccd84e9b58a87d920605}{get\+Destination}} ()
+\begin{DoxyCompactList}\small\item\em Function to return an output system. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_flow___imp_a33d678d168ebb7498049a01889fbf80d}{run}} ()=0
+\begin{DoxyCompactList}\small\item\em Virtual function to run the stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_flow___imp}{Flow\+\_\+\+Imp}} $\ast$ \mbox{\hyperlink{class_flow___imp_a95580611d3b13c49f651d31eebec2c70}{operator=}} (\mbox{\hyperlink{class_flow}{Flow}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Function to overload operator =. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_flow___imp_a86ac9e083fd2db5336b746b5432b855e}{source}}
+\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_flow___imp_a0cfe4c8708121bed3fe5df91212cacc4}{destination}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File responsible for project flows. 
+
+\begin{DoxyAuthor}{Author}
+Ananda Mendes 2021. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_flow___imp_a1c43604863f047a197402d3446aaefad}\label{class_flow___imp_a1c43604863f047a197402d3446aaefad}} 
+\index{Flow\_Imp@{Flow\_Imp}!Flow\_Imp@{Flow\_Imp}}
+\index{Flow\_Imp@{Flow\_Imp}!Flow\_Imp@{Flow\_Imp}}
+\doxysubsubsection{\texorpdfstring{Flow\_Imp()}{Flow\_Imp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Flow\+\_\+\+Imp\+::\+Flow\+\_\+\+Imp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Builder to create a new flow. 
+
+$<$Pointer of output of a system \mbox{\Hypertarget{class_flow___imp_af088429e1814c2d6417900b2daac056b}\label{class_flow___imp_af088429e1814c2d6417900b2daac056b}} 
+\index{Flow\_Imp@{Flow\_Imp}!Flow\_Imp@{Flow\_Imp}}
+\index{Flow\_Imp@{Flow\_Imp}!Flow\_Imp@{Flow\_Imp}}
+\doxysubsubsection{\texorpdfstring{Flow\_Imp()}{Flow\_Imp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Flow\+\_\+\+Imp\+::\+Flow\+\_\+\+Imp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{source,  }\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{destination }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_flow___imp_af545a8eb70fbb6175d86c71866cb19ee}\label{class_flow___imp_af545a8eb70fbb6175d86c71866cb19ee}} 
+\index{Flow\_Imp@{Flow\_Imp}!````~Flow\_Imp@{$\sim$Flow\_Imp}}
+\index{````~Flow\_Imp@{$\sim$Flow\_Imp}!Flow\_Imp@{Flow\_Imp}}
+\doxysubsubsection{\texorpdfstring{$\sim$Flow\_Imp()}{~Flow\_Imp()}}
+{\footnotesize\ttfamily Flow\+\_\+\+Imp\+::$\sim$\+Flow\+\_\+\+Imp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor to destroy the flow. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_flow___imp_ad93b98b0c135ccd84e9b58a87d920605}\label{class_flow___imp_ad93b98b0c135ccd84e9b58a87d920605}} 
+\index{Flow\_Imp@{Flow\_Imp}!getDestination@{getDestination}}
+\index{getDestination@{getDestination}!Flow\_Imp@{Flow\_Imp}}
+\doxysubsubsection{\texorpdfstring{getDestination()}{getDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}} $\ast$ Flow\+\_\+\+Imp\+::get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Function to return an output system. 
+
+\begin{DoxyReturn}{Returns}
+Returns a \mbox{\hyperlink{class_system}{System}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_flow_a8bab401d070f19cf12ad2e0f54f1286b}{Flow}}.
+
+\mbox{\Hypertarget{class_flow___imp_a8250e6502d9ae0bde86fcad44b7d5d8e}\label{class_flow___imp_a8250e6502d9ae0bde86fcad44b7d5d8e}} 
+\index{Flow\_Imp@{Flow\_Imp}!getSource@{getSource}}
+\index{getSource@{getSource}!Flow\_Imp@{Flow\_Imp}}
+\doxysubsubsection{\texorpdfstring{getSource()}{getSource()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}} $\ast$ Flow\+\_\+\+Imp\+::get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Function to return an input system. 
+
+\begin{DoxyReturn}{Returns}
+Returns a \mbox{\hyperlink{class_system}{System}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_flow_ac4060eca7a83b8eeedf83b7823dd0ec8}{Flow}}.
+
+\mbox{\Hypertarget{class_flow___imp_a95580611d3b13c49f651d31eebec2c70}\label{class_flow___imp_a95580611d3b13c49f651d31eebec2c70}} 
+\index{Flow\_Imp@{Flow\_Imp}!operator=@{operator=}}
+\index{operator=@{operator=}!Flow\_Imp@{Flow\_Imp}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_flow___imp}{Flow\+\_\+\+Imp}} $\ast$ Flow\+\_\+\+Imp\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_flow}{Flow}} $\ast$}]{flow }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Function to overload operator =. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_flow___imp}{Flow\+\_\+\+Imp}}} & \mbox{\hyperlink{class_flow}{Flow}} pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns flow. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_flow_ace9977e3a4abe6bca3aed8fc4c0152d3}{Flow}}.
+
+\mbox{\Hypertarget{class_flow___imp_a33d678d168ebb7498049a01889fbf80d}\label{class_flow___imp_a33d678d168ebb7498049a01889fbf80d}} 
+\index{Flow\_Imp@{Flow\_Imp}!run@{run}}
+\index{run@{run}!Flow\_Imp@{Flow\_Imp}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily virtual double Flow\+\_\+\+Imp\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Virtual function to run the stream. 
+
+\begin{DoxyReturn}{Returns}
+Returns value of 0. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_flow_a1cac6068ee3ed3f03fa0708640eb2f02}{Flow}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_flow_unit_a9a53e30daf47fe0c31785a1ec8e19d83}{Flow\+Unit}}, \mbox{\hyperlink{class_logistic_af6f99f0b3655a4f2066617564935ff24}{Logistic}}, and \mbox{\hyperlink{class_exponential_a00fc8c70e25ea91120b26d640480a22c}{Exponential}}.
+
+\mbox{\Hypertarget{class_flow___imp_aaa3bd28218b47c56d9cb6ac04df1c617}\label{class_flow___imp_aaa3bd28218b47c56d9cb6ac04df1c617}} 
+\index{Flow\_Imp@{Flow\_Imp}!setDestination@{setDestination}}
+\index{setDestination@{setDestination}!Flow\_Imp@{Flow\_Imp}}
+\doxysubsubsection{\texorpdfstring{setDestination()}{setDestination()}}
+{\footnotesize\ttfamily void Flow\+\_\+\+Imp\+::set\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add an exit system to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em system} & \mbox{\hyperlink{class_system}{System}} pointer. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_flow_aecb114f3f5beca729c6d9f64fca36bea}{Flow}}.
+
+\mbox{\Hypertarget{class_flow___imp_a672dfab39e612533951460bdcdc52e9c}\label{class_flow___imp_a672dfab39e612533951460bdcdc52e9c}} 
+\index{Flow\_Imp@{Flow\_Imp}!setSources@{setSources}}
+\index{setSources@{setSources}!Flow\_Imp@{Flow\_Imp}}
+\doxysubsubsection{\texorpdfstring{setSources()}{setSources()}}
+{\footnotesize\ttfamily void Flow\+\_\+\+Imp\+::set\+Sources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add an input system to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em system} & \mbox{\hyperlink{class_system}{System}} pointer. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_flow_a0e189c0918fb655cde5cd15efed7fc34}{Flow}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_flow___imp_a0cfe4c8708121bed3fe5df91212cacc4}\label{class_flow___imp_a0cfe4c8708121bed3fe5df91212cacc4}} 
+\index{Flow\_Imp@{Flow\_Imp}!destination@{destination}}
+\index{destination@{destination}!Flow\_Imp@{Flow\_Imp}}
+\doxysubsubsection{\texorpdfstring{destination}{destination}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}}$\ast$ Flow\+\_\+\+Imp\+::destination\hspace{0.3cm}{\ttfamily [protected]}}
+
+$<$Pointer of entry of a system \mbox{\Hypertarget{class_flow___imp_a86ac9e083fd2db5336b746b5432b855e}\label{class_flow___imp_a86ac9e083fd2db5336b746b5432b855e}} 
+\index{Flow\_Imp@{Flow\_Imp}!source@{source}}
+\index{source@{source}!Flow\_Imp@{Flow\_Imp}}
+\doxysubsubsection{\texorpdfstring{source}{source}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}}$\ast$ Flow\+\_\+\+Imp\+::source\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\mbox{\hyperlink{flow___imp_8h}{flow\+\_\+\+Imp.\+h}}\item 
+src/lib/\mbox{\hyperlink{flow___imp_8cpp}{flow\+\_\+\+Imp.\+cpp}}\end{DoxyCompactItemize}

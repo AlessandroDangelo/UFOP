@@ -1,0 +1,66 @@
+\doxysection{system\+Impl.\+hpp}
+\label{systemImpl_8hpp_source}\index{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/src/systemImpl.hpp@{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/src/systemImpl.hpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#ifndef SYSTEMIMPL\_H}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#define SYSTEMIMPL\_H}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}system.hpp"{}}}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00012 \textcolor{keyword}{class }SystemImpl : \textcolor{keyword}{public} System\{}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00015         \textcolor{keywordtype}{string} name; }
+\DoxyCodeLine{00016         \textcolor{keywordtype}{double} value; }
+\DoxyCodeLine{00022         \textcolor{comment}{// SystemImpl (const SystemImpl\& sys);}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00027         SystemImpl\& operator=(\textcolor{keyword}{const} SystemImpl\& sys);}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030         SystemImpl (\textcolor{keyword}{const} SystemImpl\& sys);}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032         \textcolor{keyword}{friend} \textcolor{keyword}{class }Flow; }
+\DoxyCodeLine{00033         \textcolor{keyword}{friend} \textcolor{keyword}{class }ModelImpl; }
+\DoxyCodeLine{00034         \textcolor{keyword}{friend} \textcolor{keyword}{class }UnitSystem; }
+\DoxyCodeLine{00042         SystemImpl(\textcolor{keywordtype}{string} name = \textcolor{stringliteral}{"{}"{}}, \textcolor{keywordtype}{double} value = 0.0);}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00047         \textcolor{keyword}{virtual} \string~SystemImpl();}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00053         \textcolor{keywordtype}{void} setName(\textcolor{keywordtype}{string} sysName);}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00059         \textcolor{keywordtype}{string} getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{00060         }
+\DoxyCodeLine{00065         \textcolor{keywordtype}{void} setValue(\textcolor{keywordtype}{double} sysValue);}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00071         \textcolor{keywordtype}{double} getValue() \textcolor{keyword}{const};}
+\DoxyCodeLine{00072       }
+\DoxyCodeLine{00076         \textcolor{keywordtype}{double} operator+(\textcolor{keyword}{const} System\& sys);}
+\DoxyCodeLine{00077         }
+\DoxyCodeLine{00081         \textcolor{keywordtype}{double} operator+(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& valueSys);}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00086         \textcolor{keywordtype}{double} operator-\/(\textcolor{keyword}{const} System\& sys);}
+\DoxyCodeLine{00087         }
+\DoxyCodeLine{00091         \textcolor{keywordtype}{double} operator-\/(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& valueSys);}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00096         \textcolor{keywordtype}{double} operator*(\textcolor{keyword}{const} System\& sys);}
+\DoxyCodeLine{00097         }
+\DoxyCodeLine{00101         \textcolor{keywordtype}{double} operator*(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& valueSys);}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00106         \textcolor{keywordtype}{double} operator/(\textcolor{keyword}{const} System\& sys);}
+\DoxyCodeLine{00107         }
+\DoxyCodeLine{00111         \textcolor{keywordtype}{double} operator/(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& valueSys);}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113 \};}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116 \textcolor{keywordtype}{double} operator+(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& valueSys, \textcolor{keyword}{const} System\& sys);}
+\DoxyCodeLine{00117 \textcolor{keywordtype}{double} operator-\/(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& valueSys, \textcolor{keyword}{const} System\& sys);}
+\DoxyCodeLine{00118 \textcolor{keywordtype}{double} operator*(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& valueSys, \textcolor{keyword}{const} System\& sys);}
+\DoxyCodeLine{00119 \textcolor{keywordtype}{double} operator/(\textcolor{keyword}{const} \textcolor{keywordtype}{double}\& valueSys, \textcolor{keyword}{const} System\& sys);}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

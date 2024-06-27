@@ -1,0 +1,198 @@
+\doxysection{Model\+Handle Class Reference}
+\label{class_model_handle}\index{ModelHandle@{ModelHandle}}
+
+
+{\ttfamily \#include $<$model\+\_\+\+Imp.\+h$>$}
+
+
+
+Inheritance diagram for Model\+Handle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_model_handle__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Model\+Handle\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_model_handle__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Model\+Handle} ()
+\item 
+virtual \textbf{ $\sim$\+Model\+Handle} ()
+\item 
+double \textbf{ run} (int start, int finish)
+\begin{DoxyCompactList}\small\item\em Function to run the model. \end{DoxyCompactList}\item 
+\textbf{ System} $\ast$ \textbf{ create\+System} (string name, double value)
+\item 
+\textbf{ System} $\ast$ \textbf{ get\+System} (string name)
+\begin{DoxyCompactList}\small\item\em Function to overload operator =. \end{DoxyCompactList}\item 
+vector$<$ \textbf{ Flow} $\ast$ $>$ \textbf{ get\+Flows} ()
+\item 
+string \textbf{ get\+Id} ()
+\item 
+void \textbf{ set\+Id} (string id)
+\item 
+void \textbf{ add} (\textbf{ System} $\ast$system)
+\begin{DoxyCompactList}\small\item\em Function to add a new system. \end{DoxyCompactList}\item 
+void \textbf{ add} (\textbf{ Flow} $\ast$flow)
+\begin{DoxyCompactList}\small\item\em Function to add new flow. \end{DoxyCompactList}\item 
+void \textbf{ add} (\textbf{ Model} $\ast$model)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Model} $\ast$ \textbf{ create\+Model} (string id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_model_handle_a1c203c425e69e245ad1e3f65143fa69b}} 
+\index{ModelHandle@{ModelHandle}!ModelHandle@{ModelHandle}}
+\index{ModelHandle@{ModelHandle}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{ModelHandle()}
+{\footnotesize\ttfamily Model\+Handle\+::\+Model\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_model_handle_aa2813029166b0166dc9f20398d7e4bdb}} 
+\index{ModelHandle@{ModelHandle}!````~ModelHandle@{$\sim$ModelHandle}}
+\index{````~ModelHandle@{$\sim$ModelHandle}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{$\sim$ModelHandle()}
+{\footnotesize\ttfamily virtual Model\+Handle\+::$\sim$\+Model\+Handle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_model_handle_a1c2fe71daa814c09442b735a81f9ba53}} 
+\index{ModelHandle@{ModelHandle}!add@{add}}
+\index{add@{add}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Model\+Handle\+::add (\begin{DoxyParamCaption}\item[{\textbf{ Flow} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Function to add new flow. 
+
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{class_model_ac1e19f5fcc4ced9defbfe2847a26ff33}.
+
+\mbox{\label{class_model_handle_a6473ef1915fe407a6866fdb9c594685b}} 
+\index{ModelHandle@{ModelHandle}!add@{add}}
+\index{add@{add}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Model\+Handle\+::add (\begin{DoxyParamCaption}\item[{\textbf{ Model} $\ast$}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_model_handle_acf6ea36ccd2ee6d375c988bc71dcfcdd}} 
+\index{ModelHandle@{ModelHandle}!add@{add}}
+\index{add@{add}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Model\+Handle\+::add (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Function to add a new system. 
+
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{class_model_a70362afdd9db6268b4adaedfeddb2935}.
+
+\mbox{\label{class_model_handle_afe099ad42cedd65dd389e5feedd2f2b5}} 
+\index{ModelHandle@{ModelHandle}!createModel@{createModel}}
+\index{createModel@{createModel}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{createModel()}
+{\footnotesize\ttfamily static \textbf{ Model}$\ast$ Model\+Handle\+::create\+Model (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\label{class_model_handle_a7b1b5f8c7558f6355571de87ffe92569}} 
+\index{ModelHandle@{ModelHandle}!createSystem@{createSystem}}
+\index{createSystem@{createSystem}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{createSystem()}
+{\footnotesize\ttfamily \textbf{ System}$\ast$ Model\+Handle\+::create\+System (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{class_model_a7d2b21a02c1ce4362c5414f2a33fae24}.
+
+\mbox{\label{class_model_handle_a1255f377f45e7a053efae64d2267fabd}} 
+\index{ModelHandle@{ModelHandle}!getFlows@{getFlows}}
+\index{getFlows@{getFlows}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{getFlows()}
+{\footnotesize\ttfamily vector$<$\textbf{ Flow}$\ast$$>$ Model\+Handle\+::get\+Flows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{class_model_ac1445546b12b7fb8eaf6a783c3a42b90}.
+
+\mbox{\label{class_model_handle_ae7d620d751a68b97990f297817f22c3e}} 
+\index{ModelHandle@{ModelHandle}!getId@{getId}}
+\index{getId@{getId}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{getId()}
+{\footnotesize\ttfamily string Model\+Handle\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_model_handle_a5f39220bb7333b935383d2e8e3730ec8}} 
+\index{ModelHandle@{ModelHandle}!getSystem@{getSystem}}
+\index{getSystem@{getSystem}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{getSystem()}
+{\footnotesize\ttfamily \textbf{ System}$\ast$ Model\+Handle\+::get\+System (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Function to overload operator =. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \doxyref{Model}{p.}{class_model} pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns model. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{class_model_aedb5bbb3b1127751f86d8aeba1a8ea98}.
+
+\mbox{\label{class_model_handle_a7eb4cb7f4520a1057dae1d77bea11c0b}} 
+\index{ModelHandle@{ModelHandle}!run@{run}}
+\index{run@{run}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{run()}
+{\footnotesize\ttfamily double Model\+Handle\+::run (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Function to run the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Initial value. \\
+\hline
+{\em finish} & Final value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns final value. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{class_model_aab6200147ea653640bccae289eff93ee}.
+
+\mbox{\label{class_model_handle_a4b2735ac7f512977df01006308c41a41}} 
+\index{ModelHandle@{ModelHandle}!setId@{setId}}
+\index{setId@{setId}!ModelHandle@{ModelHandle}}
+\doxysubsubsection{setId()}
+{\footnotesize\ttfamily void Model\+Handle\+::set\+Id (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\textbf{ model\+\_\+\+Imp.\+h}\end{DoxyCompactItemize}

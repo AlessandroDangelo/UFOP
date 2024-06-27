@@ -1,0 +1,149 @@
+\doxysection{Body Class Reference}
+\label{class_body}\index{Body@{Body}}
+
+
+The class Implementation was implemented based on the class te\+Counted writed by Ricardo Cartaxo and Gilberto Câmara and founded in the geographic library Terra\+Lib.  
+
+
+
+
+{\ttfamily \#include $<$handle\+Body\+Sem\+Debug.\+h$>$}
+
+
+
+Inheritance diagram for Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{class_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Body} ()
+\begin{DoxyCompactList}\small\item\em Constructor\+: zero references when the object is being built. \end{DoxyCompactList}\item 
+void \textbf{ attach} ()
+\begin{DoxyCompactList}\small\item\em Increases the number of references to this object. \end{DoxyCompactList}\item 
+void \textbf{ detach} ()
+\begin{DoxyCompactList}\small\item\em Decreases the number of references to this object. \end{DoxyCompactList}\item 
+int \textbf{ ref\+Count} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of references to this object. \end{DoxyCompactList}\item 
+virtual \textbf{ $\sim$\+Body} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Body} (const \textbf{ Body} \&)
+\begin{DoxyCompactList}\small\item\em No copy allowed. \end{DoxyCompactList}\item 
+\textbf{ Body} \& \textbf{ operator=} (const \textbf{ Body} \&)
+\begin{DoxyCompactList}\small\item\em Implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ ref\+Count\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class Implementation was implemented based on the class te\+Counted writed by Ricardo Cartaxo and Gilberto Câmara and founded in the geographic library Terra\+Lib. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_body_a7727b0d8c998bbc2942e4c802e31e2eb}} 
+\index{Body@{Body}!Body@{Body}}
+\index{Body@{Body}!Body@{Body}}
+\doxysubsubsection{Body()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Body\+::\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor\+: zero references when the object is being built. 
+
+\mbox{\label{class_body_a9b15e54cf881ac0ca64790ca1d50110e}} 
+\index{Body@{Body}!````~Body@{$\sim$Body}}
+\index{````~Body@{$\sim$Body}!Body@{Body}}
+\doxysubsubsection{$\sim$Body()}
+{\footnotesize\ttfamily virtual Body\+::$\sim$\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\mbox{\label{class_body_ad7fa496772479f2d3debe3c1ea0e8c1b}} 
+\index{Body@{Body}!Body@{Body}}
+\index{Body@{Body}!Body@{Body}}
+\doxysubsubsection{Body()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Body\+::\+Body (\begin{DoxyParamCaption}\item[{const \textbf{ Body} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+No copy allowed. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_body_a5d53322c76a6952d096cb7564ac86db1}} 
+\index{Body@{Body}!attach@{attach}}
+\index{attach@{attach}!Body@{Body}}
+\doxysubsubsection{attach()}
+{\footnotesize\ttfamily void Body\+::attach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increases the number of references to this object. 
+
+\mbox{\label{class_body_ad481d0c8368db318795c9a0a8fdd3717}} 
+\index{Body@{Body}!detach@{detach}}
+\index{detach@{detach}!Body@{Body}}
+\doxysubsubsection{detach()}
+{\footnotesize\ttfamily void Body\+::detach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Decreases the number of references to this object. 
+
+Destroy it if there are no more references to it \mbox{\label{class_body_a18ca8b6719c0d91416e7f4355d04f3f7}} 
+\index{Body@{Body}!operator=@{operator=}}
+\index{operator=@{operator=}!Body@{Body}}
+\doxysubsubsection{operator=()}
+{\footnotesize\ttfamily \textbf{ Body}\& Body\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Body} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Implementation. 
+
+\mbox{\label{class_body_a59ae961812625b8636071ba61b1a75fc}} 
+\index{Body@{Body}!refCount@{refCount}}
+\index{refCount@{refCount}!Body@{Body}}
+\doxysubsubsection{refCount()}
+{\footnotesize\ttfamily int Body\+::ref\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of references to this object. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{class_body_a70b46681762de310d6a3fba89ba2d721}} 
+\index{Body@{Body}!refCount\_@{refCount\_}}
+\index{refCount\_@{refCount\_}!Body@{Body}}
+\doxysubsubsection{refCount\_}
+{\footnotesize\ttfamily int Body\+::ref\+Count\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\textbf{ handle\+Body\+Sem\+Debug.\+h}\end{DoxyCompactItemize}

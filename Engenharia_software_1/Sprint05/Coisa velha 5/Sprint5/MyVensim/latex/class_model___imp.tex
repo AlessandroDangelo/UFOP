@@ -1,0 +1,262 @@
+\hypertarget{class_model___imp}{}\doxysection{Model\+\_\+\+Imp Class Reference}
+\label{class_model___imp}\index{Model\_Imp@{Model\_Imp}}
+
+
+File responsible for project templates.  
+
+
+
+
+{\ttfamily \#include $<$model\+\_\+\+Imp.\+h$>$}
+
+
+
+Inheritance diagram for Model\+\_\+\+Imp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_model___imp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Model\+\_\+\+Imp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_model___imp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model___imp_a3696c18cd5b11cc04cc426a580d0c39e}{Model\+\_\+\+Imp}} ()
+\begin{DoxyCompactList}\small\item\em Builder to create a new model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model___imp_ae892974c2776982496d7cd843332f882}{Model\+\_\+\+Imp}} (string)
+\item 
+virtual \mbox{\hyperlink{class_model___imp_aeeddd6d81acaed37f1293aa30703426b}{$\sim$\+Model\+\_\+\+Imp}} ()
+\begin{DoxyCompactList}\small\item\em Destructor to destroy the model. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_model___imp_a82663d3bf5bd459d39f20e0da286ff9e}{run}} (int, int)
+\begin{DoxyCompactList}\small\item\em Function to run the model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_model___imp_a3cfba5f8f889a38614cf4473a0f8de52}{create\+System}} (string, double)
+\item 
+\mbox{\hyperlink{class_system}{System}} $\ast$ \mbox{\hyperlink{class_model___imp_a00f21e7c80130e99ad951f81bc1659e2}{get\+System}} (string name)
+\begin{DoxyCompactList}\small\item\em Function to overload operator =. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_flow}{Flow}} $\ast$ $>$ \mbox{\hyperlink{class_model___imp_a8923ada02af9ae7d0c84b0093067566c}{get\+Flows}} ()
+\item 
+\mbox{\hyperlink{class_model___imp}{Model\+\_\+\+Imp}} $\ast$ \mbox{\hyperlink{class_model___imp_ad443a75e0be3a53918d8f9cc7da400f8}{operator=}} (\mbox{\hyperlink{class_model}{Model}} $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_model___imp_ade84ae2fc79fecbcfa8333647585cfbb}{create\+Model}} (string)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_flow}{Flow}} $\ast$ $>$ \mbox{\hyperlink{class_model___imp_acbb7531b97678737a9aba64c4d7ea816}{flows}}
+\item 
+vector$<$ \mbox{\hyperlink{class_system}{System}} $\ast$ $>$ \mbox{\hyperlink{class_model___imp_a8f9270475362a07b5c58c6a69937f451}{systems}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \mbox{\hyperlink{class_model}{Model}} $\ast$ $>$ \mbox{\hyperlink{class_model___imp_a9b5660e2d162adff14dcbd7e3ecfa1ae}{models}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_model___imp_ad417a5c0c859750c3f301c0c8d634d6f}{add}} (\mbox{\hyperlink{class_system}{System}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Function to add a new system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model___imp_aaf507dc3be98f443c96118aae4138251}{add}} (\mbox{\hyperlink{class_flow}{Flow}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Function to add new flow. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_model___imp_a51c894d7216a25be14f75c84e5b57fca}{id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File responsible for project templates. 
+
+\begin{DoxyAuthor}{Author}
+Ananda Mendes 2021. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model___imp_a3696c18cd5b11cc04cc426a580d0c39e}\label{class_model___imp_a3696c18cd5b11cc04cc426a580d0c39e}} 
+\index{Model\_Imp@{Model\_Imp}!Model\_Imp@{Model\_Imp}}
+\index{Model\_Imp@{Model\_Imp}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{Model\_Imp()}{Model\_Imp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Model\+\_\+\+Imp\+::\+Model\+\_\+\+Imp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Builder to create a new model. 
+
+\mbox{\Hypertarget{class_model___imp_ae892974c2776982496d7cd843332f882}\label{class_model___imp_ae892974c2776982496d7cd843332f882}} 
+\index{Model\_Imp@{Model\_Imp}!Model\_Imp@{Model\_Imp}}
+\index{Model\_Imp@{Model\_Imp}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{Model\_Imp()}{Model\_Imp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Model\+\_\+\+Imp\+::\+Model\+\_\+\+Imp (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model___imp_aeeddd6d81acaed37f1293aa30703426b}\label{class_model___imp_aeeddd6d81acaed37f1293aa30703426b}} 
+\index{Model\_Imp@{Model\_Imp}!````~Model\_Imp@{$\sim$Model\_Imp}}
+\index{````~Model\_Imp@{$\sim$Model\_Imp}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{$\sim$Model\_Imp()}{~Model\_Imp()}}
+{\footnotesize\ttfamily Model\+\_\+\+Imp\+::$\sim$\+Model\+\_\+\+Imp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor to destroy the model. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model___imp_aaf507dc3be98f443c96118aae4138251}\label{class_model___imp_aaf507dc3be98f443c96118aae4138251}} 
+\index{Model\_Imp@{Model\_Imp}!add@{add}}
+\index{add@{add}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Model\+\_\+\+Imp\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_flow}{Flow}} $\ast$}]{flow }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Function to add new flow. 
+
+
+
+Implements \mbox{\hyperlink{class_model_ac1e19f5fcc4ced9defbfe2847a26ff33}{Model}}.
+
+\mbox{\Hypertarget{class_model___imp_ad417a5c0c859750c3f301c0c8d634d6f}\label{class_model___imp_ad417a5c0c859750c3f301c0c8d634d6f}} 
+\index{Model\_Imp@{Model\_Imp}!add@{add}}
+\index{add@{add}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Model\+\_\+\+Imp\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{system }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Function to add a new system. 
+
+
+
+Implements \mbox{\hyperlink{class_model_a70362afdd9db6268b4adaedfeddb2935}{Model}}.
+
+\mbox{\Hypertarget{class_model___imp_ade84ae2fc79fecbcfa8333647585cfbb}\label{class_model___imp_ade84ae2fc79fecbcfa8333647585cfbb}} 
+\index{Model\_Imp@{Model\_Imp}!createModel@{createModel}}
+\index{createModel@{createModel}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{createModel()}{createModel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model}{Model}} $\ast$ Model\+\_\+\+Imp\+::create\+Model (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_model___imp_a3cfba5f8f889a38614cf4473a0f8de52}\label{class_model___imp_a3cfba5f8f889a38614cf4473a0f8de52}} 
+\index{Model\_Imp@{Model\_Imp}!createSystem@{createSystem}}
+\index{createSystem@{createSystem}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{createSystem()}{createSystem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}} $\ast$ Model\+\_\+\+Imp\+::create\+System (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_model_a7d2b21a02c1ce4362c5414f2a33fae24}{Model}}.
+
+\mbox{\Hypertarget{class_model___imp_a8923ada02af9ae7d0c84b0093067566c}\label{class_model___imp_a8923ada02af9ae7d0c84b0093067566c}} 
+\index{Model\_Imp@{Model\_Imp}!getFlows@{getFlows}}
+\index{getFlows@{getFlows}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{getFlows()}{getFlows()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_flow}{Flow}} $\ast$ $>$ Model\+\_\+\+Imp\+::get\+Flows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_model_ac1445546b12b7fb8eaf6a783c3a42b90}{Model}}.
+
+\mbox{\Hypertarget{class_model___imp_a00f21e7c80130e99ad951f81bc1659e2}\label{class_model___imp_a00f21e7c80130e99ad951f81bc1659e2}} 
+\index{Model\_Imp@{Model\_Imp}!getSystem@{getSystem}}
+\index{getSystem@{getSystem}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{getSystem()}{getSystem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system}{System}} $\ast$ Model\+\_\+\+Imp\+::get\+System (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Function to overload operator =. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \mbox{\hyperlink{class_model}{Model}} pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns model. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aedb5bbb3b1127751f86d8aeba1a8ea98}{Model}}.
+
+\mbox{\Hypertarget{class_model___imp_ad443a75e0be3a53918d8f9cc7da400f8}\label{class_model___imp_ad443a75e0be3a53918d8f9cc7da400f8}} 
+\index{Model\_Imp@{Model\_Imp}!operator=@{operator=}}
+\index{operator=@{operator=}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model___imp}{Model\+\_\+\+Imp}} $\ast$ Model\+\_\+\+Imp\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model}{Model}} $\ast$}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_model_a5034e4c32a51bafebfb18e79a2efe32e}{Model}}.
+
+\mbox{\Hypertarget{class_model___imp_a82663d3bf5bd459d39f20e0da286ff9e}\label{class_model___imp_a82663d3bf5bd459d39f20e0da286ff9e}} 
+\index{Model\_Imp@{Model\_Imp}!run@{run}}
+\index{run@{run}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily double Model\+\_\+\+Imp\+::run (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{int}]{finish }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Function to run the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Initial value. \\
+\hline
+{\em finish} & Final value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns final value. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_model_aab6200147ea653640bccae289eff93ee}{Model}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_model___imp_acbb7531b97678737a9aba64c4d7ea816}\label{class_model___imp_acbb7531b97678737a9aba64c4d7ea816}} 
+\index{Model\_Imp@{Model\_Imp}!flows@{flows}}
+\index{flows@{flows}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{flows}{flows}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_flow}{Flow}}$\ast$$>$ Model\+\_\+\+Imp\+::flows\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_model___imp_a51c894d7216a25be14f75c84e5b57fca}\label{class_model___imp_a51c894d7216a25be14f75c84e5b57fca}} 
+\index{Model\_Imp@{Model\_Imp}!id@{id}}
+\index{id@{id}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily string Model\+\_\+\+Imp\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_model___imp_a9b5660e2d162adff14dcbd7e3ecfa1ae}\label{class_model___imp_a9b5660e2d162adff14dcbd7e3ecfa1ae}} 
+\index{Model\_Imp@{Model\_Imp}!models@{models}}
+\index{models@{models}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{models}{models}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_model}{Model}} $\ast$ $>$ Model\+\_\+\+Imp\+::models\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+$<$ Systems pointer vector \mbox{\Hypertarget{class_model___imp_a8f9270475362a07b5c58c6a69937f451}\label{class_model___imp_a8f9270475362a07b5c58c6a69937f451}} 
+\index{Model\_Imp@{Model\_Imp}!systems@{systems}}
+\index{systems@{systems}!Model\_Imp@{Model\_Imp}}
+\doxysubsubsection{\texorpdfstring{systems}{systems}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_system}{System}}$\ast$$>$ Model\+\_\+\+Imp\+::systems\hspace{0.3cm}{\ttfamily [protected]}}
+
+$<$ \mbox{\hyperlink{class_flow}{Flow}} pointer vector 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lib/\mbox{\hyperlink{model___imp_8h}{model\+\_\+\+Imp.\+h}}\item 
+src/lib/\mbox{\hyperlink{model___imp_8cpp}{model\+\_\+\+Imp.\+cpp}}\end{DoxyCompactItemize}

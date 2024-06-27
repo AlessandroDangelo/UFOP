@@ -1,0 +1,69 @@
+\doxysection{unit\+\_\+flow.\+hpp}
+\label{unit__flow_8hpp_source}\index{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/test/unit/unit\_flow.hpp@{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/test/unit/unit\_flow.hpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#ifndef UNIT\_FLOW}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#define UNIT\_FLOW}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include "{}../../src/systemImpl.hpp"{}}}
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include "{}../../src/flowImpl.hpp"{}}}
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include "{}./utils/mem\_usage.hpp"{}}}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#define RESET "{}\(\backslash\)033[0m"{}}  }
+\DoxyCodeLine{00009 \textcolor{preprocessor}{\#define GREEN "{}\(\backslash\)033[32m"{}} }
+\DoxyCodeLine{00010 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00017 \textcolor{keyword}{class }UnitFlow\{}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020         UnitFlow()\{\}}
+\DoxyCodeLine{00021         \string~UnitFlow()\{\}}
+\DoxyCodeLine{00022         }
+\DoxyCodeLine{00026         \textcolor{keywordtype}{void} unit\_flow\_copy\_constructor();}
+\DoxyCodeLine{00030         \textcolor{keywordtype}{void} unit\_flow\_assingmentOperator();}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032 \};}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00038 \textcolor{keyword}{class }ExponencialFlow : \textcolor{keyword}{public} FlowImpl\{}
+\DoxyCodeLine{00039     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046         ExponencialFlow(\textcolor{keywordtype}{string} name = \textcolor{stringliteral}{"{}"{}}, System* source = NULL, System* target = NULL): FlowImpl(name, source, target)\{\}}
+\DoxyCodeLine{00047         }
+\DoxyCodeLine{00051         \textcolor{keywordtype}{double} execute()\{}
+\DoxyCodeLine{00052             \textcolor{keywordflow}{if} (getSource() != NULL)\{}
+\DoxyCodeLine{00053                 \textcolor{keywordflow}{return} (0.01 * getSource()-\/>getValue());}
+\DoxyCodeLine{00054             \}}
+\DoxyCodeLine{00055             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00056                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00057             \}}
+\DoxyCodeLine{00058         \}}
+\DoxyCodeLine{00059 \};}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00064 \textcolor{keywordtype}{void} unit\_flow\_constructor();}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00069 \textcolor{keywordtype}{void} unit\_flow\_destructor();}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00074 \textcolor{keywordtype}{void} unit\_flow\_getName();}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00079 \textcolor{keywordtype}{void} unit\_flow\_setName();}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00084 \textcolor{keywordtype}{void} unit\_flow\_getSource();}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00089 \textcolor{keywordtype}{void} unit\_flow\_setSource();}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00094 \textcolor{keywordtype}{void} unit\_flow\_clearSource();}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00099 \textcolor{keywordtype}{void} unit\_flow\_getTarget();}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00104 \textcolor{keywordtype}{void} unit\_flow\_setTarget();}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00109 \textcolor{keywordtype}{void} unit\_flow\_clearTarget();}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00114 \textcolor{keywordtype}{void} unit\_flow\_execute();}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00119 \textcolor{keywordtype}{void} run\_unit\_tests\_flow();}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

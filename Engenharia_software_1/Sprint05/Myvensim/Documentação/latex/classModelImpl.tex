@@ -1,0 +1,874 @@
+\doxysection{Model\+Impl Class Reference}
+\label{classModelImpl}\index{ModelImpl@{ModelImpl}}
+
+
+Class \doxyref{Model\+Impl}{p.}{classModelImpl}.  
+
+
+
+
+{\ttfamily \#include $<$model\+Impl.\+h$>$}
+
+
+
+Inheritance diagram for Model\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classModelImpl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Model\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classModelImpl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef vector$<$ \textbf{ System} $\ast$ $>$\+::iterator \textbf{ system\+Iterator}
+\item 
+typedef vector$<$ \textbf{ Flow} $\ast$ $>$\+::iterator \textbf{ flow\+Iterator}
+\item 
+typedef vector$<$ \textbf{ Model} $\ast$ $>$\+::iterator \textbf{ model\+Iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ system\+Iterator} \textbf{ begin\+Systems} ()
+\item 
+\textbf{ system\+Iterator} \textbf{ end\+Systems} ()
+\item 
+\textbf{ flow\+Iterator} \textbf{ begin\+Flows} ()
+\item 
+\textbf{ flow\+Iterator} \textbf{ end\+Flows} ()
+\item 
+\textbf{ Model\+Impl} (string \textbf{ name}=\char`\"{}\char`\"{}, double \textbf{ time}=0.\+0)
+\item 
+virtual \textbf{ $\sim$\+Model\+Impl} ()
+\item 
+void \textbf{ execute} (double start=0.\+0, double final=0.\+0, double increment=1.\+0)
+\item 
+void \textbf{ remove} (\textbf{ System} $\ast$sys)
+\item 
+void \textbf{ remove} (\textbf{ Flow} $\ast$flow)
+\item 
+void \textbf{ set\+Name} (string model\+Name)
+\item 
+string \textbf{ get\+Name} () const
+\item 
+void \textbf{ set\+Time} (double current\+Time)
+\item 
+double \textbf{ get\+Time} () const
+\item 
+void \textbf{ increment\+Time} (double increment)
+\item 
+\textbf{ System} $\ast$ \textbf{ get\+System} (int index)
+\item 
+\textbf{ Flow} $\ast$ \textbf{ get\+Flow} (int index)
+\item 
+\textbf{ System} $\ast$ \textbf{ create\+System} (string \textbf{ name}, double value)
+\item 
+void \textbf{ set\+Target} (\textbf{ Flow} $\ast$f, \textbf{ System} $\ast$s)
+\item 
+void \textbf{ set\+Source} (\textbf{ Flow} $\ast$f, \textbf{ System} $\ast$s)
+\item 
+\textbf{ System} $\ast$ \textbf{ get\+Target} (\textbf{ Flow} $\ast$f)
+\item 
+\textbf{ System} $\ast$ \textbf{ get\+Source} (\textbf{ Flow} $\ast$f)
+\item 
+void \textbf{ clear\+Target} (\textbf{ Flow} $\ast$f)
+\item 
+void \textbf{ clear\+Source} (\textbf{ Flow} $\ast$f)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Model} $\ast$ \textbf{ create\+Model} (string \textbf{ name}=\char`\"{}\char`\"{}, double \textbf{ time}=0.\+0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \textbf{ name}
+\item 
+double \textbf{ time}
+\item 
+vector$<$ \textbf{ System} $\ast$ $>$ \textbf{ systems}
+\item 
+vector$<$ \textbf{ Flow} $\ast$ $>$ \textbf{ flows}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \textbf{ qntd} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Model\+Impl} (const \textbf{ Model\+Impl} \&model)
+\item 
+void \textbf{ operator=} (const \textbf{ Model\+Impl} \&model)
+\item 
+void \textbf{ add} (\textbf{ System} $\ast$sys)
+\item 
+void \textbf{ add} (\textbf{ Flow} $\ast$flow)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Unit\+Model}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \doxyref{Model\+Impl}{p.}{classModelImpl}. 
+
+This Class represents a \doxyref{Model\+Impl}{p.}{classModelImpl} in the General Systems Theory implemented in this code. 
+
+Definition at line \textbf{ 12} of file \textbf{ model\+Impl.\+h}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\label{classModelImpl_af88935c2845167bc170308098c4d7c27}} 
+\index{ModelImpl@{ModelImpl}!flowIterator@{flowIterator}}
+\index{flowIterator@{flowIterator}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{flowIterator}
+{\footnotesize\ttfamily typedef vector$<$\textbf{ Flow}$\ast$$>$\+::iterator \textbf{ Model\+Impl\+::flow\+Iterator}}
+
+
+
+Definition at line \textbf{ 25} of file \textbf{ model\+Impl.\+h}.
+
+\mbox{\label{classModelImpl_a450b432684252238e09bc4d2d979808b}} 
+\index{ModelImpl@{ModelImpl}!modelIterator@{modelIterator}}
+\index{modelIterator@{modelIterator}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{modelIterator}
+{\footnotesize\ttfamily typedef vector$<$\textbf{ Model}$\ast$$>$\+::iterator \textbf{ Model\+Impl\+::model\+Iterator}}
+
+
+
+Definition at line \textbf{ 26} of file \textbf{ model\+Impl.\+h}.
+
+\mbox{\label{classModelImpl_a425ee372fb39ab2cbd7dbcbf0ac51608}} 
+\index{ModelImpl@{ModelImpl}!systemIterator@{systemIterator}}
+\index{systemIterator@{systemIterator}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{systemIterator}
+{\footnotesize\ttfamily typedef vector$<$\textbf{ System}$\ast$$>$\+::iterator \textbf{ Model\+Impl\+::system\+Iterator}}
+
+
+
+Definition at line \textbf{ 24} of file \textbf{ model\+Impl.\+h}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classModelImpl_af0fbd2e08b909ffb2876827d9684b6ee}} 
+\index{ModelImpl@{ModelImpl}!ModelImpl@{ModelImpl}}
+\index{ModelImpl@{ModelImpl}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{ModelImpl()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Model\+Impl\+::\+Model\+Impl (\begin{DoxyParamCaption}\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{double}]{time = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+This is the default constructor for the \doxyref{Model\+Impl}{p.}{classModelImpl} Class. 
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the \doxyref{Model\+Impl}{p.}{classModelImpl} Class. \\
+\hline
+{\em time} & the time for the \doxyref{Model\+Impl}{p.}{classModelImpl} Class to run. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Model\+Impl}{p.}{classModelImpl} -\/ a \doxyref{Model\+Impl}{p.}{classModelImpl} Class object. 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 31} of file \textbf{ model\+Impl.\+cpp}.
+
+\mbox{\label{classModelImpl_a427f422a6d356b94afbe3937d6452a2b}} 
+\index{ModelImpl@{ModelImpl}!````~ModelImpl@{$\sim$ModelImpl}}
+\index{````~ModelImpl@{$\sim$ModelImpl}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{$\sim$ModelImpl()}
+{\footnotesize\ttfamily Model\+Impl\+::$\sim$\+Model\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is the default destructor for the \doxyref{Model\+Impl}{p.}{classModelImpl} Class. 
+
+Definition at line \textbf{ 33} of file \textbf{ model\+Impl.\+cpp}.
+
+\mbox{\label{classModelImpl_a027c2618c0645601df6287193db1ae1c}} 
+\index{ModelImpl@{ModelImpl}!ModelImpl@{ModelImpl}}
+\index{ModelImpl@{ModelImpl}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{ModelImpl()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Model\+Impl\+::\+Model\+Impl (\begin{DoxyParamCaption}\item[{const \textbf{ Model\+Impl} \&}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This is the copy constructor for the \doxyref{Model\+Impl}{p.}{classModelImpl} Class. 
+\begin{DoxyParams}{Parameters}
+{\em model} & the \doxyref{Model\+Impl}{p.}{classModelImpl} that is going to be cloned. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 22} of file \textbf{ model\+Impl.\+cpp}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classModelImpl_a3b71fb4f8f2b4933104f03a91138a758}} 
+\index{ModelImpl@{ModelImpl}!add@{add}}
+\index{add@{add}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Model\+Impl\+::add (\begin{DoxyParamCaption}\item[{\textbf{ Flow} $\ast$}]{flow }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+Adds a flow\textquotesingle{}s pointer to the flows vector. 
+\begin{DoxyParams}{Parameters}
+{\em flow} & the flow to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_ab7df81041f62f049cfc6e4d50dcaf721}.
+
+
+
+Definition at line \textbf{ 89} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{classModelImpl_a3b71fb4f8f2b4933104f03a91138a758_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a71fdc6f260548487d5732c97a65d016b}} 
+\index{ModelImpl@{ModelImpl}!add@{add}}
+\index{add@{add}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{add()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Model\+Impl\+::add (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{sys }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+Adds a system\textquotesingle{}s pointer to the systems vector. 
+\begin{DoxyParams}{Parameters}
+{\em sys} & the system to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a94c8319fa87ab9f33a4ac2b362837e5d}.
+
+
+
+Definition at line \textbf{ 85} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classModelImpl_a71fdc6f260548487d5732c97a65d016b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classModelImpl_a71fdc6f260548487d5732c97a65d016b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a04d4234a1c69c7164f628fec763f8f20}} 
+\index{ModelImpl@{ModelImpl}!beginFlows@{beginFlows}}
+\index{beginFlows@{beginFlows}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{beginFlows()}
+{\footnotesize\ttfamily \textbf{ Model\+Impl\+::flow\+Iterator} Model\+Impl\+::begin\+Flows (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the iterator to the beginning of flows attribute. 
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a4c21fa615edc5d7b8a9696fe090707a4}.
+
+
+
+Definition at line \textbf{ 28} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classModelImpl_a04d4234a1c69c7164f628fec763f8f20_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a6a4d492d29b4af77b294ee8031bae6f5}} 
+\index{ModelImpl@{ModelImpl}!beginSystems@{beginSystems}}
+\index{beginSystems@{beginSystems}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{beginSystems()}
+{\footnotesize\ttfamily \textbf{ Model\+Impl\+::system\+Iterator} Model\+Impl\+::begin\+Systems (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the iterator to the beginning of systems attribute. 
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_af44c12bce2645f91b796e750ddbacbd2}.
+
+
+
+Definition at line \textbf{ 26} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classModelImpl_a6a4d492d29b4af77b294ee8031bae6f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a17042eabbd38fa4d8d3236f315264ee1}} 
+\index{ModelImpl@{ModelImpl}!clearSource@{clearSource}}
+\index{clearSource@{clearSource}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{clearSource()}
+{\footnotesize\ttfamily void Model\+Impl\+::clear\+Source (\begin{DoxyParamCaption}\item[{\textbf{ Flow} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clear the source attribute of a flow 
+\begin{DoxyParams}{Parameters}
+{\em f} & the flow \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a40ddab9ec0e9930d3783ec782f0a9216}.
+
+
+
+Definition at line \textbf{ 173} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classModelImpl_a17042eabbd38fa4d8d3236f315264ee1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a9ff4d6b904cb8dc51aaaa1c927b90770}} 
+\index{ModelImpl@{ModelImpl}!clearTarget@{clearTarget}}
+\index{clearTarget@{clearTarget}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{clearTarget()}
+{\footnotesize\ttfamily void Model\+Impl\+::clear\+Target (\begin{DoxyParamCaption}\item[{\textbf{ Flow} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clear the target attribute of a flow 
+\begin{DoxyParams}{Parameters}
+{\em f} & the flow \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a5d44e699983f04a41238247fa8e53f47}.
+
+
+
+Definition at line \textbf{ 169} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classModelImpl_a9ff4d6b904cb8dc51aaaa1c927b90770_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_af8a4afb579ad81aee0a3dc34005b82b8}} 
+\index{ModelImpl@{ModelImpl}!createModel@{createModel}}
+\index{createModel@{createModel}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{createModel()}
+{\footnotesize\ttfamily \textbf{ Model} $\ast$ Model\+Impl\+::create\+Model (\begin{DoxyParamCaption}\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{double}]{time = {\ttfamily 0.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a \doxyref{Model}{p.}{classModel}. 
+\begin{DoxyParams}{Parameters}
+{\em name} & the model name. \\
+\hline
+{\em final} & the model initial time. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Model$\ast$ -\/ the pointer to the model that was created. 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 10} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classModelImpl_af8a4afb579ad81aee0a3dc34005b82b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_ab62e8ea6c664dec3ad72dd3ca3dc386b}} 
+\index{ModelImpl@{ModelImpl}!createSystem@{createSystem}}
+\index{createSystem@{createSystem}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{createSystem()}
+{\footnotesize\ttfamily \textbf{ System} $\ast$ Model\+Impl\+::create\+System (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates a \doxyref{System}{p.}{classSystem} in the model 
+\begin{DoxyParams}{Parameters}
+{\em name} & for the new system \\
+\hline
+{\em value} & the initial value for the new system \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System$\ast$ -\/ the system that was created. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_ad6bfdcab663aabd78304cc98466d6b48}.
+
+
+
+Definition at line \textbf{ 147} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classModelImpl_ab62e8ea6c664dec3ad72dd3ca3dc386b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a651776ba7d34de952d3436b48ae66d7c}} 
+\index{ModelImpl@{ModelImpl}!endFlows@{endFlows}}
+\index{endFlows@{endFlows}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{endFlows()}
+{\footnotesize\ttfamily \textbf{ Model\+Impl\+::flow\+Iterator} Model\+Impl\+::end\+Flows (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the iterator to the end of flows attribute. 
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a27d6c506e46555299b4b4c8ae0990a7c}.
+
+
+
+Definition at line \textbf{ 29} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{classModelImpl_a651776ba7d34de952d3436b48ae66d7c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a90d1b6f26fa4fbb0cc93f740825f7607}} 
+\index{ModelImpl@{ModelImpl}!endSystems@{endSystems}}
+\index{endSystems@{endSystems}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{endSystems()}
+{\footnotesize\ttfamily \textbf{ Model\+Impl\+::system\+Iterator} Model\+Impl\+::end\+Systems (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the iterator to the end of systems attribute. 
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a251f709667f7ca6aedc45dd7431e40c1}.
+
+
+
+Definition at line \textbf{ 27} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classModelImpl_a90d1b6f26fa4fbb0cc93f740825f7607_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_acbb972533125efe0813bad6dd69c97d7}} 
+\index{ModelImpl@{ModelImpl}!execute@{execute}}
+\index{execute@{execute}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{execute()}
+{\footnotesize\ttfamily void Model\+Impl\+::execute (\begin{DoxyParamCaption}\item[{double}]{start = {\ttfamily 0.0},  }\item[{double}]{final = {\ttfamily 0.0},  }\item[{double}]{increment = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Executes all the flows in the \doxyref{Model\+Impl}{p.}{classModelImpl}. 
+\begin{DoxyParams}{Parameters}
+{\em start} & the initial time. \\
+\hline
+{\em final} & the final time. \\
+\hline
+{\em increment} & represents the iteration step. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a99b14b1ec90fde965573721cbda60269}.
+
+
+
+Definition at line \textbf{ 50} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classModelImpl_acbb972533125efe0813bad6dd69c97d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a37d4c07f681fc172c97de7418066f9e7}} 
+\index{ModelImpl@{ModelImpl}!getFlow@{getFlow}}
+\index{getFlow@{getFlow}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{getFlow()}
+{\footnotesize\ttfamily \textbf{ Flow} $\ast$ Model\+Impl\+::get\+Flow (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns a flow in the index-\/th position of the flows attribute \doxyref{Model\+Impl}{p.}{classModelImpl} Class. \begin{DoxyReturn}{Returns}
+Flow$\ast$ -\/ a flow in the index-\/th position of the systems attribute. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_ac9c37d14cbf74b215be9ccbe6c46e990}.
+
+
+
+Definition at line \textbf{ 143} of file \textbf{ model\+Impl.\+cpp}.
+
+\mbox{\label{classModelImpl_a027d6617b69c45b92243c3caca352ba5}} 
+\index{ModelImpl@{ModelImpl}!getName@{getName}}
+\index{getName@{getName}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{getName()}
+{\footnotesize\ttfamily string Model\+Impl\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the name attribute in the \doxyref{Model\+Impl}{p.}{classModelImpl} Class. \begin{DoxyReturn}{Returns}
+string -\/ the name attribute. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_aa5365ab557ae47efffdf14ba7a46dac8}.
+
+
+
+Definition at line \textbf{ 123} of file \textbf{ model\+Impl.\+cpp}.
+
+\mbox{\label{classModelImpl_a27383d0966fe2b7133036553aecfad7d}} 
+\index{ModelImpl@{ModelImpl}!getSource@{getSource}}
+\index{getSource@{getSource}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{getSource()}
+{\footnotesize\ttfamily \textbf{ System} $\ast$ Model\+Impl\+::get\+Source (\begin{DoxyParamCaption}\item[{\textbf{ Flow} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the source attribute of a flow 
+\begin{DoxyParams}{Parameters}
+{\em f} & the flow \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System$\ast$ -\/ the source system 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_ab27b1a2fc397ff0ab2e1eb7be02b914f}.
+
+
+
+Definition at line \textbf{ 165} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classModelImpl_a27383d0966fe2b7133036553aecfad7d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a28b9053cb8d0a1387b2c36e92b27d3c4}} 
+\index{ModelImpl@{ModelImpl}!getSystem@{getSystem}}
+\index{getSystem@{getSystem}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{getSystem()}
+{\footnotesize\ttfamily \textbf{ System} $\ast$ Model\+Impl\+::get\+System (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns a system in the index-\/th position of the systems attribute \doxyref{Model\+Impl}{p.}{classModelImpl} Class. \begin{DoxyReturn}{Returns}
+System$\ast$ -\/ a system in the index-\/th position of the systems attribute. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a2c6fb075b089c90f883eb74baa0bfcd1}.
+
+
+
+Definition at line \textbf{ 139} of file \textbf{ model\+Impl.\+cpp}.
+
+\mbox{\label{classModelImpl_a3465d527d3061bb36939eef8547a8c67}} 
+\index{ModelImpl@{ModelImpl}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{getTarget()}
+{\footnotesize\ttfamily \textbf{ System} $\ast$ Model\+Impl\+::get\+Target (\begin{DoxyParamCaption}\item[{\textbf{ Flow} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the target attribute of a flow 
+\begin{DoxyParams}{Parameters}
+{\em f} & the flow \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System$\ast$ -\/ the target system 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a6d78947cd1dd3e374c9081f1066b6e5c}.
+
+
+
+Definition at line \textbf{ 161} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classModelImpl_a3465d527d3061bb36939eef8547a8c67_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_ae3ff615e42e9c4822d13314ea3d48c5a}} 
+\index{ModelImpl@{ModelImpl}!getTime@{getTime}}
+\index{getTime@{getTime}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{getTime()}
+{\footnotesize\ttfamily double Model\+Impl\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the time attribute in the \doxyref{Model\+Impl}{p.}{classModelImpl} Class. \begin{DoxyReturn}{Returns}
+double -\/ the time attribute. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a41569269c162962571a791c0fe737bca}.
+
+
+
+Definition at line \textbf{ 131} of file \textbf{ model\+Impl.\+cpp}.
+
+\mbox{\label{classModelImpl_aac72781046ad2ee4e2d787427afe8528}} 
+\index{ModelImpl@{ModelImpl}!incrementTime@{incrementTime}}
+\index{incrementTime@{incrementTime}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{incrementTime()}
+{\footnotesize\ttfamily void Model\+Impl\+::increment\+Time (\begin{DoxyParamCaption}\item[{double}]{increment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This method increments the time attribute in the \doxyref{Model\+Impl}{p.}{classModelImpl} Class. 
+\begin{DoxyParams}{Parameters}
+{\em increment} & which will define by how much time should increment. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_adc78826b46538af6cc18fb41c138a017}.
+
+
+
+Definition at line \textbf{ 135} of file \textbf{ model\+Impl.\+cpp}.
+
+\mbox{\label{classModelImpl_ae07ad86b6d497308dcce8b97fd4016c7}} 
+\index{ModelImpl@{ModelImpl}!operator=@{operator=}}
+\index{operator=@{operator=}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{operator=()}
+{\footnotesize\ttfamily void Model\+Impl\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Model\+Impl} \&}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This is the overloaded assignment operator for the \doxyref{Model\+Impl}{p.}{classModelImpl} Class. 
+
+Definition at line \textbf{ 24} of file \textbf{ model\+Impl.\+cpp}.
+
+\mbox{\label{classModelImpl_a517cc6310aee36ae3d44512a0b72a321}} 
+\index{ModelImpl@{ModelImpl}!remove@{remove}}
+\index{remove@{remove}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{remove()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Model\+Impl\+::remove (\begin{DoxyParamCaption}\item[{\textbf{ Flow} $\ast$}]{flow }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a flow\textquotesingle{}s pointer on the flows vector. 
+\begin{DoxyParams}{Parameters}
+{\em flow} & which will be removed from the vector flows. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a8af2e0747cdca00538d4ddf339621582}.
+
+
+
+Definition at line \textbf{ 106} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classModelImpl_a517cc6310aee36ae3d44512a0b72a321_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_acc6d8b8fa7e584db2651c1bfafb15005}} 
+\index{ModelImpl@{ModelImpl}!remove@{remove}}
+\index{remove@{remove}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{remove()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Model\+Impl\+::remove (\begin{DoxyParamCaption}\item[{\textbf{ System} $\ast$}]{sys }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes a system\textquotesingle{}s pointer on the systems vector. 
+\begin{DoxyParams}{Parameters}
+{\em sys} & which will be removed from the vector flows. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_adbd9179086a62368503bc04baae0b5ae}.
+
+
+
+Definition at line \textbf{ 93} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classModelImpl_acc6d8b8fa7e584db2651c1bfafb15005_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a70af5be718afed2424ebce48fe59452e}} 
+\index{ModelImpl@{ModelImpl}!setName@{setName}}
+\index{setName@{setName}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{setName()}
+{\footnotesize\ttfamily void Model\+Impl\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{model\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the name attribute in the \doxyref{Model\+Impl}{p.}{classModelImpl} Class. 
+\begin{DoxyParams}{Parameters}
+{\em model\+Name} & which will be set to the current model. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_a33a3e6f80021524cf3f6ae504a1a0bb8}.
+
+
+
+Definition at line \textbf{ 119} of file \textbf{ model\+Impl.\+cpp}.
+
+\mbox{\label{classModelImpl_af73a7b89b8a47a595b1a23af9b62bbc6}} 
+\index{ModelImpl@{ModelImpl}!setSource@{setSource}}
+\index{setSource@{setSource}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{setSource()}
+{\footnotesize\ttfamily void Model\+Impl\+::set\+Source (\begin{DoxyParamCaption}\item[{\textbf{ Flow} $\ast$}]{f,  }\item[{\textbf{ System} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the source attribute of a flow 
+\begin{DoxyParams}{Parameters}
+{\em f} & the flow \\
+\hline
+{\em s} & the source system \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_aba76beb32ce2589431d34930d3147fd7}.
+
+
+
+Definition at line \textbf{ 157} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classModelImpl_af73a7b89b8a47a595b1a23af9b62bbc6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a79572d50422c07d2354ec2c4b9f0016d}} 
+\index{ModelImpl@{ModelImpl}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{setTarget()}
+{\footnotesize\ttfamily void Model\+Impl\+::set\+Target (\begin{DoxyParamCaption}\item[{\textbf{ Flow} $\ast$}]{f,  }\item[{\textbf{ System} $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Set the target attribute of a flow 
+\begin{DoxyParams}{Parameters}
+{\em f} & the flow \\
+\hline
+{\em s} & the target system \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_ae317e0d3c359d3432de6cd78c33307f5}.
+
+
+
+Definition at line \textbf{ 153} of file \textbf{ model\+Impl.\+cpp}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classModelImpl_a79572d50422c07d2354ec2c4b9f0016d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classModelImpl_a9f3b06b20529bdbe93005f52109133ba}} 
+\index{ModelImpl@{ModelImpl}!setTime@{setTime}}
+\index{setTime@{setTime}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{setTime()}
+{\footnotesize\ttfamily void Model\+Impl\+::set\+Time (\begin{DoxyParamCaption}\item[{double}]{current\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the time attribute in the \doxyref{Model\+Impl}{p.}{classModelImpl} Class. 
+\begin{DoxyParams}{Parameters}
+{\em current\+Time} & which will be set to the current model. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Model} \doxyref{}{p.}{classModel_ad31159bd890b359726e7c2201ea78e7e}.
+
+
+
+Definition at line \textbf{ 127} of file \textbf{ model\+Impl.\+cpp}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\label{classModelImpl_acfe6145ac71b7c6b9065c61d09de0131}} 
+\index{ModelImpl@{ModelImpl}!UnitModel@{UnitModel}}
+\index{UnitModel@{UnitModel}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{UnitModel}
+{\footnotesize\ttfamily friend class \textbf{ Unit\+Model}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \textbf{ 22} of file \textbf{ model\+Impl.\+h}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classModelImpl_a9be1dcdb4753e5d78e0c817261297dcf}} 
+\index{ModelImpl@{ModelImpl}!flows@{flows}}
+\index{flows@{flows}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{flows}
+{\footnotesize\ttfamily vector$<$\textbf{ Flow}$\ast$$>$ Model\+Impl\+::flows\hspace{0.3cm}{\ttfamily [protected]}}
+
+This attribute stores pointers to the flows contained in the model. 
+
+Definition at line \textbf{ 18} of file \textbf{ model\+Impl.\+h}.
+
+\mbox{\label{classModelImpl_aa32e79af7c5dfa46a3ea476796a33fb4}} 
+\index{ModelImpl@{ModelImpl}!name@{name}}
+\index{name@{name}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{name}
+{\footnotesize\ttfamily string Model\+Impl\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+This attribute contains a name for the model. 
+
+Definition at line \textbf{ 15} of file \textbf{ model\+Impl.\+h}.
+
+\mbox{\label{classModelImpl_a83020b28e438b82ccf821e751282ff79}} 
+\index{ModelImpl@{ModelImpl}!qntd@{qntd}}
+\index{qntd@{qntd}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{qntd}
+{\footnotesize\ttfamily int Model\+Impl\+::qntd = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+This attribute handle the creation of \doxyref{Model}{p.}{classModel} objects. 
+
+Definition at line \textbf{ 19} of file \textbf{ model\+Impl.\+h}.
+
+\mbox{\label{classModelImpl_a767e2054ecaaa8d1401ef2c962adc3e2}} 
+\index{ModelImpl@{ModelImpl}!systems@{systems}}
+\index{systems@{systems}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{systems}
+{\footnotesize\ttfamily vector$<$\textbf{ System}$\ast$$>$ Model\+Impl\+::systems\hspace{0.3cm}{\ttfamily [protected]}}
+
+This attribute stores pointers to the systems contained in the model. 
+
+Definition at line \textbf{ 17} of file \textbf{ model\+Impl.\+h}.
+
+\mbox{\label{classModelImpl_aad5b642a4500713444c44bdadd5d19dc}} 
+\index{ModelImpl@{ModelImpl}!time@{time}}
+\index{time@{time}!ModelImpl@{ModelImpl}}
+\doxysubsubsection{time}
+{\footnotesize\ttfamily double Model\+Impl\+::time\hspace{0.3cm}{\ttfamily [protected]}}
+
+This attribute contains the current time in which the operations in the model is being executed. 
+
+Definition at line \textbf{ 16} of file \textbf{ model\+Impl.\+h}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\textbf{ model\+Impl.\+h}\item 
+src/lib/\textbf{ model\+Impl.\+cpp}\end{DoxyCompactItemize}

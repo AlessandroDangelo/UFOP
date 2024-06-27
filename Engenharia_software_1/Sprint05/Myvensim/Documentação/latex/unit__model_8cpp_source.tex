@@ -1,0 +1,346 @@
+\doxysection{unit\+\_\+model.\+cpp}
+\label{unit__model_8cpp_source}\index{test/unit/unit\_model.cpp@{test/unit/unit\_model.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}unit\_model.h"{}}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <assert.h>}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{comment}{// Function for Model class's constructor unit test.}}
+\DoxyCodeLine{00007 \textcolor{keywordtype}{void} unit\_model\_constructor()\{}
+\DoxyCodeLine{00008     cout << \textcolor{stringliteral}{"{}TEST 1 -\/ Default constructor of the Model class without passing parameters"{}} << endl;}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010     Model* model1 = Model::createModel();}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012     \textcolor{comment}{// Making assertion to verify if the name property was initialized with the default data.}}
+\DoxyCodeLine{00013     assert(model1-\/>getName() == \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00014     \textcolor{comment}{// Making assertion to verify if the time property was initialized with the default data.}}
+\DoxyCodeLine{00015     assert(model1-\/>getTime() == 0.0);}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017     \textcolor{keyword}{delete} model1;}
+\DoxyCodeLine{00018     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     cout << \textcolor{stringliteral}{"{}TEST 2 -\/ Default constructor of the Model class with passing parameters"{}} << endl;}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     Model* model2 = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 1.0);}
+\DoxyCodeLine{00023     System* system1 = model2-\/>createSystem(\textcolor{stringliteral}{"{}System 1"{}}, 0.0);}
+\DoxyCodeLine{00024     System* system2 =model2-\/>createSystem(\textcolor{stringliteral}{"{}System 2"{}}, 0.0);}
+\DoxyCodeLine{00025     Flow* flow = model2-\/>createFlow<ExponencialFlow>(\textcolor{stringliteral}{"{}Test Flow"{}}, system1, system2);}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{comment}{// Making assertion to verify if the name and time property was initialized with the parameter specified.}}
+\DoxyCodeLine{00028     assert(model2-\/>getName() == \textcolor{stringliteral}{"{}Test Model"{}});}
+\DoxyCodeLine{00029     assert(model2-\/>getTime() == 1.0);}
+\DoxyCodeLine{00030     \textcolor{comment}{// Making assertion to verify if the Flow object was added to the Model's flows parameter.}}
+\DoxyCodeLine{00031     assert(model2-\/>getSystem(0)-\/>getName() == \textcolor{stringliteral}{"{}System 1"{}});    }
+\DoxyCodeLine{00032     assert(model2-\/>getSystem(1)-\/>getName() == \textcolor{stringliteral}{"{}System 2"{}});    }
+\DoxyCodeLine{00033     assert((*(model2-\/>beginFlows()))-\/>getName() == \textcolor{stringliteral}{"{}Test Flow"{}}); }
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keyword}{delete} model2;}
+\DoxyCodeLine{00036     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;  }
+\DoxyCodeLine{00037 \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 \textcolor{comment}{// Function for the Model class' destructor unit test.}}
+\DoxyCodeLine{00040 \textcolor{keywordtype}{void} unit\_model\_destructor()\{}
+\DoxyCodeLine{00041     cout << \textcolor{stringliteral}{"{}TEST 3 -\/ Default destructor of the Model class"{}} << endl;}
+\DoxyCodeLine{00042     }
+\DoxyCodeLine{00043     \textcolor{keywordtype}{double} vmBefore, vmAfter, rss;}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     \textcolor{comment}{// Getting the memory usage previous to the creation of a model.}}
+\DoxyCodeLine{00046     memory\_usage(vmBefore, rss);}
+\DoxyCodeLine{00047     }
+\DoxyCodeLine{00048     Model* model = Model::createModel();}
+\DoxyCodeLine{00049     System* system1 = model-\/>createSystem(\textcolor{stringliteral}{"{}System 1"{}}, 0.0);}
+\DoxyCodeLine{00050     System* system2 = model-\/>createSystem(\textcolor{stringliteral}{"{}System 2"{}}, 0.0);}
+\DoxyCodeLine{00051     Flow* flow1 = model-\/>createFlow<ExponencialFlow>(\textcolor{stringliteral}{"{}Flow1"{}}, system1, system2);}
+\DoxyCodeLine{00052     \textcolor{keyword}{delete} (ModelImpl*) model;}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \textcolor{comment}{// Getting the memory usage after the creation and destruction of a Flow object.}}
+\DoxyCodeLine{00055     memory\_usage(vmAfter, rss);}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{comment}{// Making assertion to verify if the memory usage after the creation and deletion}}
+\DoxyCodeLine{00058     \textcolor{comment}{// is the same as before the creation of Model object.}}
+\DoxyCodeLine{00059     \textcolor{comment}{//cout << vmBefore << endl;}}
+\DoxyCodeLine{00060     \textcolor{comment}{//cout << vmAfter << endl;}}
+\DoxyCodeLine{00061     \textcolor{comment}{//assert(vmBefore == vmAfter);}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00064 \}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 \textcolor{comment}{// Function for the Model class' getName() method unit test.}}
+\DoxyCodeLine{00067 \textcolor{keywordtype}{void} unit\_model\_getName()\{}
+\DoxyCodeLine{00068     cout << \textcolor{stringliteral}{"{}TEST 4 -\/ Model class' getName() method"{}} << endl;}
+\DoxyCodeLine{00069     }
+\DoxyCodeLine{00070     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}});}
+\DoxyCodeLine{00071     }
+\DoxyCodeLine{00072     \textcolor{comment}{// Making assertion to verify if the method returns the Model class name and if it's}}
+\DoxyCodeLine{00073     \textcolor{comment}{// equal to the parameter previously passed.}}
+\DoxyCodeLine{00074     assert(model-\/>getName() == \textcolor{stringliteral}{"{}Test Model"{}});}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00077     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00078 \}}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080 \textcolor{comment}{// Function for the Model class' setName() method unit test.}}
+\DoxyCodeLine{00081 \textcolor{keywordtype}{void} unit\_model\_setName()\{}
+\DoxyCodeLine{00082     cout << \textcolor{stringliteral}{"{}TEST 5 -\/ Model class' setName() method"{}} << endl;}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     Model* model = Model::createModel();}
+\DoxyCodeLine{00085     model-\/>setName(\textcolor{stringliteral}{"{}Test Model"{}});}
+\DoxyCodeLine{00086     }
+\DoxyCodeLine{00087     \textcolor{comment}{// Making assertion to verify if the data of the name property has been altered.}}
+\DoxyCodeLine{00088     assert(model-\/>getName() == \textcolor{stringliteral}{"{}Test Model"{}});}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00091     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00092 \}}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094 \textcolor{comment}{// Function for the Model class' getTime() method unit test.}}
+\DoxyCodeLine{00095 \textcolor{keywordtype}{void} unit\_model\_getTime()\{}
+\DoxyCodeLine{00096     cout << \textcolor{stringliteral}{"{}TEST 6 -\/ Model class' getTime() method"{}} << endl;}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098     Model* model = Model::createModel();}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100     \textcolor{comment}{// Making assertion to verify if the method returns the Model class time and if it's}}
+\DoxyCodeLine{00101     \textcolor{comment}{// equal to the parameter previously passed.}}
+\DoxyCodeLine{00102     assert(model-\/>getTime() == 0.0);}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00105     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00106 \}}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108 \textcolor{comment}{// Function for the Model class' setTime() method unit test.}}
+\DoxyCodeLine{00109 \textcolor{keywordtype}{void} unit\_model\_setTime()\{}
+\DoxyCodeLine{00110     cout << \textcolor{stringliteral}{"{}TEST 7 -\/ Model class' setTime() method"{}} << endl;}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112     Model* model = Model::createModel();}
+\DoxyCodeLine{00113     model-\/>setTime(1.0);}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115     \textcolor{comment}{// Making assertion to verify if the data of the time property has been altered.}}
+\DoxyCodeLine{00116     assert(model-\/>getTime() == 1.0);}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00119     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00120 \}}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122 \textcolor{comment}{// Function for the Model class' incrementTime() method unit test.}}
+\DoxyCodeLine{00123 \textcolor{keywordtype}{void} unit\_model\_incrementTime()\{}
+\DoxyCodeLine{00124     cout << \textcolor{stringliteral}{"{}TEST 8 -\/ Model class' incrementTime() method"{}} << endl;}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 1.0);}
+\DoxyCodeLine{00127     model-\/>incrementTime(1.0);}
+\DoxyCodeLine{00128     }
+\DoxyCodeLine{00129     \textcolor{comment}{// Making assertion to verify if the data of the time property has been incremented.}}
+\DoxyCodeLine{00130     assert(model-\/>getTime() == 2.0);}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00133     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00134 \}}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136 \textcolor{comment}{// Function for the Model class' addSystem() method unit test.}}
+\DoxyCodeLine{00137 \textcolor{keywordtype}{void} UnitModel::unit\_model\_addSystem()\{}
+\DoxyCodeLine{00138     cout << \textcolor{stringliteral}{"{}TEST 9 -\/ Model class' addSystem() method"{}} << endl;}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 0.0);    }
+\DoxyCodeLine{00141     System* system = \textcolor{keyword}{new} SystemImpl(\textcolor{stringliteral}{"{}System 1"{}}, 0.0);}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143     model-\/>add(system);}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145     \textcolor{comment}{// Making assertion to verify if the system has been added to the systems property.}}
+\DoxyCodeLine{00146     assert((*(model-\/>beginSystems()))-\/>getName() == system-\/>getName());}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00149     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00150 \}}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152 \textcolor{comment}{// Function for the Model class' removeSystem() method unit test.}}
+\DoxyCodeLine{00153 \textcolor{keywordtype}{void} unit\_model\_removeSystem()\{}
+\DoxyCodeLine{00154     cout << \textcolor{stringliteral}{"{}TEST 10 -\/ Model class' removeSystem() method"{}} << endl;}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 0.0);    }
+\DoxyCodeLine{00157     System* system = model-\/>createSystem(\textcolor{stringliteral}{"{}System 1"{}}, 0.0);}
+\DoxyCodeLine{00158     \textcolor{comment}{// model-\/>add(system);}}
+\DoxyCodeLine{00159     model-\/>remove(system);}
+\DoxyCodeLine{00160     }
+\DoxyCodeLine{00161     \textcolor{comment}{// Making assertion to verify if the system has been removed from the systems property.}}
+\DoxyCodeLine{00162     assert(model-\/>beginSystems() == model-\/>endSystems());}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00165     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00166 \}}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168 \textcolor{comment}{// Function for the Model class' addFlow() method unit test.}}
+\DoxyCodeLine{00169 \textcolor{keywordtype}{void} UnitModel::unit\_model\_addFlow()\{}
+\DoxyCodeLine{00170     cout << \textcolor{stringliteral}{"{}TEST 11 -\/ Model class' addFlow() method"{}} << endl;}
+\DoxyCodeLine{00171 }
+\DoxyCodeLine{00172     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 1.0);}
+\DoxyCodeLine{00173     ExponencialFlow* flow = \textcolor{keyword}{new} ExponencialFlow(\textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00174     model-\/>add(flow);}
+\DoxyCodeLine{00175     }
+\DoxyCodeLine{00176     \textcolor{comment}{// Making assertion to verify if the flow has been added to the flows property.}}
+\DoxyCodeLine{00177     assert((*(model-\/>beginFlows()))-\/>getName() == flow-\/>getName());}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00180     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00181 \}}
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00183 \textcolor{comment}{// Function for the Model class' removeFlow() method unit test.}}
+\DoxyCodeLine{00184 \textcolor{keywordtype}{void} unit\_model\_removeFlow()\{}
+\DoxyCodeLine{00185     cout << \textcolor{stringliteral}{"{}TEST 12 -\/ Model class' removeFlow() method"{}} << endl;}
+\DoxyCodeLine{00186 }
+\DoxyCodeLine{00187     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 1.0);}
+\DoxyCodeLine{00188     Flow* flow =  model-\/>createFlow<ExponencialFlow>(\textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00189     model-\/>remove(flow);}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191     \textcolor{comment}{// Making assertion to verify if the system has been removed from the systems property.}}
+\DoxyCodeLine{00192     assert(model-\/>beginFlows() == model-\/>endFlows());}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00195     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00196 \}}
+\DoxyCodeLine{00197 }
+\DoxyCodeLine{00198 \textcolor{comment}{// Function for the Model class' getTarget() method unit test.}}
+\DoxyCodeLine{00199 \textcolor{keywordtype}{void} unit\_model\_getTarget()\{}
+\DoxyCodeLine{00200     cout << \textcolor{stringliteral}{"{}TEST 13 -\/ Model class' getTarget() method"{}} << endl;}
+\DoxyCodeLine{00201 }
+\DoxyCodeLine{00202     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 1.0);}
+\DoxyCodeLine{00203     System* system = model-\/>createSystem(\textcolor{stringliteral}{"{}System 1"{}}, 0.0);}
+\DoxyCodeLine{00204     Flow* flow = model-\/>createFlow<ExponencialFlow>(\textcolor{stringliteral}{"{}Flow 1"{}}, NULL, system);}
+\DoxyCodeLine{00205 }
+\DoxyCodeLine{00206     assert(model-\/>getTarget(flow)-\/>getName() == \textcolor{stringliteral}{"{}System 1"{}});}
+\DoxyCodeLine{00207 }
+\DoxyCodeLine{00208     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00209     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00210 \}}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212 \textcolor{comment}{// Function for the Model class' setTarget() method unit test.}}
+\DoxyCodeLine{00213 \textcolor{keywordtype}{void} unit\_model\_setTarget()\{}
+\DoxyCodeLine{00214     cout << \textcolor{stringliteral}{"{}TEST 14 -\/ Model class' setTarget() method"{}} << endl;}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 1.0);}
+\DoxyCodeLine{00217     System* system = model-\/>createSystem(\textcolor{stringliteral}{"{}System 1"{}}, 0.0);}
+\DoxyCodeLine{00218     Flow* flow = model-\/>createFlow<ExponencialFlow>(\textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00219     model-\/>setTarget(flow, system);}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00221     assert(model-\/>getTarget(flow)-\/>getName() == \textcolor{stringliteral}{"{}System 1"{}});}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00224     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00225 \}}
+\DoxyCodeLine{00226 }
+\DoxyCodeLine{00227 \textcolor{comment}{// Function for the Model class' clearTarget() method unit test.}}
+\DoxyCodeLine{00228 \textcolor{keywordtype}{void} unit\_model\_clearTarget()\{}
+\DoxyCodeLine{00229     cout << \textcolor{stringliteral}{"{}TEST 15 -\/ Model class' clearTarget() method"{}} << endl;}
+\DoxyCodeLine{00230 }
+\DoxyCodeLine{00231     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 1.0);}
+\DoxyCodeLine{00232     System* system = model-\/>createSystem(\textcolor{stringliteral}{"{}System 1"{}}, 0.0);}
+\DoxyCodeLine{00233     Flow* flow = model-\/>createFlow<ExponencialFlow>(\textcolor{stringliteral}{"{}Flow 1"{}}, NULL, system);}
+\DoxyCodeLine{00234     model-\/>clearTarget(flow);}
+\DoxyCodeLine{00235 }
+\DoxyCodeLine{00236     assert(model-\/>getTarget(flow) == NULL);}
+\DoxyCodeLine{00237 }
+\DoxyCodeLine{00238     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00239     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00240 \}}
+\DoxyCodeLine{00241 }
+\DoxyCodeLine{00242 \textcolor{comment}{// Function for the Model class' getSource() method unit test.}}
+\DoxyCodeLine{00243 \textcolor{keywordtype}{void} unit\_model\_getSource()\{}
+\DoxyCodeLine{00244     cout << \textcolor{stringliteral}{"{}TEST 16 -\/ Model class' getSource() method"{}} << endl;}
+\DoxyCodeLine{00245 }
+\DoxyCodeLine{00246     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 1.0);}
+\DoxyCodeLine{00247     System* system = model-\/>createSystem(\textcolor{stringliteral}{"{}System 1"{}}, 0.0);}
+\DoxyCodeLine{00248     Flow* flow = model-\/>createFlow<ExponencialFlow>(\textcolor{stringliteral}{"{}Flow 1"{}}, system);}
+\DoxyCodeLine{00249 }
+\DoxyCodeLine{00250     assert(model-\/>getSource(flow)-\/>getName() == \textcolor{stringliteral}{"{}System 1"{}});}
+\DoxyCodeLine{00251 }
+\DoxyCodeLine{00252     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00253     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00254 \}}
+\DoxyCodeLine{00255 }
+\DoxyCodeLine{00256 \textcolor{comment}{// Function for the Model class' setSource() method unit test.}}
+\DoxyCodeLine{00257 \textcolor{keywordtype}{void} unit\_model\_setSource()\{}
+\DoxyCodeLine{00258     cout << \textcolor{stringliteral}{"{}TEST 17 -\/ Model class' setSource() method"{}} << endl;}
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 1.0);}
+\DoxyCodeLine{00261     System* system = model-\/>createSystem(\textcolor{stringliteral}{"{}System 1"{}}, 0.0);}
+\DoxyCodeLine{00262     Flow* flow = model-\/>createFlow<ExponencialFlow>(\textcolor{stringliteral}{"{}Flow 1"{}});}
+\DoxyCodeLine{00263     model-\/>setSource(flow, system);}
+\DoxyCodeLine{00264 }
+\DoxyCodeLine{00265     assert(model-\/>getSource(flow)-\/>getName() == \textcolor{stringliteral}{"{}System 1"{}});}
+\DoxyCodeLine{00266 }
+\DoxyCodeLine{00267     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00268     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00269 \}}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{00271 \textcolor{comment}{// Function for the Model class' clearSource() method unit test.}}
+\DoxyCodeLine{00272 \textcolor{keywordtype}{void} unit\_model\_clearSource()\{}
+\DoxyCodeLine{00273     cout << \textcolor{stringliteral}{"{}TEST 18 -\/ Model class' clearSource() method"{}} << endl;}
+\DoxyCodeLine{00274 }
+\DoxyCodeLine{00275     Model* model = Model::createModel(\textcolor{stringliteral}{"{}Test Model"{}}, 1.0);}
+\DoxyCodeLine{00276     System* system = model-\/>createSystem(\textcolor{stringliteral}{"{}System 1"{}}, 0.0);}
+\DoxyCodeLine{00277     Flow* flow = model-\/>createFlow<ExponencialFlow>(\textcolor{stringliteral}{"{}Flow 1"{}}, system);}
+\DoxyCodeLine{00278     model-\/>clearSource(flow);}
+\DoxyCodeLine{00279 }
+\DoxyCodeLine{00280     assert(model-\/>getSource(flow) == NULL);}
+\DoxyCodeLine{00281 }
+\DoxyCodeLine{00282     \textcolor{keyword}{delete} model;}
+\DoxyCodeLine{00283     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00284 \}}
+\DoxyCodeLine{00285 }
+\DoxyCodeLine{00286 \textcolor{comment}{// Function for the Model class' execute() method unit test.}}
+\DoxyCodeLine{00287 \textcolor{keywordtype}{void} unit\_model\_execute()\{}
+\DoxyCodeLine{00288     cout << \textcolor{stringliteral}{"{}TEST 19 -\/ Model class' execute() method"{}} << endl;}
+\DoxyCodeLine{00289     }
+\DoxyCodeLine{00290     Model* expModel = Model::createModel(\textcolor{stringliteral}{"{}Exponential Model"{}}, 0.0);}
+\DoxyCodeLine{00291     System* pop1 = expModel-\/>createSystem(\textcolor{stringliteral}{"{}Population 1"{}}, 100.0);}
+\DoxyCodeLine{00292     System* pop2 = expModel-\/>createSystem(\textcolor{stringliteral}{"{}Population 2"{}}, 0.0);}
+\DoxyCodeLine{00293     Flow* expFlow = expModel-\/>createFlow<ExponencialFlow>(\textcolor{stringliteral}{"{}Exponential flow"{}}, pop1, pop2);}
+\DoxyCodeLine{00294 }
+\DoxyCodeLine{00295     \textcolor{comment}{// Making assertions for the unit test before execution}}
+\DoxyCodeLine{00296     assert(pop1-\/>getName() == \textcolor{stringliteral}{"{}Population 1"{}});}
+\DoxyCodeLine{00297     assert(pop2-\/>getName() == \textcolor{stringliteral}{"{}Population 2"{}});}
+\DoxyCodeLine{00298     assert(expFlow-\/>getName() == \textcolor{stringliteral}{"{}Exponential flow"{}});}
+\DoxyCodeLine{00299     assert(expModel-\/>getName() == \textcolor{stringliteral}{"{}Exponential Model"{}});}
+\DoxyCodeLine{00300 }
+\DoxyCodeLine{00301     assert(abs(pop1-\/>getValue() -\/ 100.0) < 0.0001);}
+\DoxyCodeLine{00302     assert(abs(pop2-\/>getValue() -\/ 0.0) < 0.0001);}
+\DoxyCodeLine{00303     assert(abs(expModel-\/>getTime() -\/ 0.0) < 0.0001);}
+\DoxyCodeLine{00304 }
+\DoxyCodeLine{00305     expModel-\/>execute(0, 100, 1);}
+\DoxyCodeLine{00306 }
+\DoxyCodeLine{00307     \textcolor{comment}{// Making assertions for the unit test after execution}}
+\DoxyCodeLine{00308     assert(abs(pop1-\/>getValue() -\/ 36.6032) < 0.0001);}
+\DoxyCodeLine{00309     assert(abs(pop2-\/>getValue() -\/ 63.3968) < 0.0001);}
+\DoxyCodeLine{00310     assert(abs(expModel-\/>getTime() -\/ 100.0) < 0.0001);}
+\DoxyCodeLine{00311 }
+\DoxyCodeLine{00312     \textcolor{keyword}{delete} expModel;}
+\DoxyCodeLine{00313     cout << GREEN << \textcolor{stringliteral}{"{}OK!"{}} << RESET << endl;}
+\DoxyCodeLine{00314 \}}
+\DoxyCodeLine{00315 }
+\DoxyCodeLine{00316 \textcolor{comment}{// Function to run all the Model class' unit tests.}}
+\DoxyCodeLine{00317 \textcolor{keywordtype}{void} run\_unit\_tests\_model()\{}
+\DoxyCodeLine{00318     UnitModel* m = \textcolor{keyword}{new} UnitModel();}
+\DoxyCodeLine{00319 }
+\DoxyCodeLine{00320     \textcolor{comment}{// Calling all the Model class' unit test functions.}}
+\DoxyCodeLine{00321     unit\_model\_constructor();}
+\DoxyCodeLine{00322     unit\_model\_destructor();}
+\DoxyCodeLine{00323     unit\_model\_getName();}
+\DoxyCodeLine{00324     unit\_model\_setName();}
+\DoxyCodeLine{00325     unit\_model\_getTime();}
+\DoxyCodeLine{00326     unit\_model\_setTime();}
+\DoxyCodeLine{00327     unit\_model\_incrementTime();}
+\DoxyCodeLine{00328     m-\/>unit\_model\_addSystem();}
+\DoxyCodeLine{00329     unit\_model\_removeSystem();}
+\DoxyCodeLine{00330     m-\/>unit\_model\_addFlow();}
+\DoxyCodeLine{00331     unit\_model\_removeFlow();}
+\DoxyCodeLine{00332     unit\_model\_getTarget();}
+\DoxyCodeLine{00333     unit\_model\_setTarget();}
+\DoxyCodeLine{00334     unit\_model\_clearTarget();}
+\DoxyCodeLine{00335     unit\_model\_getSource();}
+\DoxyCodeLine{00336     unit\_model\_setSource();}
+\DoxyCodeLine{00337     unit\_model\_clearSource();}
+\DoxyCodeLine{00338     unit\_model\_execute();}
+\DoxyCodeLine{00339 }
+\DoxyCodeLine{00340 \}}
+
+\end{DoxyCode}

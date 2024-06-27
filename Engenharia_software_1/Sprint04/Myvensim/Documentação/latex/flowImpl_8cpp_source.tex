@@ -1,0 +1,65 @@
+\doxysection{flow\+Impl.\+cpp}
+\label{flowImpl_8cpp_source}\index{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/src/flowImpl.cpp@{C:/Users/aless/OneDrive/Documentos/UFOP/Engenharia de Software/Sprint04/Myvensim/src/flowImpl.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "{}flowImpl.hpp"{}}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{00003 FlowImpl::FlowImpl(\textcolor{keyword}{const} Flow\& flow)\{}
+\DoxyCodeLine{00004     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&flow)\{}
+\DoxyCodeLine{00005         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00006     \}}
+\DoxyCodeLine{00007     }
+\DoxyCodeLine{00008     name = flow.getName();}
+\DoxyCodeLine{00009     source = NULL;}
+\DoxyCodeLine{00010     target = NULL;}
+\DoxyCodeLine{00011 \}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 FlowImpl\& FlowImpl::operator=(\textcolor{keyword}{const} Flow\& flow)\{}
+\DoxyCodeLine{00014     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == \&flow)\{}
+\DoxyCodeLine{00015         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00016     \}}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018     setName(flow.getName());}
+\DoxyCodeLine{00019     setSource(NULL);}
+\DoxyCodeLine{00020     setTarget(NULL);}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00023 \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025 FlowImpl::FlowImpl(\textcolor{keywordtype}{string} name, System* source, System* target):name(name), source(source), target(target)\{\}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 FlowImpl::\string~FlowImpl()\{\}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 \textcolor{keywordtype}{string} FlowImpl::getName()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{return} name;}
+\DoxyCodeLine{00031 \}}
+\DoxyCodeLine{00032         }
+\DoxyCodeLine{00033 \textcolor{keywordtype}{void} FlowImpl::setName(\textcolor{keywordtype}{string} flowName)\{}
+\DoxyCodeLine{00034     name = flowName;}
+\DoxyCodeLine{00035 \}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037 System* FlowImpl::getSource()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{return} source;}
+\DoxyCodeLine{00039 \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041 \textcolor{keywordtype}{void} FlowImpl::setSource(System* sourceSys)\{}
+\DoxyCodeLine{00042     source = sourceSys;}
+\DoxyCodeLine{00043 \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \textcolor{keywordtype}{void} FlowImpl::clearSource() \{}
+\DoxyCodeLine{00046     source = NULL;}
+\DoxyCodeLine{00047 \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049 System* FlowImpl::getTarget()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00050     \textcolor{keywordflow}{return} target;}
+\DoxyCodeLine{00051 \}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053 \textcolor{keywordtype}{void} FlowImpl::setTarget(System* targetSys) \{}
+\DoxyCodeLine{00054     target = targetSys;}
+\DoxyCodeLine{00055 \}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057 \textcolor{keywordtype}{void} FlowImpl::clearTarget() \{}
+\DoxyCodeLine{00058     target = NULL;}
+\DoxyCodeLine{00059 \}}
+
+\end{DoxyCode}
