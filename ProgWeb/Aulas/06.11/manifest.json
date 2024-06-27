@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Substituição de Imagens",
+    "version": "1.0",
+    "description": "Esta extensão substitui imagens em páginas *.br e exibe o número de imagens no topo.",
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "cat.jpg",
+        "48": "cat.jpg",
+        "128": "cat.jpg"
+      }
+    },
+    "permissions": [
+      "activeTab",
+      "webNavigation",
+      "webRequest",
+      "webRequestBlocking",
+      "*://*.br/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["*://*.br/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  

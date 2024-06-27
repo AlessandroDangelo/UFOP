@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+}
+
+body h1{
+    color: red;
+}
+
+body h2{
+    color: white;
+}
+
+.nav picture img{
+    border: 2px solid white;
+    margin: 2px;
+    height: auto;
+}
+
+.filmes{
+    width: 20%;
+    display: flex;
+}

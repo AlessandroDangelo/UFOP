@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>T10</title>
+</head>
+<body>
+  <h1>Transformador de Texto</h1>
+  <label for="texto">Texto</label>
+  <textarea id="texto" rows="4" cols="50"></textarea>
+  <br>
+  <div class="botoes">
+    <button onclick="transformarTexto(true)">Maiúsculo</button>
+    <button onclick="transformarTexto(false)">Minúsculo</button>
+  </div>  
+  <br>
+  <p id="resultado"></p>
+
+  <script>
+    function transformarTexto(maiusculo) {
+      const texto = document.getElementById('texto').value;
+      const parametro = String(maiusculo);
+
+      fetch('/transformar-texto', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ texto, maiusculo: parametro }),
+      })
+      .then(response => response.text())
+      .then(result => {
+        document.getElementById('resultado').innerText = result;
+      })
+      .catch(error => {
+        console.error('Erro na requisição:', error);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/aless/OneDrive/Documentos/UFOP/Organização de computadores/tp2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_d7ea7/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_d7ea7.dir\build.make CMakeFiles/cmTC_d7ea7.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/aless/OneDrive/Documentos/UFOP/OrganizaþÒo de computadores/tp2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d7ea7.dir/testCCompiler.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_d7ea7.dir\testCCompiler.c.obj   -c "C:\Users\aless\OneDrive\Documentos\UFOP\Organiza├º├úo de computadores\tp2\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c"
+gcc.exe: error: C:\Users\aless\OneDrive\Documentos\UFOP\Organiza+║+·o de computadores\tp2\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+CMakeFiles\cmTC_d7ea7.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_d7ea7.dir/testCCompiler.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_d7ea7.dir/testCCompiler.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/aless/OneDrive/Documentos/UFOP/OrganizaþÒo de computadores/tp2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_d7ea7/fast' failed
+mingw32-make.exe: *** [cmTC_d7ea7/fast] Error 2
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/aless/OneDrive/Documentos/UFOP/Organização de computadores/tp2/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_cd937/fast 
+C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_cd937.dir\build.make CMakeFiles/cmTC_cd937.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/aless/OneDrive/Documentos/UFOP/OrganizaþÒo de computadores/tp2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd937.dir/testCCompiler.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_cd937.dir\testCCompiler.c.obj   -c "C:\Users\aless\OneDrive\Documentos\UFOP\Organiza├º├úo de computadores\tp2\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c"
+gcc.exe: error: C:\Users\aless\OneDrive\Documentos\UFOP\Organiza+║+·o de computadores\tp2\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+CMakeFiles\cmTC_cd937.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_cd937.dir/testCCompiler.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_cd937.dir/testCCompiler.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/aless/OneDrive/Documentos/UFOP/OrganizaþÒo de computadores/tp2/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_cd937/fast' failed
+mingw32-make.exe: *** [cmTC_cd937/fast] Error 2
+
+

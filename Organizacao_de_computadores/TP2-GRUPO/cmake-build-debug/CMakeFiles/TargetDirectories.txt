@@ -1,0 +1,3 @@
+C:/Users/aless/OneDrive/Documentos/UFOP/Organizacao_de_computadores/TP2-GRUPO/cmake-build-debug/CMakeFiles/TP2_GRUPO.dir
+C:/Users/aless/OneDrive/Documentos/UFOP/Organizacao_de_computadores/TP2-GRUPO/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/aless/OneDrive/Documentos/UFOP/Organizacao_de_computadores/TP2-GRUPO/cmake-build-debug/CMakeFiles/rebuild_cache.dir

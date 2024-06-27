@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Substitui\u00c3\u00a7\u00c3\u00a3o de Imagens",
+  "version": "1.0",
+  "description": "Esta extens\u00c3\u00a3o substitui imagens em p\u00c3\u00a1ginas *.br e exibe o n\u00c3\u00bamero de imagens no topo.",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "img/cat.jpg",
+      "48": "img/cat.jpg",
+      "128": "img/cat.jpg"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.br/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.br/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
